@@ -1,0 +1,19 @@
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1rem;
+}
+
+.picTitle {
+  color: #1e3a8a;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+.info {
+  font-size: 1.25rem;
+  font-weight: bold;
+  line-height: 1.75rem;
+}

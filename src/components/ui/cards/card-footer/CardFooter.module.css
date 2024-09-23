@@ -1,0 +1,14 @@
+.cardFooter {
+  position: absolute;
+  width: 78px;
+  height: 56px;
+  right: 0;
+  top: 20px;
+}
+
+.logo {
+  border-radius: 50%;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}

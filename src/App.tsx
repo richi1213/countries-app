@@ -1,11 +1,16 @@
-import Header from "./components/Header";
-import SnowFlakes from "./components/SnowFlakes";
+import Header from "./components/header/Header";
+import Snowflakes from "./components/ui/animations/Snowflakes";
 
-export default function App() {
+const App: React.FC = () => {
   return (
     <>
-      <SnowFlakes />
-      <Header />
+      <Snowflakes>
+        <Header />
+      </Snowflakes>
     </>
   );
-}
+};
+
+App.displayName = "App Component";
+
+export default App;
