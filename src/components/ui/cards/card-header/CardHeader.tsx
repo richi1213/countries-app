@@ -1,5 +1,5 @@
-import OsloImg from "../../../../assets/images/capitals/oslo.jpg";
-import styles from "./CardHeader.module.css";
+import OsloImg from "assets/images/capitals/oslo.jpg";
+import styles from "components/ui/cards/card-header/CardHeader.module.css";
 
 const CardHeader = (): JSX.Element => {
   return (

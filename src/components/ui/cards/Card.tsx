@@ -1,12 +1,27 @@
-import styles from "./Card.module.css";
+import styles from "components/ui/cards/Card.module.css";
 import { ReactNode } from "react";
 
 type CardProps = {
-  children: ReactNode;
+  children?: ReactNode;
+  renderHeader: () => ReactNode;
+  renderContent: () => ReactNode;
+  renderFooter: () => ReactNode;
 };
 
-const Card = ({ children }: CardProps): JSX.Element => {
-  return <div className={styles.card}>{children}</div>;
+const Card = ({
+  children,
+  renderHeader,
+  renderContent,
+  renderFooter,
+}: CardProps): JSX.Element => {
+  return (
+    <div className={styles.card}>
+      {renderHeader()}
+      {renderContent()}
+      {children}
+      {renderFooter()}
+    </div>
+  );
 };
 
 export default Card;

@@ -1,12 +1,11 @@
-import Header from "./components/header/Header";
-import Snowflakes from "./components/ui/animations/Snowflakes";
+import { Layout, Hero } from "components";
 
 const App: React.FC = () => {
   return (
     <>
-      <Snowflakes>
-        <Header />
-      </Snowflakes>
+      <Layout>
+        <Hero />
+      </Layout>
     </>
   );
 };

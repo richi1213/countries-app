@@ -1,5 +1,5 @@
-import NorwayFlag from "../../../../assets/images/flags/norway-flag.bmp";
-import styles from "./CardFooter.module.css";
+import NorwayFlag from "assets/images/flags/norway-flag.bmp";
+import styles from "components/ui/cards/card-footer/CardFooter.module.css";
 
 const CardFooter = (): JSX.Element => {
   return (

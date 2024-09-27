@@ -1,4 +1,4 @@
-import styles from "./Snowflakes.module.css";
+import styles from "components/ui/animations/Snowflakes.module.css";
 
 type SnowflakesProps = {
   children?: React.ReactNode;

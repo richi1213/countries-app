@@ -1,23 +1,15 @@
-import React from "react";
-import winterImage from "../../assets/images/winter.svg";
-import styles from "./Header.module.css";
-import Hero from "./hero/Hero";
+import styles from "components/header/Header.module.css";
+import winterImage from "assets/images/winter.svg";
 
-const Header: React.FC = () => {
+const Header: () => JSX.Element = () => {
   return (
     <header>
-      <div className={styles.wrapper}>
-        <div>
-          <nav className={styles.nav}>
-            <div className={styles.logo}>
-              <img src={winterImage} alt="winter logo" />
-            </div>
-            <div>🧣</div>
-          </nav>
+      <nav className={styles.nav}>
+        <div className={styles.logo}>
+          <img src={winterImage} alt="winter logo" />
         </div>
-
-        <Hero />
-      </div>
+        <div>🧣</div>
+      </nav>
     </header>
   );
 };

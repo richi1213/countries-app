@@ -1,22 +1,24 @@
-import styles from "./CardContent.module.css";
+import styles from "components/ui/cards/card-content/CardContent.module.css";
 
-const country = {
-  name: "Norway",
-  population: "5.46 million",
-  capitalCity: "Oslo",
+type CardContentProps = {
+  name: string;
+  population: string;
+  capitalCity: string;
 };
 
-const CardContent = (): JSX.Element => {
+const CardContent = ({
+  name,
+  population,
+  capitalCity,
+}: CardContentProps): JSX.Element => {
   return (
     <div className={styles.cardContent}>
-      <span className={styles.picTitle}>
-        {`${country.capitalCity}, ${country.name}`}
-      </span>
+      <span className={styles.picTitle}>{`${capitalCity}, ${name}`}</span>
       <h3 className={styles.info}>
-        {`Population: ${country.population.toUpperCase()}`}
+        {`Population: ${population.toUpperCase()}`}
       </h3>
       <h4 className={styles.info}>
-        {`Capital city: ${country.capitalCity.toUpperCase()}`}
+        {`Capital city: ${capitalCity.toUpperCase()}`}
       </h4>
     </div>
   );
