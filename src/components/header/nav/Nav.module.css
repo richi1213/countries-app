@@ -8,7 +8,7 @@
     rgba(59, 130, 246, 1) 50%,
     rgba(30, 64, 175, 1) 100%
   );
-  color: #17186e;
+  /* color: #17186e; */
   padding: 5px 20px;
   font-family: "Lucida Console", serif;
 }
@@ -16,4 +16,23 @@
 .logo {
   display: flex;
   align-items: center;
+}
+
+.navLinks {
+  display: flex;
+  gap: 15px;
+  font-size: 18px;
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: #bae6fd;
+}
+
+.navLinks a:hover {
+  color: #db2777;
+}
+.navLinks a.active {
+  color: #e879f9;
+  font-weight: 700;
 }

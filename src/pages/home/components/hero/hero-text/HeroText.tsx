@@ -1,4 +1,4 @@
-import styles from "components/hero/hero-text/HeroText.module.css";
+import styles from "@/pages/home/components/hero/hero-text/HeroText.module.css";
 
 const HeroText: () => JSX.Element = () => {
   return (

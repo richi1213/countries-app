@@ -1,7 +1,7 @@
 import { Card, CardHeader, CardContent, CardFooter } from "components/ui/cards";
-import { HeroText } from "components/hero";
+import HeroText from "~/src/pages/home/components/hero/hero-text/HeroText";
 
-import styles from "components/hero/Hero.module.css";
+import styles from "@/pages/home/components/hero/Hero.module.css";
 
 const Hero: React.FC = () => {
   return (
