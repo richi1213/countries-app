@@ -1,16 +1,21 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense, lazy } from "react";
 import { coldCountries } from "~/src/pages/countries/utils/coldCountries";
 import { fetchColdCountryData } from "~/src/pages/countries/api/countriesApi/countriesApi";
 import { fetchCapitalCityPhoto } from "~/src/pages/countries/api/unsplashApi/unsplashApi";
 import Loading from "~/src/components/ui/loader/Loading";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-} from "~/src/components/ui/cards";
 import { CountryData as BaseCountryData } from "~/src/pages/countries/api/countriesApi/countriesApi";
 import styles from "@/pages/countries/components/list/CountryList.module.css";
+
+const Card = lazy(() => import("~/src/components/ui/cards/Card"));
+const CardContent = lazy(
+  () => import("~/src/components/ui/cards/card-content/CardContent")
+);
+const CardFooter = lazy(
+  () => import("~/src/components/ui/cards/card-footer/CardFooter")
+);
+const CardHeader = lazy(
+  () => import("~/src/components/ui/cards/card-header/CardHeader")
+);
 
 type CountryData = BaseCountryData & {
   photo: string;
@@ -56,25 +61,27 @@ const CountryList = () => {
 
   return (
     <div className={styles.countryList}>
-      {countriesData.map((country) => (
-        <div className={styles.countryItem} key={country.name}>
-          <Card
-            renderHeader={() => (
-              <CardHeader photo={country.photo} name={country.name} />
-            )}
-            renderContent={() => (
-              <CardContent
-                name={country.name}
-                population={country.population}
-                capitalCity={country.capital}
-              />
-            )}
-            renderFooter={() => (
-              <CardFooter flag={country.flag} countryName={country.name} />
-            )}
-          />
-        </div>
-      ))}
+      <Suspense fallback={<Loading />}>
+        {countriesData.map((country) => (
+          <div className={styles.countryItem} key={country.name}>
+            <Card
+              renderHeader={() => (
+                <CardHeader photo={country.photo} name={country.name} />
+              )}
+              renderContent={() => (
+                <CardContent
+                  name={country.name}
+                  population={country.population}
+                  capitalCity={country.capital}
+                />
+              )}
+              renderFooter={() => (
+                <CardFooter flag={country.flag} countryName={country.name} />
+              )}
+            />
+          </div>
+        ))}
+      </Suspense>
     </div>
   );
 };

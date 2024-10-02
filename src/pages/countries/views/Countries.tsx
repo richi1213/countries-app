@@ -1,10 +1,17 @@
-import CountryList from "~/src/pages/countries/components/list/CountryList";
+import { lazy, Suspense } from "react";
+import Loading from "~/src/components/ui/loader/Loading";
+
+const LazyCountryList = lazy(
+  () => import("~/src/pages/countries/components/list/CountryList")
+);
 
 const Countries = () => {
   return (
-    <div>
-      <CountryList />
-    </div>
+    <>
+      <Suspense fallback={<Loading />}>
+        <LazyCountryList />
+      </Suspense>
+    </>
   );
 };
 

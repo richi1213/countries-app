@@ -13,3 +13,26 @@
   object-fit: fill;
   transition: transform 300ms;
 }
+
+@keyframes placeHolderShimmer {
+  0% {
+    background-position: -800px 0;
+  }
+  100% {
+    background-position: 800px 0;
+  }
+}
+
+.blurhash {
+  height: 100%;
+  width: 100%;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeHolderShimmer;
+  animation-timing-function: linear;
+  background-color: #f6f7f8;
+  background: linear-gradient(to right, #eeeeee 8%, #bbbbbb 18%, #eeeeee 33%);
+  background-size: 850px 200px;
+  position: relative;
+}

@@ -8,7 +8,12 @@ type CardFooterProps = {
 const CardFooter = ({ flag, countryName }: CardFooterProps): JSX.Element => {
   return (
     <div className={styles.cardFooter}>
-      <img src={flag} alt={`Flag of ${countryName}`} className={styles.flag} />
+      <img
+        src={flag}
+        alt={`Flag of ${countryName}`}
+        className={styles.flag}
+        loading="lazy"
+      />
     </div>
   );
 };
