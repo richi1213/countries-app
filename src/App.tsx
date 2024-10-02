@@ -4,15 +4,17 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
+
 import { RootLayout } from "components";
 
-import Home from "@/pages/home/views/Home";
-import About from "@/pages/about/views/About";
-import Countries from "@/pages/countries/views/Countries";
-import NotFound from "@/pages/errors/not-found/NotFound";
-
-import { countriesLoader } from "~/src/pages/countries/loaders/countriesLoader";
-import Error from "~/src/pages/errors/Error";
+import {
+  Home,
+  About,
+  Countries,
+  NotFound,
+  Error,
+  countriesLoader,
+} from "@/pages";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
