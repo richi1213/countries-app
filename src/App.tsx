@@ -11,14 +11,18 @@ import About from "@/pages/about/views/About";
 import Countries from "@/pages/countries/views/Countries";
 import NotFound from "@/pages/not-found/NotFound";
 
+import { countriesLoader } from "~/src/pages/countries/loaders/countriesLoader";
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
-
-      <Route path="countries" element={<Countries />} />
-
+      <Route
+        path="countries"
+        element={<Countries />}
+        loader={countriesLoader}
+      />
       <Route path="*" element={<NotFound />} />
     </Route>
   )
