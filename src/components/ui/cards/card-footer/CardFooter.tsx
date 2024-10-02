@@ -1,10 +1,14 @@
-import NorwayFlag from "assets/images/flags/norway-flag.bmp";
 import styles from "components/ui/cards/card-footer/CardFooter.module.css";
 
-const CardFooter = (): JSX.Element => {
+type CardFooterProps = {
+  flag: string;
+  countryName: string;
+};
+
+const CardFooter = ({ flag, countryName }: CardFooterProps): JSX.Element => {
   return (
     <div className={styles.cardFooter}>
-      <img src={NorwayFlag} alt="Norway flag" className={styles.logo} />
+      <img src={flag} alt={`Flag of ${countryName}`} className={styles.flag} />
     </div>
   );
 };

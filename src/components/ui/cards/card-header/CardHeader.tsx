@@ -1,10 +1,14 @@
-import OsloImg from "assets/images/capitals/oslo.jpg";
 import styles from "components/ui/cards/card-header/CardHeader.module.css";
 
-const CardHeader = (): JSX.Element => {
+type CardHeaderProps = {
+  photo?: string;
+  name: string;
+};
+
+const CardHeader = ({ photo, name }: CardHeaderProps): JSX.Element => {
   return (
     <div className={styles.cardHeader}>
-      <img src={OsloImg} alt="Norway" />
+      <img src={photo} alt={`Image of ${name}`} />
     </div>
   );
 };

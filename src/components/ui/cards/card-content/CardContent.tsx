@@ -1,8 +1,9 @@
 import styles from "components/ui/cards/card-content/CardContent.module.css";
+import formatPopulation from "~/src/helpers/formatPopulation";
 
 type CardContentProps = {
   name: string;
-  population: string;
+  population: number;
   capitalCity: string;
 };
 
@@ -14,12 +15,10 @@ const CardContent = ({
   return (
     <div className={styles.cardContent}>
       <span className={styles.picTitle}>{`${capitalCity}, ${name}`}</span>
-      <h3 className={styles.info}>
-        {`Population: ${population.toUpperCase()}`}
-      </h3>
-      <h4 className={styles.info}>
-        {`Capital city: ${capitalCity.toUpperCase()}`}
-      </h4>
+      <h3 className={styles.info}>{`Population: ${formatPopulation(
+        population
+      )}`}</h3>
+      <h4 className={styles.info}>{`Capital: ${capitalCity}`}</h4>
     </div>
   );
 };

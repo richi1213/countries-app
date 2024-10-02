@@ -1,16 +1,17 @@
-.nav {
+.footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: linear-gradient(
     90deg,
-    rgba(232, 121, 249, 1) 0%,
-    rgba(59, 130, 246, 1) 50%,
+    rgba(59, 130, 246, 1) 0%,
+    rgba(232, 121, 249, 1) 50%,
     rgba(30, 64, 175, 1) 100%
   );
-  /* color: #17186e; */
-  padding: 5px 20px;
+  padding: 10px 20px;
   font-family: "Lucida Console", serif;
+  width: 100%;
+  position: relative;
 }
 
 .logo {
@@ -18,21 +19,20 @@
   align-items: center;
 }
 
-.navLinks {
+.navLinks,
+.socialLinks {
   display: flex;
-  gap: 20px;
-  font-size: 18px;
+  gap: 15px;
 }
 
-.navLinks a {
+.navLinks a,
+.socialLinks a {
   text-decoration: none;
   color: #bae6fd;
+  transition: color 0.3s;
 }
 
-.navLinks a:hover {
+.navLinks a:hover,
+.socialLinks a:hover {
   color: #db2777;
-}
-.navLinks a.active {
-  color: #e879f9;
-  font-weight: 700;
 }

@@ -1,5 +1,5 @@
 import styles from "components/header/nav/Nav.module.css";
-import winterImage from "assets/images/winter.svg";
+import JacketWeatherLogo from "assets/images/winter.svg";
 import { Link, NavLink, NavLinkRenderProps } from "react-router-dom";
 
 const handleActiveNav = ({ isActive }: NavLinkRenderProps) => {
@@ -11,7 +11,7 @@ const Nav = () => {
     <nav className={styles.nav}>
       <Link to="/">
         <div className={styles.logo}>
-          <img src={winterImage} alt="winter logo" />
+          <img src={JacketWeatherLogo} alt="winter logo" />
         </div>
       </Link>
       <div className={styles.navLinks}>
@@ -20,6 +20,9 @@ const Nav = () => {
         </NavLink>
         <NavLink to="/about" className={handleActiveNav}>
           About
+        </NavLink>
+        <NavLink to="/countries" className={handleActiveNav}>
+          Countries
         </NavLink>
       </div>
     </nav>
