@@ -9,9 +9,10 @@ import { RootLayout } from "components";
 import Home from "@/pages/home/views/Home";
 import About from "@/pages/about/views/About";
 import Countries from "@/pages/countries/views/Countries";
-import NotFound from "@/pages/not-found/NotFound";
+import NotFound from "@/pages/errors/not-found/NotFound";
 
 import { countriesLoader } from "~/src/pages/countries/loaders/countriesLoader";
+import Error from "~/src/pages/errors/Error";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,6 +23,7 @@ const router = createBrowserRouter(
         path="countries"
         element={<Countries />}
         loader={countriesLoader}
+        errorElement={<Error />}
       />
       <Route path="*" element={<NotFound />} />
     </Route>
