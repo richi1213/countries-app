@@ -24,6 +24,9 @@ const Nav = () => {
         <NavLink to="/countries" className={handleActiveNav}>
           Countries
         </NavLink>
+        <NavLink to="/contact" className={handleActiveNav}>
+          Contact
+        </NavLink>
       </div>
     </nav>
   );

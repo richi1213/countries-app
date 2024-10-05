@@ -11,20 +11,32 @@ import {
   Home,
   About,
   Countries,
+  Contact,
   NotFound,
   Error,
   countriesLoader,
+  countryDetailsLoader,
+  CountryDetails,
+  contactAction,
 } from "@/pages";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
-      <Route index element={<Home />} />
-      <Route path="about" element={<About />} />
+      <Route index element={<Home />} errorElement={<Error />} />
+      <Route path="about" element={<About />} errorElement={<Error />} />
+      <Route path="countries" errorElement={<Error />}>
+        <Route index element={<Countries />} loader={countriesLoader} />
+        <Route
+          path=":name"
+          element={<CountryDetails />}
+          loader={countryDetailsLoader}
+        />
+      </Route>
       <Route
-        path="countries"
-        element={<Countries />}
-        loader={countriesLoader}
+        path="contact"
+        element={<Contact />}
+        action={contactAction}
         errorElement={<Error />}
       />
       <Route path="*" element={<NotFound />} />

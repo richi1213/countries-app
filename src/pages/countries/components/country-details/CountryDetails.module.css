@@ -1,0 +1,93 @@
+.countryContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.goBackButton {
+  background-color: #d946ef;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+
+.goBackButton:hover {
+  background-color: #3730a3;
+}
+
+.countryTitle {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-family: "Lucida Console", serif;
+  text-align: center;
+}
+
+.countryFlag {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.countryInfo {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.countryInfo strong {
+  color: #007bff;
+}
+
+.countryDetailsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.countryDetailsList li {
+  margin-bottom: 0.75rem;
+  padding: 0.5rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.mapLinks {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.mapLinks a {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.mapLinks a:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .countryTitle {
+    font-size: 1.5rem;
+  }
+
+  .countryFlag {
+    max-width: 200px;
+  }
+}

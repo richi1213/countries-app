@@ -1,22 +1,16 @@
 import { Suspense, lazy } from "react";
-import { useLoaderData } from "react-router-dom";
-import { CountryData as BaseCountryData } from "~/src/pages/countries/api/countriesApi/countriesApi";
-import Loading from "~/src/components/ui/loader/Loading";
+import { useLoaderData, Link } from "react-router-dom"; // Import Link from react-router-dom
+import { CountryData as BaseCountryData } from "@/pages/countries/api/countriesApi/countriesApi";
+import Loading from "components/ui/loader/Loading";
 import styles from "@/pages/countries/components/list/CountryList.module.css";
+import CardHeader from "components/ui/cards/card-header/CardHeader";
+import CardContent from "components/ui/cards/card-content/CardContent";
+import CardFooter from "components/ui/cards/card-footer/CardFooter";
 
-const Card = lazy(() => import("~/src/components/ui/cards/Card"));
-const CardContent = lazy(
-  () => import("~/src/components/ui/cards/card-content/CardContent")
-);
-const CardFooter = lazy(
-  () => import("~/src/components/ui/cards/card-footer/CardFooter")
-);
-const CardHeader = lazy(
-  () => import("~/src/components/ui/cards/card-header/CardHeader")
-);
+const Card = lazy(() => import("components/ui/cards/Card"));
 
 type CountryData = BaseCountryData & {
-  photo: string;
+  photo?: string;
 };
 
 const CountryList = () => {
@@ -31,21 +25,23 @@ const CountryList = () => {
       <Suspense fallback={<Loading />}>
         {countriesData.map((country) => (
           <div className={styles.countryItem} key={country.name}>
-            <Card
-              renderHeader={() => (
-                <CardHeader photo={country.photo} name={country.name} />
-              )}
-              renderContent={() => (
-                <CardContent
-                  name={country.name}
-                  population={country.population}
-                  capitalCity={country.capital}
-                />
-              )}
-              renderFooter={() => (
-                <CardFooter flag={country.flag} countryName={country.name} />
-              )}
-            />
+            <Link to={`${country.name}`} className={styles.link}>
+              <Card
+                renderHeader={() => (
+                  <CardHeader photo={country.photo} name={country.name} />
+                )}
+                renderContent={() => (
+                  <CardContent
+                    name={country.name ?? "Unknown Name"}
+                    population={country.population}
+                    capitalCity={country.capital}
+                  />
+                )}
+                renderFooter={() => (
+                  <CardFooter flag={country.flag} countryName={country.name} />
+                )}
+              />
+            </Link>
           </div>
         ))}
       </Suspense>
