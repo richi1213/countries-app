@@ -12,4 +12,4 @@ export { countriesLoader } from "@/pages/countries/loaders/countriesLoader";
 export { countryDetailsLoader } from "@/pages/countries/loaders/countryDetailsLoader";
 
 // actions
-export { contactAction } from "@/pages/contact/components/form/ContactForm";
+export { contactAction } from "@/pages/contact/actions/contactAction";
