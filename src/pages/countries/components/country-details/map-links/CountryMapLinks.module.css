@@ -1,0 +1,30 @@
+.mapLinks {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.mapLinks a {
+  padding: 0.4rem 1rem;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.mapLinks a:hover {
+  background-color: #0056b3;
+}
+
+.countryInfo {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.countryInfo strong {
+  color: #007bff;
+}

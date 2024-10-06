@@ -9,4 +9,5 @@ html {
   height: 100%;
   cursor: url(assets/cursors/mountain.svg), default;
   font-family: "Lucida Console", serif;
+  scroll-behavior: smooth;
 }

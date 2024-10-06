@@ -12,3 +12,13 @@
   border-radius: 4px;
   margin-bottom: 1rem;
 }
+
+@media (max-width: 768px) {
+  .countryTitle {
+    font-size: 1.5rem;
+  }
+
+  .countryFlag {
+    max-width: 200px;
+  }
+}
