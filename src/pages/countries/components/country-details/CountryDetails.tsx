@@ -1,58 +1,53 @@
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { Country } from "@/pages/countries/components/country-details/types";
 import styles from "@/pages/countries/components/country-details/CountryDetails.module.css";
+import CountryHeader from "~/src/pages/countries/components/country-details/country-header/CountryHeader";
 
 const CountryDetails = () => {
-  const country = useLoaderData() as Country[] | undefined;
+  const country = useLoaderData() as Country;
   const navigate = useNavigate();
 
-  if (!country || country.length === 0) {
-    return <div>Country data not found.</div>;
-  }
-
-  const [countryData] = country; // Get the first country object
-
   const countryInfoItems = [
-    { label: "Official Name", value: countryData.name.official },
-    { label: "Capital", value: countryData.capital.join(", ") },
-    { label: "Region", value: countryData.region },
-    { label: "Subregion", value: countryData.subregion },
-    { label: "Population", value: countryData.population.toLocaleString() },
-    { label: "Area", value: `${countryData.area.toLocaleString()} km²` },
+    { label: "Official Name", value: country.name.official },
+    { label: "Capital", value: country.capital.join(", ") },
+    { label: "Region", value: country.region },
+    { label: "Subregion", value: country.subregion },
+    { label: "Population", value: country.population.toLocaleString() },
+    { label: "Area", value: `${country.area.toLocaleString()} km²` },
     {
       label: "Languages",
-      value: Object.values(countryData.languages).join(", "),
+      value: Object.values(country.languages).join(", "),
     },
     {
       label: "Currencies",
-      value: Object.values(countryData.currencies)
+      value: Object.values(country.currencies)
         .map((currency) => `${currency.name} (${currency.code})`)
         .join(", "),
     },
-    { label: "Timezones", value: countryData.timezones.join(", ") },
-    { label: "Continents", value: countryData.continents.join(", ") },
+    { label: "Timezones", value: country.timezones.join(", ") },
+    { label: "Continents", value: country.continents.join(", ") },
     {
       label: "Demonyms",
       value:
-        countryData.demonyms &&
-        Object.entries(countryData.demonyms).map(([lang, value]) => (
+        country.demonyms &&
+        Object.entries(country.demonyms).map(([lang, value]) => (
           <span key={lang}>
             {lang.charAt(0).toUpperCase() + lang.slice(1)}: Male: {value.m},
             Female: {value.f}
           </span>
         )),
     },
-    ...(countryData.borders && countryData.borders.length > 0
+    ...(country.borders && country.borders.length > 0
       ? [
           {
             label: "Borders",
-            value: countryData.borders.join(", "),
+            value: country.borders.join(", "),
           },
         ]
       : []),
-    { label: "Driving Side", value: countryData.car?.side || "Unknown" },
-    { label: "FIFA Code", value: countryData.fifa },
-    { label: "Start of Week", value: countryData.startOfWeek },
+    { label: "Driving Side", value: country.car?.side || "Unknown" },
+    { label: "FIFA Code", value: country.fifa },
+    { label: "Start of Week", value: country.startOfWeek },
   ];
 
   return (
@@ -60,12 +55,8 @@ const CountryDetails = () => {
       <button className={styles.goBackButton} onClick={() => navigate(-1)}>
         Go Back
       </button>
-      <h1 className={styles.countryTitle}>{countryData.name.common}</h1>
-      <img
-        className={styles.countryFlag}
-        src={countryData.flags.png}
-        alt={`Flag of ${countryData.name.common}`}
-      />
+
+      <CountryHeader countryData={country} />
       {countryInfoItems.map((item, index) =>
         item.value !== undefined ? (
           <p key={index} className={styles.countryInfo}>
@@ -79,7 +70,7 @@ const CountryDetails = () => {
       <ul className={styles.mapLinks}>
         <li>
           <a
-            href={countryData.maps.googleMaps}
+            href={country.maps.googleMaps}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -88,7 +79,7 @@ const CountryDetails = () => {
         </li>
         <li>
           <a
-            href={countryData.maps.openStreetMaps}
+            href={country.maps.openStreetMaps}
             target="_blank"
             rel="noopener noreferrer"
           >

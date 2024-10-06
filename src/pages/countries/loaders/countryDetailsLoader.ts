@@ -11,9 +11,21 @@ export const countryDetailsLoader = async ({ params }: LoaderFunctionArgs) => {
     throw new Error("Country name is required.");
   }
 
-  const response = await axios.get<Country[]>(
-    `${BASE_URL}${name}?fullText=true`
-  );
+  try {
+    const response = await axios.get<Country[]>(
+      `${BASE_URL}${name}?fullText=true`
+    );
 
-  return response.data;
+    if (response.data.length === 0) {
+      throw new Error("No country found with the specified name.");
+    }
+
+    return response.data[0];
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      throw new Error(`Error fetching country data: ${error.message}`);
+    } else {
+      throw new Error("An unexpected error occurred.");
+    }
+  }
 };

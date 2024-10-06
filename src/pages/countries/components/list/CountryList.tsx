@@ -1,5 +1,5 @@
 import { Suspense, lazy } from "react";
-import { useLoaderData, Link } from "react-router-dom"; // Import Link from react-router-dom
+import { useLoaderData, Link } from "react-router-dom";
 import { CountryData as BaseCountryData } from "@/pages/countries/api/countriesApi/countriesApi";
 import Loading from "components/ui/loader/Loading";
 import styles from "@/pages/countries/components/list/CountryList.module.css";
