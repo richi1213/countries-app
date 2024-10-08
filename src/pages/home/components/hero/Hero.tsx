@@ -24,19 +24,11 @@ const Hero: React.FC = () => {
       <HeroText />
 
       <Suspense fallback={<Loading />}>
-        <Card
-          renderHeader={() => <CardHeader name="Oslo" photo={OsloImg} />}
-          renderContent={() => (
-            <CardContent
-              name="Norway"
-              population={5379475}
-              capitalCity="Oslo"
-            />
-          )}
-          renderFooter={() => (
-            <CardFooter flag={NorwayFlag} countryName="Norway" />
-          )}
-        />
+        <Card>
+          <CardHeader name="Oslo" photo={OsloImg} />
+          <CardContent name="Norway" population={5379475} capitalCity="Oslo" />
+          <CardFooter flag={NorwayFlag} countryName="Norway" />
+        </Card>
       </Suspense>
     </div>
   );

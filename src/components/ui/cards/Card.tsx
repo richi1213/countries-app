@@ -3,25 +3,10 @@ import { ReactNode } from "react";
 
 type CardProps = {
   children?: ReactNode;
-  renderHeader: () => ReactNode;
-  renderContent: () => ReactNode;
-  renderFooter: () => ReactNode;
 };
 
-const Card = ({
-  children,
-  renderHeader,
-  renderContent,
-  renderFooter,
-}: CardProps): JSX.Element => {
-  return (
-    <div className={styles.card}>
-      {renderHeader()}
-      {renderContent()}
-      {children}
-      {renderFooter()}
-    </div>
-  );
+const Card = ({ children }: CardProps): JSX.Element => {
+  return <div className={styles.card}>{children}</div>;
 };
 
 export default Card;

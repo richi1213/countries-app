@@ -1,0 +1,17 @@
+.likeButton {
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.button {
+  all: unset;
+}
+
+.button:hover {
+  color: #38bdf8;
+}

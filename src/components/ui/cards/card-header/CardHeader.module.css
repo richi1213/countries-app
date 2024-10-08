@@ -4,6 +4,7 @@
   border-radius: 0.375rem 0.375rem 0 0;
   height: 10rem;
   width: 100%;
+  min-height: 130px;
   transition: transform 300ms;
 }
 

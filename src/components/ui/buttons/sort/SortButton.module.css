@@ -1,0 +1,27 @@
+.sortButton {
+  display: flex;
+  align-items: center;
+  background-color: rgba(30, 58, 138, 0.8);
+  color: #fff;
+  border: none;
+  border-radius: 0.375rem;
+  padding: 15px 10px;
+
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+
+  position: fixed;
+  top: 75px;
+  right: 28px;
+  z-index: 100;
+}
+
+.sortButton:hover {
+  background-color: rgba(37, 99, 235, 0.8);
+}
+
+.sortButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(30, 58, 138, 0.5);
+}
