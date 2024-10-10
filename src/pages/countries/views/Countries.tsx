@@ -1,8 +1,8 @@
 import { lazy, Suspense } from "react";
-import Loading from "~/src/components/ui/loader/Loading";
+import Loading from "components/ui/loader/Loading";
 
 const LazyCountryList = lazy(
-  () => import("~/src/pages/countries/components/list/CountryList")
+  () => import("@/pages/countries/components/list/CountryList")
 );
 
 const Countries = () => {

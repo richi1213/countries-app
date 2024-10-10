@@ -1,15 +1,12 @@
-import { Suspense, lazy, useState } from "react";
-import { useLoaderData, Link } from "react-router-dom";
+import { Suspense, useState } from "react";
+import { useLoaderData } from "react-router-dom";
 import { CountryData as BaseCountryData } from "@/pages/countries/api/countriesApi/countriesApi";
+import { SortButton } from "components/ui/buttons";
+import CountryCardWrapper from "@/pages/countries/components/list/card-wrapper/CountryCardWrapper";
 import styles from "@/pages/countries/components/list/CountryList.module.css";
-import Loading from "components/ui/loader/Loading";
-import { CardHeader, CardContent, CardFooter } from "components/ui/cards";
-import { LikeButton, SortButton } from "components/ui/buttons";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import CountryCardWrapperSkeleton from "@/pages/countries/components/list/card-wrapper/skeleton/CountryCardWrapperSkeleton";
 
-const Card = lazy(() => import("components/ui/cards/Card"));
-
-type CountryData = BaseCountryData & {
+export type CountryData = BaseCountryData & {
   photo?: string;
   likes: number;
 };
@@ -17,7 +14,6 @@ type CountryData = BaseCountryData & {
 const CountryList = () => {
   const countriesData = useLoaderData() as CountryData[];
 
-  // Initialize state with fetched countries and their likes
   const [countries, setCountries] = useState<CountryData[]>(
     countriesData.map((country) => ({
       ...country,
@@ -25,10 +21,8 @@ const CountryList = () => {
     }))
   );
 
-  // State for sorting order (ascending or descending)
   const [isAscending, setIsAscending] = useState<boolean>(true);
 
-  // Function to handle when the like button is clicked
   const handleLike = (name: string) => {
     setCountries((prevCountries) =>
       prevCountries.map((country) =>
@@ -39,7 +33,6 @@ const CountryList = () => {
     );
   };
 
-  // Function to toggle sorting by likes
   const sortCountries = () => {
     setIsAscending((prev) => !prev);
     setCountries((prevCountries) =>
@@ -52,27 +45,8 @@ const CountryList = () => {
   return (
     <div className={styles.countryList}>
       <SortButton onSort={sortCountries} isAscending={isAscending} />
-      <Suspense fallback={<Loading />}>
-        {countries.map((country) => (
-          <div className={styles.countryItem} key={country.name}>
-            <Card>
-              <Link to={`${country.name}`} className={styles.link}>
-                <CardHeader photo={country.photo} name={country.name} />
-                <CardContent
-                  name={country.name ?? "Unknown Name"}
-                  population={country.population}
-                  capitalCity={country.capital}
-                />
-              </Link>
-              <CardFooter flag={country.flag} countryName={country.name} />
-              <LikeButton
-                icon={<FavoriteBorderIcon />}
-                initialLikes={country.likes}
-                onLike={() => handleLike(country.name)}
-              />
-            </Card>
-          </div>
-        ))}
+      <Suspense fallback={<CountryCardWrapperSkeleton />}>
+        <CountryCardWrapper countries={countries} handleLike={handleLike} />
       </Suspense>
     </div>
   );
