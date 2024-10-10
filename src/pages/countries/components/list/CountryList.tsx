@@ -1,13 +1,10 @@
 import { Suspense, lazy, useState } from "react";
 import { useLoaderData, Link } from "react-router-dom";
 import { CountryData as BaseCountryData } from "@/pages/countries/api/countriesApi/countriesApi";
-import Loading from "components/ui/loader/Loading";
 import styles from "@/pages/countries/components/list/CountryList.module.css";
-import CardHeader from "components/ui/cards/card-header/CardHeader";
-import CardContent from "components/ui/cards/card-content/CardContent";
-import CardFooter from "components/ui/cards/card-footer/CardFooter";
-import LikeButton from "components/ui/buttons/like/LikeButton";
-import SortButton from "components/ui/buttons/sort/SortButton";
+import Loading from "components/ui/loader/Loading";
+import { CardHeader, CardContent, CardFooter } from "components/ui/cards";
+import { LikeButton, SortButton } from "components/ui/buttons";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
 const Card = lazy(() => import("components/ui/cards/Card"));

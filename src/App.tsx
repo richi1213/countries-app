@@ -4,9 +4,7 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
-
 import { RootLayout } from "components";
-
 import {
   Home,
   About,
