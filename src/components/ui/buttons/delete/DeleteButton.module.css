@@ -6,9 +6,13 @@
 }
 
 .delete:hover {
-  color: red;
+  color: #ef4444;
+}
+
+.restore {
+  transition: background-color 0.3s ease;
 }
 
 .restore:hover {
-  color: green;
+  color: #15803d;
 }
