@@ -1,5 +1,5 @@
 import styles from "components/ui/cards/card-content/CardContent.module.css";
-import formatPopulation from "~/src/helpers/formatPopulation";
+import { formatPopulation } from "@/helpers/formatPopulation";
 
 type CardContentProps = {
   name: string;

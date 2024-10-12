@@ -1,0 +1,21 @@
+.modalContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.textField {
+  margin-bottom: 16px;
+}
+
+.buttonGroup {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}

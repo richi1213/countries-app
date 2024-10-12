@@ -4,7 +4,7 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 
 type SortButtonProps = {
-  onSort?: () => void;
+  onSort: () => void;
   isAscending?: boolean;
 };
 

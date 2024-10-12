@@ -1,8 +1,8 @@
 import { ReactNode, useState } from "react";
 import styles from "components/ui/buttons/like/LikeButton.module.css";
 
-type LikeButtonProps = {
-  icon: ReactNode | string;
+export type LikeButtonProps = {
+  icon: ReactNode | JSX.Element | string;
   initialLikes?: number;
   onLike?: () => void;
 };

@@ -1,23 +1,38 @@
-import { Card, CardHeader, CardContent, CardFooter } from "components/ui/cards";
+import {
+  Card,
+  CardHeader,
+  CardContent,
+  CardFooter,
+  CardButtonsWrapper,
+} from "components/ui/cards";
 import { CountryData } from "@/pages/countries/components/list/CountryList";
 import { Link } from "react-router-dom";
-import { LikeButton } from "components/ui/buttons";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import styles from "@/pages/countries/components/list/card-wrapper/CountryCardWrapper.module.css";
 
 type CountryCardWrapperProps = {
   countries: CountryData[];
   handleLike: (name: string) => void;
+  handleDelete: (
+    event: React.MouseEvent<HTMLButtonElement>,
+    name: string
+  ) => void;
 };
 
 const CountryCardWrapper = ({
   countries,
   handleLike,
+  handleDelete,
 }: CountryCardWrapperProps) => {
   return (
     <>
       {countries.map((country) => (
-        <div className={styles.countryItem} key={country.name}>
+        <div
+          className={`${styles.countryItem} ${
+            country.isDeleted ? styles.deletedCountry : ""
+          }`}
+          key={country.name}
+        >
           <Card>
             <Link to={`${country.name}`} className={styles.link}>
               <CardHeader photo={country.photo} name={country.name} />
@@ -26,12 +41,18 @@ const CountryCardWrapper = ({
                 population={country.population}
                 capitalCity={country.capital}
               />
+              <CardFooter flag={country.flag} countryName={country.name} />
             </Link>
-            <CardFooter flag={country.flag} countryName={country.name} />
-            <LikeButton
-              icon={<FavoriteBorderIcon />}
-              initialLikes={country.likes}
-              onLike={() => handleLike(country.name)}
+            <CardButtonsWrapper
+              likeButtonProps={{
+                icon: <FavoriteBorderIcon />,
+                initialLikes: country.likes,
+                onLike: () => handleLike(country.name),
+              }}
+              deleteButtonProps={{
+                onDelete: (event) => handleDelete(event, country.name),
+                isDeleted: country.isDeleted || false,
+              }}
             />
           </Card>
         </div>

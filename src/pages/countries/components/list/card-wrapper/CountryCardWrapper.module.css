@@ -8,3 +8,9 @@
   text-decoration: none;
   color: inherit;
 }
+
+.deletedCountry {
+  opacity: 0.5;
+  background-color: gray;
+  outline: 2px solid red;
+}
