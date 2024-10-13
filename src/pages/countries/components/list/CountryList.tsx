@@ -1,12 +1,12 @@
-import { Suspense, useReducer, useState } from "react";
-import { useLoaderData } from "react-router-dom";
-import { CountryData as BaseCountryData } from "@/pages/countries/api/countriesApi/countriesApi";
-import { SortButton, AddCountryButton } from "components/ui/buttons";
-import CountryCardWrapper from "@/pages/countries/components/list/card-wrapper/CountryCardWrapper";
-import styles from "@/pages/countries/components/list/CountryList.module.css";
-import CountryCardWrapperSkeleton from "@/pages/countries/components/list/card-wrapper/skeleton/CountryCardWrapperSkeleton";
-import AddCountryModal from "components/ui/modals/AddCountryModal";
-import { reducer, State } from "@/pages/countries/reducers/countryReducer";
+import { Suspense, useReducer, useState } from 'react';
+import { useLoaderData } from 'react-router-dom';
+import { CountryData as BaseCountryData } from '@/pages/countries/api/countriesApi/countriesApi';
+import { SortButton, AddCountryButton } from 'components/ui/buttons';
+import CountryCardWrapper from '@/pages/countries/components/list/card-wrapper/CountryCardWrapper';
+import styles from '@/pages/countries/components/list/CountryList.module.css';
+import CountryCardWrapperSkeleton from '@/pages/countries/components/list/card-wrapper/skeleton/CountryCardWrapperSkeleton';
+import AddCountryModal from 'components/ui/modals/AddCountryModal';
+import { reducer, State } from '@/pages/countries/reducers/countryReducer';
 
 export type CountryData = BaseCountryData & {
   photo?: string;
@@ -32,7 +32,7 @@ const CountryList = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleLike = (name: string) => {
-    dispatch({ type: "country/liked", payload: name });
+    dispatch({ type: 'country/liked', payload: name });
   };
 
   const handleDelete = (
@@ -45,7 +45,7 @@ const CountryList = () => {
     const country = state.countries.find((country) => country.name === name);
     if (country) {
       dispatch({
-        type: "country/toggleDelete",
+        type: 'country/toggleDelete',
         payload: { name, isDeleted: !country.isDeleted },
       });
     }
@@ -53,7 +53,7 @@ const CountryList = () => {
 
   const toggleSortOrder = () => {
     dispatch({
-      type: "country/setSortOrderAndSort",
+      type: 'country/setSortOrderAndSort',
       payload: !state.isAscending,
     });
   };
@@ -64,7 +64,7 @@ const CountryList = () => {
       likes: 0,
       isDeleted: false,
     };
-    dispatch({ type: "country/added", payload: countryData });
+    dispatch({ type: 'country/added', payload: countryData });
   };
 
   return (

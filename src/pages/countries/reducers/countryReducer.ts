@@ -1,4 +1,4 @@
-import { CountryData } from "@/pages/countries/components/list/CountryList";
+import { CountryData } from '@/pages/countries/components/list/CountryList';
 
 export type State = {
   countries: CountryData[];
@@ -6,17 +6,17 @@ export type State = {
 };
 
 type Action =
-  | { type: "country/liked"; payload: string }
-  | { type: "country/setSortOrderAndSort"; payload: boolean }
+  | { type: 'country/liked'; payload: string }
+  | { type: 'country/setSortOrderAndSort'; payload: boolean }
   | {
-      type: "country/toggleDelete";
+      type: 'country/toggleDelete';
       payload: { name: string; isDeleted: boolean };
     }
-  | { type: "country/added"; payload: CountryData };
+  | { type: 'country/added'; payload: CountryData };
 
 export const reducer = (state: State, action: Action): State => {
   switch (action.type) {
-    case "country/liked":
+    case 'country/liked':
       return {
         ...state,
         countries: state.countries.map((country) =>
@@ -26,7 +26,7 @@ export const reducer = (state: State, action: Action): State => {
         ),
       };
 
-    case "country/setSortOrderAndSort":
+    case 'country/setSortOrderAndSort':
       const nonDeletedCountries = state.countries.filter(
         (country) => !country.isDeleted
       );
@@ -44,7 +44,7 @@ export const reducer = (state: State, action: Action): State => {
         countries: [...sortedNonDeletedCountries, ...deletedCountries],
       };
 
-    case "country/toggleDelete":
+    case 'country/toggleDelete':
       return {
         ...state,
         countries: [
@@ -58,12 +58,11 @@ export const reducer = (state: State, action: Action): State => {
         ),
       };
 
-    case "country/added":
+    case 'country/added':
       return {
         ...state,
-        countries: [...state.countries, action.payload],
+        countries: [action.payload, ...state.countries],
       };
-
     default:
       return state;
   }
