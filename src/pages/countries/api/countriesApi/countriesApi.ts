@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 
 type CountryApiResponse = {
   name: { common: string };
@@ -25,16 +25,16 @@ export const fetchColdCountryData = async (
     );
 
     if (!Array.isArray(response.data) || response.data.length === 0) {
-      throw new Error("No data found for the specified country.");
+      throw new Error('No data found for the specified country.');
     }
 
     const { name, flags, population, capital } = response.data[0];
 
     return {
       name: name.common,
-      flag: flags?.png ?? "",
+      flag: flags?.png ?? '',
       population: population ?? 0,
-      capital: capital?.[0] ?? "N/A",
+      capital: capital?.[0] ?? 'N/A',
     };
   } catch (error: any) {
     if (axios.isAxiosError(error)) {
