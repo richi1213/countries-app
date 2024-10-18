@@ -11,6 +11,3 @@ export { default as CountryDetails } from '@/pages/countries/components/country-
 export { countriesLoader } from '@/pages/countries/loaders/countriesLoader';
 export { countryDetailsLoader } from '@/pages/countries/loaders/countryDetailsLoader';
 export { languageLoader } from '@/pages/errors/not-found/languageLoader';
-
-// actions
-export { contactAction } from '@/pages/contact/actions/contactAction';

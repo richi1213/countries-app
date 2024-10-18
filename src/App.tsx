@@ -17,7 +17,6 @@ import {
   countriesLoader,
   countryDetailsLoader,
   CountryDetails,
-  contactAction,
   languageLoader,
 } from '@/pages';
 
@@ -43,7 +42,7 @@ const App: React.FC = () => {
               loader={countryDetailsLoader}
             />
           </Route>
-          <Route path='contact' element={<Contact />} action={contactAction} />
+          <Route path='contact' element={<Contact />} />
         </Route>
 
         <Route path='*' element={<NotFound />} />
