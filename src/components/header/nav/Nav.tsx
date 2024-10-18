@@ -1,6 +1,6 @@
 import styles from 'components/header/nav/Nav.module.css';
 import JacketWeatherLogo from 'assets/images/winter.svg';
-import { Link, NavLink, NavLinkRenderProps } from 'react-router-dom';
+import { Link, NavLink, NavLinkRenderProps, useParams } from 'react-router-dom';
 import LanguageSwitcher from 'components/ui/language-switch/LanguageSwitcher';
 import { Lang } from '@/types';
 
@@ -8,31 +8,31 @@ const handleActiveNav = ({ isActive }: NavLinkRenderProps) => {
   return isActive ? `${styles.active}` : '';
 };
 
-type NavProps = {
-  onLanguageChange?: (lang: Lang) => void;
-};
+const Nav: React.FC = () => {
+  const { lang } = useParams<{ lang: Lang }>();
 
-const Nav: React.FC<NavProps> = ({ onLanguageChange }) => {
+  const currentLang = lang || 'en';
+
   return (
     <nav className={styles.nav}>
-      <Link to='/'>
+      <Link to={`/${currentLang}`}>
         <div className={styles.logo}>
           <img src={JacketWeatherLogo} alt='winter logo' />
         </div>
       </Link>
       <div className={styles.navLinks}>
-        <LanguageSwitcher onLanguageChange={onLanguageChange} />
+        <LanguageSwitcher />
 
-        <NavLink to='/' className={handleActiveNav}>
+        <NavLink to={`/${currentLang}`} className={handleActiveNav} end>
           Home
         </NavLink>
-        <NavLink to='about' className={handleActiveNav}>
+        <NavLink to={`/${currentLang}/about`} className={handleActiveNav}>
           About
         </NavLink>
-        <NavLink to='countries' className={handleActiveNav}>
+        <NavLink to={`/${currentLang}/countries`} className={handleActiveNav}>
           Countries
         </NavLink>
-        <NavLink to='contact' className={handleActiveNav}>
+        <NavLink to={`/${currentLang}/contact`} className={handleActiveNav}>
           Contact
         </NavLink>
       </div>

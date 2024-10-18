@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -19,24 +19,14 @@ import {
   CountryDetails,
   contactAction,
 } from '@/pages';
-import { Lang } from '@/types';
 
 const App: React.FC = () => {
-  const [language, setLanguage] = useState<Lang>('en');
-
-  const handleLanguageChange = (newLang: Lang) => {
-    setLanguage(newLang);
-  };
-
   const router = createBrowserRouter(
     createRoutesFromElements(
       <>
-        <Route path='/' element={<Navigate to={`/${language}`} replace />} />
+        <Route path='/' element={<Navigate to={`/en`} replace />} />
 
-        <Route
-          path='/:lang'
-          element={<RootLayout onLanguageChange={handleLanguageChange} />}
-        >
+        <Route path='/:lang' element={<RootLayout />}>
           <Route index element={<Home />} errorElement={<Error />} />
           <Route path='about' element={<About />} errorElement={<Error />} />
           <Route path='countries' errorElement={<Error />}>

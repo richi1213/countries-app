@@ -3,19 +3,12 @@ import Header from 'components/header/Header';
 import { Outlet } from 'react-router-dom';
 import { PageContainer } from 'components/page-container/PageContainer';
 import Footer from 'components/footer/Footer';
-import { Lang } from '@/types';
 
-type RootLayoutProps = {
-  onLanguageChange?: (lang: Lang) => void;
-};
-
-const RootLayout: React.FC<RootLayoutProps> = ({
-  onLanguageChange,
-}): JSX.Element => {
+const RootLayout: React.FC = (): JSX.Element => {
   return (
     <>
       <Snowflakes>
-        <Header onLanguageChange={onLanguageChange} />
+        <Header />
         <PageContainer>
           <Outlet />
         </PageContainer>
