@@ -3,6 +3,9 @@ import { Modal, Box, TextField, Button } from '@mui/material';
 import styles from 'components/ui/modals/AddCountryModal.module.css';
 import { CountryData } from '@/pages/countries/components/list/CountryList';
 import { capitalizeWords } from '@/helpers/capitalizeWords';
+import { useParams } from 'react-router-dom';
+import { Lang } from '@/types';
+import { translations } from '@/components/ui/modals/translations';
 
 type AddCountryModalProps = {
   open: boolean;
@@ -17,6 +20,10 @@ const AddCountryModal: React.FC<AddCountryModalProps> = ({
   handleAddCountry,
   existingCountries,
 }) => {
+  const { lang } = useParams<{ lang: Lang }>();
+
+  const translated = translations[lang ?? 'en'];
+
   const [formData, setFormData] = useState({
     countryName: '',
     capital: '',
@@ -38,17 +45,17 @@ const AddCountryModal: React.FC<AddCountryModalProps> = ({
     switch (name) {
       case 'countryName':
         if (value.length < 4 || value.length > 30) {
-          errorMessage = 'Country name must be between 4 and 30 characters.';
+          errorMessage = translated.errCountry;
         }
         break;
       case 'capital':
         if (value.length < 4 || value.length > 30) {
-          errorMessage = 'Capital name must be between 4 and 30 characters.';
+          errorMessage = translated.errCapital;
         }
         break;
       case 'population':
         if (Number(value) <= 0) {
-          errorMessage = 'Population must be greater than zero.';
+          errorMessage = translated.errPopulation;
         }
         break;
       case 'photoUrl':
@@ -57,9 +64,9 @@ const AddCountryModal: React.FC<AddCountryModalProps> = ({
         try {
           new URL(value);
         } catch (_) {
-          errorMessage = `${
-            name === 'photoUrl' ? 'Photo' : 'Flag'
-          } URL is invalid.`;
+          errorMessage = `${name === 'photoUrl' ? 'Photo' : 'Flag'} ${
+            translated.errUrl
+          }`;
         }
         break;
       default:
@@ -104,7 +111,7 @@ const AddCountryModal: React.FC<AddCountryModalProps> = ({
     event.preventDefault();
 
     if (!isFormValid()) {
-      alert('Please correct the errors before submitting.');
+      alert(translated.alertInvalid);
       return;
     }
 
@@ -114,7 +121,7 @@ const AddCountryModal: React.FC<AddCountryModalProps> = ({
     );
 
     if (isCountryAlreadyAdded) {
-      alert('This country is already added.');
+      alert(translated.alreadyAdded);
       return;
     }
 
@@ -155,7 +162,7 @@ const AddCountryModal: React.FC<AddCountryModalProps> = ({
         <form onSubmit={handleSubmit}>
           <TextField
             className={styles.textField}
-            label='Country Name'
+            label={translated.lCountryName}
             name='countryName'
             value={formData.countryName}
             onChange={handleChange}
@@ -167,7 +174,7 @@ const AddCountryModal: React.FC<AddCountryModalProps> = ({
           />
           <TextField
             className={styles.textField}
-            label='Capital'
+            label={translated.lCapital}
             name='capital'
             value={formData.capital}
             onChange={handleChange}
@@ -179,7 +186,7 @@ const AddCountryModal: React.FC<AddCountryModalProps> = ({
           />
           <TextField
             className={styles.textField}
-            label='Population'
+            label={translated.lPopulation}
             type='number'
             name='population'
             value={formData.population ?? ''}
@@ -192,7 +199,7 @@ const AddCountryModal: React.FC<AddCountryModalProps> = ({
           />
           <TextField
             className={styles.textField}
-            label='Photo URL (of Capital)'
+            label={translated.lCapitalURL}
             name='photoUrl'
             value={formData.photoUrl}
             onChange={handleChange}
@@ -204,7 +211,7 @@ const AddCountryModal: React.FC<AddCountryModalProps> = ({
           />
           <TextField
             className={styles.textField}
-            label='Flag URL'
+            label={translated.lFlagURL}
             name='flagUrl'
             value={formData.flagUrl}
             onChange={handleChange}
@@ -215,10 +222,10 @@ const AddCountryModal: React.FC<AddCountryModalProps> = ({
           />
           <div className={styles.buttonGroup}>
             <Button type='submit' variant='contained' color='primary'>
-              Add Country
+              {translated.addCountry}
             </Button>
             <Button variant='outlined' onClick={handleClose}>
-              Cancel
+              {translated.cancel}
             </Button>
           </div>
         </form>

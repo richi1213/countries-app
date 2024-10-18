@@ -1,31 +1,40 @@
-import styles from "components/header/nav/Nav.module.css";
-import JacketWeatherLogo from "assets/images/winter.svg";
-import { Link, NavLink, NavLinkRenderProps } from "react-router-dom";
+import styles from 'components/header/nav/Nav.module.css';
+import JacketWeatherLogo from 'assets/images/winter.svg';
+import { Link, NavLink, NavLinkRenderProps, useParams } from 'react-router-dom';
+import LanguageSwitcher from 'components/ui/language-switch/LanguageSwitcher';
+import { translations } from 'components/header/nav/translations';
+import { Lang } from '@/types';
 
 const handleActiveNav = ({ isActive }: NavLinkRenderProps) => {
-  return isActive ? `${styles.active}` : "";
+  return isActive ? `${styles.active}` : '';
 };
 
-const Nav = () => {
+const Nav: React.FC = () => {
+  const { lang } = useParams<{ lang: Lang }>();
+
+  const translated = translations[lang ?? 'en'];
+
   return (
     <nav className={styles.nav}>
-      <Link to="/">
+      <Link to={`/${lang}`}>
         <div className={styles.logo}>
-          <img src={JacketWeatherLogo} alt="winter logo" />
+          <img src={JacketWeatherLogo} alt='winter logo' />
         </div>
       </Link>
       <div className={styles.navLinks}>
-        <NavLink to="/" className={handleActiveNav}>
-          Home
+        <LanguageSwitcher />
+
+        <NavLink to={`/${lang}`} className={handleActiveNav} end>
+          {translated.home}
         </NavLink>
-        <NavLink to="/about" className={handleActiveNav}>
-          About
+        <NavLink to={`/${lang}/about`} className={handleActiveNav}>
+          {translated.about}
         </NavLink>
-        <NavLink to="/countries" className={handleActiveNav}>
-          Countries
+        <NavLink to={`/${lang}/countries`} className={handleActiveNav}>
+          {translated.countries}
         </NavLink>
-        <NavLink to="/contact" className={handleActiveNav}>
-          Contact
+        <NavLink to={`/${lang}/contact`} className={handleActiveNav}>
+          {translated.contact}
         </NavLink>
       </div>
     </nav>

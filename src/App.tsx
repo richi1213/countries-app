@@ -1,10 +1,12 @@
+import React from 'react';
 import {
   createBrowserRouter,
   createRoutesFromElements,
   Route,
   RouterProvider,
-} from "react-router-dom";
-import { RootLayout } from "components";
+  Navigate,
+} from 'react-router-dom';
+import { RootLayout } from 'components';
 import {
   Home,
   About,
@@ -15,37 +17,42 @@ import {
   countriesLoader,
   countryDetailsLoader,
   CountryDetails,
-  contactAction,
-} from "@/pages";
-
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path="/" element={<RootLayout />}>
-      <Route index element={<Home />} errorElement={<Error />} />
-      <Route path="about" element={<About />} errorElement={<Error />} />
-      <Route path="countries" errorElement={<Error />}>
-        <Route index element={<Countries />} loader={countriesLoader} />
-        <Route
-          path=":name"
-          element={<CountryDetails />}
-          loader={countryDetailsLoader}
-        />
-      </Route>
-      <Route
-        path="contact"
-        element={<Contact />}
-        action={contactAction}
-        errorElement={<Error />}
-      />
-      <Route path="*" element={<NotFound />} />
-    </Route>
-  )
-);
+  languageLoader,
+} from '@/pages';
 
 const App: React.FC = () => {
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <>
+        <Route path='/' element={<Navigate to='/en' replace />} />
+
+        <Route
+          path=':lang'
+          element={<RootLayout />}
+          errorElement={<Error />}
+          loader={languageLoader}
+        >
+          <Route index element={<Home />} />
+          <Route path='about' element={<About />} />
+          <Route path='countries' errorElement={<Error />}>
+            <Route index element={<Countries />} loader={countriesLoader} />
+            <Route
+              path=':name'
+              element={<CountryDetails />}
+              loader={countryDetailsLoader}
+            />
+          </Route>
+          <Route path='contact' element={<Contact />} />
+        </Route>
+
+        <Route path='*' element={<NotFound />} />
+      </>
+    )
+  );
+
   return <RouterProvider router={router} />;
 };
 
-App.displayName = "App Component";
+App.displayName = 'App Component';
 
 export default App;

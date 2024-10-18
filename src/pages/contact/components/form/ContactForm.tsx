@@ -1,8 +1,13 @@
-import { Form } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import styles from '@/pages/contact/components/form/ContactForm.module.css';
 import { useState } from 'react';
+import { Lang } from '@/types';
+import { translations } from '@/pages/contact/components/translations';
 
 const ContactForm = () => {
+  const { lang } = useParams<{ lang: Lang }>();
+  const translated = translations[lang ?? 'en'];
+
   const [contactFormDataError, setContactFormDataError] = useState({
     firstNameError: '',
     lastNameError: '',
@@ -19,18 +24,18 @@ const ContactForm = () => {
         if (value.length < 3 || value.length > 30) {
           errorMessage = `${
             name === 'firstName' ? 'First name' : 'Last name'
-          } must be between 3 and 30 characters.`;
+          } ${translated.nErr}`;
         }
         break;
       case 'email':
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(value)) {
-          errorMessage = 'Please enter a valid email address.';
+          errorMessage = translated.mailErr;
         }
         break;
       case 'message':
         if (value.length < 4) {
-          errorMessage = 'Message must be at least 4 characters long.';
+          errorMessage = translated.mErr;
         }
         break;
       default:
@@ -45,42 +50,6 @@ const ContactForm = () => {
     return errorMessage === '';
   };
 
-  const handleKeyDown = (event: React.KeyboardEvent<HTMLFormElement>) => {
-    if (event.ctrlKey && event.key === 'Enter') {
-      event.preventDefault();
-      const form = event.currentTarget;
-
-      const formData = new FormData(form);
-      const isFirstNameValid = validateInput(
-        'firstName',
-        formData.get('firstName') as string
-      );
-      const isLastNameValid = validateInput(
-        'lastName',
-        formData.get('lastName') as string
-      );
-      const isEmailValid = validateInput(
-        'email',
-        formData.get('email') as string
-      );
-      const isMessageValid = validateInput(
-        'message',
-        formData.get('message') as string
-      );
-
-      if (
-        isFirstNameValid &&
-        isLastNameValid &&
-        isEmailValid &&
-        isMessageValid
-      ) {
-        form.requestSubmit();
-      } else {
-        alert('Please correct the errors before submitting.');
-      }
-    }
-  };
-
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -88,11 +57,39 @@ const ContactForm = () => {
     validateInput(name, value);
   };
 
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    const firstName = formData.get('firstName') as string;
+    const lastName = formData.get('lastName') as string;
+    const email = formData.get('email') as string;
+    const message = formData.get('message') as string;
+
+    const isFirstNameValid = validateInput('firstName', firstName);
+    const isLastNameValid = validateInput('lastName', lastName);
+    const isEmailValid = validateInput('email', email);
+    const isMessageValid = validateInput('message', message);
+
+    if (isFirstNameValid && isLastNameValid && isEmailValid && isMessageValid) {
+      // Log user inputted information
+      console.log({
+        firstName,
+        lastName,
+        email,
+        message,
+      });
+    } else {
+      alert(translated.bSubmitAlert);
+    }
+  };
+
   return (
     <div className={styles.formContainer}>
-      <Form method='post' onKeyDown={handleKeyDown}>
+      <form method='post' onSubmit={handleSubmit}>
         <label className={styles.label} htmlFor='firstName'>
-          Your first name:
+          {translated.yFName}:
           <input
             type='text'
             id='firstName'
@@ -109,7 +106,7 @@ const ContactForm = () => {
         </label>
 
         <label className={styles.label} htmlFor='lastName'>
-          Your last name:
+          {translated.yLName}:
           <input
             type='text'
             id='lastName'
@@ -126,7 +123,7 @@ const ContactForm = () => {
         </label>
 
         <label className={styles.label} htmlFor='email'>
-          Your email:
+          {translated.yEmail}:
           <input
             type='email'
             id='email'
@@ -143,7 +140,7 @@ const ContactForm = () => {
         </label>
 
         <label className={styles.label} htmlFor='message'>
-          Your message:
+          {translated.yMessage}:
           <textarea
             id='message'
             name='message'
@@ -159,9 +156,9 @@ const ContactForm = () => {
         </label>
 
         <button type='submit' className={styles.submitButton}>
-          Submit
+          {translated.submit}
         </button>
-      </Form>
+      </form>
     </div>
   );
 };

@@ -1,23 +1,25 @@
-import styles from "@/pages/countries/components/country-details/map-links/CountryMapLinks.module.css";
-import { Country } from "@/pages/countries/components/country-details/types";
+import styles from '@/pages/countries/components/country-details/map-links/CountryMapLinks.module.css';
+import { Country } from '@/pages/countries/components/country-details/types';
+import { useParams } from 'react-router-dom';
 
 type CountryMapLinksProps = {
   countryData: Country;
 };
 
 const CountryMapLinks = ({ countryData }: CountryMapLinksProps) => {
+  const { lang } = useParams();
   return (
     <>
       <p className={styles.countryInfo}>
-        <strong>Maps:</strong>
+        <strong>{lang === 'ka' ? 'რუკები: ' : 'Maps:'}</strong>
       </p>
 
       <ul className={styles.mapLinks}>
         <li>
           <a
             href={countryData.maps.googleMaps}
-            target="_blank"
-            rel="noopener noreferrer"
+            target='_blank'
+            rel='noopener noreferrer'
           >
             Google Maps
           </a>
@@ -25,8 +27,8 @@ const CountryMapLinks = ({ countryData }: CountryMapLinksProps) => {
         <li>
           <a
             href={countryData.maps.openStreetMaps}
-            target="_blank"
-            rel="noopener noreferrer"
+            target='_blank'
+            rel='noopener noreferrer'
           >
             OpenStreetMap
           </a>

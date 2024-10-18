@@ -1,19 +1,25 @@
-import styles from "components/footer/Footer.module.css";
-import JacketWeatherLogo from "assets/images/winter.svg";
+import styles from 'components/footer/Footer.module.css';
+import JacketWeatherLogo from 'assets/images/winter.svg';
+import { useParams } from 'react-router-dom';
+import { translations } from 'components/footer/translations';
+import { Lang } from '@/types';
 
 const Footer = () => {
+  const { lang } = useParams<{ lang: Lang }>();
+
+  const translated = translations[lang ?? 'en'];
   return (
     <footer className={styles.footer}>
       <div className={styles.logo}>
-        <img src={JacketWeatherLogo} alt="Jacket weather logo" />
+        <img src={JacketWeatherLogo} alt='Jacket weather logo' />
       </div>
       <div className={styles.navLinks}>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
+        <a href='#'>{translated.privacyPolicy}</a>
+        <a href='#'>{translated.termsOfService}</a>
       </div>
       <div className={styles.socialLinks}>
-        <a href="#">Facebook</a>
-        <a href="#">Instagram</a>
+        <a href='#'>{translated.fb}</a>
+        <a href='#'>{translated.insta}</a>
       </div>
     </footer>
   );
