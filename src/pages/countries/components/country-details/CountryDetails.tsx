@@ -1,11 +1,17 @@
-import { useLoaderData } from "react-router-dom";
-import { Country } from "@/pages/countries/components/country-details/types";
-import styles from "@/pages/countries/components/country-details/CountryDetails.module.css";
-import CountryHeader from "@/pages/countries/components/country-details/country-header/CountryHeader";
-import GoBackButton from "components/ui/buttons/go-back/GoBackButton";
-import CountryMapLinks from "@/pages/countries/components/country-details/map-links/CountryMapLinks";
+import { useLoaderData, useParams } from 'react-router-dom';
+import { Country } from '@/pages/countries/components/country-details/types';
+import styles from '@/pages/countries/components/country-details/CountryDetails.module.css';
+import CountryHeader from '@/pages/countries/components/country-details/country-header/CountryHeader';
+import GoBackButton from 'components/ui/buttons/go-back/GoBackButton';
+import CountryMapLinks from '@/pages/countries/components/country-details/map-links/CountryMapLinks';
+import { Lang } from '~/src/types';
+import { translations } from '~/src/pages/countries/components/country-details/translations';
 
 const CountryDetails = () => {
+  const { lang } = useParams<{ lang: Lang }>();
+
+  const translated = translations[lang ?? 'en'];
+
   const country = useLoaderData() as Country;
 
   if (!country) {
@@ -31,26 +37,26 @@ const CountryDetails = () => {
   } = country;
 
   const countryInfoItems = [
-    { label: "Official Name", value: name.official },
-    { label: "Capital", value: capital.join(", ") },
-    { label: "Region", value: region },
-    { label: "Subregion", value: subregion },
-    { label: "Population", value: population.toLocaleString() },
-    { label: "Area", value: `${area.toLocaleString()} km²` },
+    { label: translated.officialName, value: name.official },
+    { label: translated.capital, value: capital.join(', ') },
+    { label: translated.region, value: region },
+    { label: translated.subRegion, value: subregion },
+    { label: translated.population, value: population.toLocaleString() },
+    { label: translated.area, value: `${area.toLocaleString()} km²` },
     {
-      label: "Languages",
-      value: Object.values(languages).join(", "),
+      label: translated.languages,
+      value: Object.values(languages).join(', '),
     },
     {
-      label: "Currencies",
+      label: translated.currencies,
       value: Object.values(currencies)
         .map((currency) => `${currency.name} (${currency.code})`)
-        .join(", "),
+        .join(', '),
     },
-    { label: "Timezones", value: timezones.join(", ") },
-    { label: "Continents", value: continents.join(", ") },
+    { label: translated.timeZones, value: timezones.join(', ') },
+    { label: translated.continents, value: continents.join(', ') },
     {
-      label: "Demonyms",
+      label: translated.demonyms,
       value: Object.entries(demonyms || {}).map(([lang, value]) => (
         <span key={lang}>
           {lang.charAt(0).toUpperCase() + lang.slice(1)}: Male: {value.m},
@@ -59,11 +65,11 @@ const CountryDetails = () => {
       )),
     },
     ...(borders && borders.length > 0
-      ? [{ label: "Borders", value: borders.join(", ") }]
+      ? [{ label: translated.borders, value: borders.join(', ') }]
       : []),
-    { label: "Driving Side", value: car?.side || "Unknown" },
-    { label: "FIFA Code", value: fifa },
-    { label: "Start of Week", value: startOfWeek },
+    { label: translated.drivingSide, value: car?.side || translated.unknown },
+    { label: translated.fifaCode, value: fifa },
+    { label: translated.startOfWeek, value: startOfWeek },
   ];
 
   return (

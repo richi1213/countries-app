@@ -18,17 +18,23 @@ import {
   countryDetailsLoader,
   CountryDetails,
   contactAction,
+  languageLoader,
 } from '@/pages';
 
 const App: React.FC = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <>
-        <Route path='/' element={<Navigate to={`/en`} replace />} />
+        <Route path='/' element={<Navigate to='/en' replace />} />
 
-        <Route path='/:lang' element={<RootLayout />}>
-          <Route index element={<Home />} errorElement={<Error />} />
-          <Route path='about' element={<About />} errorElement={<Error />} />
+        <Route
+          path=':lang'
+          element={<RootLayout />}
+          errorElement={<Error />}
+          loader={languageLoader}
+        >
+          <Route index element={<Home />} />
+          <Route path='about' element={<About />} />
           <Route path='countries' errorElement={<Error />}>
             <Route index element={<Countries />} loader={countriesLoader} />
             <Route
@@ -37,14 +43,10 @@ const App: React.FC = () => {
               loader={countryDetailsLoader}
             />
           </Route>
-          <Route
-            path='contact'
-            element={<Contact />}
-            action={contactAction}
-            errorElement={<Error />}
-          />
-          <Route path='*' element={<NotFound />} />
+          <Route path='contact' element={<Contact />} action={contactAction} />
         </Route>
+
+        <Route path='*' element={<NotFound />} />
       </>
     )
   );
