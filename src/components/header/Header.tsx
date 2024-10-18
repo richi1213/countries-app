@@ -1,10 +1,15 @@
-import { Nav } from "components/header";
-import styles from "components/header/Header.module.css";
+import { Nav } from 'components/header';
+import styles from 'components/header/Header.module.css';
+import { Lang } from '@/types';
 
-const Header: () => JSX.Element = () => {
+type HeaderProps = {
+  onLanguageChange?: (lang: Lang) => void;
+};
+
+const Header: React.FC<HeaderProps> = ({ onLanguageChange }): JSX.Element => {
   return (
     <header className={styles.header}>
-      <Nav />
+      <Nav onLanguageChange={onLanguageChange} />
     </header>
   );
 };

@@ -1,5 +1,5 @@
-import styles from "components/ui/cards/Card.module.css";
-import { ReactNode } from "react";
+import styles from 'components/ui/cards/Card.module.css';
+import { ReactNode } from 'react';
 
 type CardProps = {
   children?: ReactNode;
