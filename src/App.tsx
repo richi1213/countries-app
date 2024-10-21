@@ -20,36 +20,36 @@ import {
   languageLoader,
 } from '@/pages';
 
-const App: React.FC = () => {
-  const router = createBrowserRouter(
-    createRoutesFromElements(
-      <>
-        <Route path='/' element={<Navigate to='/en' replace />} />
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <>
+      <Route path='/' element={<Navigate to='/en' replace />} />
 
-        <Route
-          path=':lang'
-          element={<RootLayout />}
-          errorElement={<Error />}
-          loader={languageLoader}
-        >
-          <Route index element={<Home />} />
-          <Route path='about' element={<About />} />
-          <Route path='countries' errorElement={<Error />}>
-            <Route index element={<Countries />} loader={countriesLoader} />
-            <Route
-              path=':name'
-              element={<CountryDetails />}
-              loader={countryDetailsLoader}
-            />
-          </Route>
-          <Route path='contact' element={<Contact />} />
+      <Route
+        path=':lang'
+        element={<RootLayout />}
+        errorElement={<Error />}
+        loader={languageLoader}
+      >
+        <Route index element={<Home />} />
+        <Route path='about' element={<About />} />
+        <Route path='countries' errorElement={<Error />}>
+          <Route index element={<Countries />} loader={countriesLoader} />
+          <Route
+            path=':name'
+            element={<CountryDetails />}
+            loader={countryDetailsLoader}
+          />
         </Route>
+        <Route path='contact' element={<Contact />} />
+      </Route>
 
-        <Route path='*' element={<NotFound />} />
-      </>
-    )
-  );
+      <Route path='*' element={<NotFound />} />
+    </>
+  )
+);
 
+const App: React.FC = () => {
   return <RouterProvider router={router} />;
 };
 
