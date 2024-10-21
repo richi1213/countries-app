@@ -158,7 +158,7 @@ const AddCountryModal: React.FC<AddCountryModalProps> = ({
   return (
     <Modal open={open} onClose={handleClose}>
       <Box className={styles.modalContent}>
-        <h2 className={styles.textField}>Add a New Country</h2>
+        <h2 className={styles.textField}>{translated.addNewCountry}</h2>
         <form onSubmit={handleSubmit}>
           <TextField
             className={styles.textField}

@@ -14,6 +14,7 @@ export const translations = {
     lCapitalURL: 'Capital URL',
     lFlagURL: 'Flag URL',
 
+    addNewCountry: 'Add a New Country',
     addCountry: 'Add Country',
     cancel: 'Cancel',
   },
@@ -32,6 +33,7 @@ export const translations = {
     lCapitalURL: 'დედაქალაქის URL',
     lFlagURL: 'დროშის URL',
 
+    addNewCountry: 'ახალი ქვეყნის დამატება',
     addCountry: 'ქვეყნის დამატება',
     cancel: 'გაუქმება',
   },
