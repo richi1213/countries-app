@@ -2,16 +2,16 @@ import axios from 'axios';
 
 type CountryApiResponse = {
   name: { common: string };
-  flags: { png: string };
+  flags: { png: string; jpg?: string };
   population: number;
   capital: string[];
 };
 
 export type CountryData = {
   name: string;
-  flag: string;
-  population: number;
   capital: string;
+  population: number;
+  flag: string;
 };
 
 const BASE_URL = import.meta.env.VITE_REST_COUNTRIES_URL;
@@ -32,7 +32,7 @@ export const fetchColdCountryData = async (
 
     return {
       name: name.common,
-      flag: flags?.png ?? '',
+      flag: flags.png || flags.jpg || '',
       population: population ?? 0,
       capital: capital?.[0] ?? 'N/A',
     };

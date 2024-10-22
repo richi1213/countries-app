@@ -1,6 +1,6 @@
-import { coldCountries } from "@/pages/countries/utils/coldCountries";
-import { fetchColdCountryData } from "@/pages/countries/api/countriesApi/countriesApi";
-import { fetchCapitalCityPhoto } from "@/pages/countries/api/unsplashApi/unsplashApi";
+import { coldCountries } from '@/pages/countries/utils/coldCountries';
+import { fetchColdCountryData } from '@/pages/countries/api/countriesApi/countriesApi';
+import { fetchCapitalCityPhoto } from '@/pages/countries/api/unsplashApi/unsplashApi';
 
 export const countriesLoader = async () => {
   const dataPromises = coldCountries.map(async (country) => {

@@ -14,7 +14,13 @@ const SortButton = ({ onSort, isAscending }: SortButtonProps) => {
   return (
     <button onClick={onSort} className={styles.sortButton}>
       <span>{lang === 'ka' ? 'ლაიქეებით სორტირება' : 'Sort by Likes'}</span>
-      <span>{isAscending ? <ArrowUpwardIcon /> : <ArrowDownwardIcon />}</span>
+      <span>
+        {isAscending ? (
+          <ArrowUpwardIcon fontSize='small' />
+        ) : (
+          <ArrowDownwardIcon />
+        )}
+      </span>
     </button>
   );
 };
