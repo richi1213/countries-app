@@ -7,7 +7,7 @@ type CountryApiResponse = {
   capital: string[];
 };
 
-export type CountryData = {
+export type BaseCountryData = {
   name: string;
   capital: string;
   population: number;
@@ -18,7 +18,7 @@ const BASE_URL = import.meta.env.VITE_REST_COUNTRIES_URL;
 
 export const fetchColdCountryData = async (
   country: string
-): Promise<CountryData | null> => {
+): Promise<BaseCountryData | null> => {
   try {
     const response = await axios.get<CountryApiResponse[]>(
       `${BASE_URL}${country}?fullText=true`

@@ -4,14 +4,15 @@ import {
   CardContent,
   CardFooter,
   CardButtonsWrapper,
-} from "components/ui/cards";
-import { CountryData } from "@/pages/countries/components/list/CountryList";
-import { Link } from "react-router-dom";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import styles from "@/pages/countries/components/list/card-wrapper/CountryCardWrapper.module.css";
+} from 'components/ui/cards';
+import { TranslatedCountryData } from '@/pages/countries/components/list/types';
+import { Link, useParams } from 'react-router-dom';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import styles from '@/pages/countries/components/list/card-wrapper/CountryCardWrapper.module.css';
+import { Lang } from '~/src/types';
 
 type CountryCardWrapperProps = {
-  countries: CountryData[];
+  countries: TranslatedCountryData[];
   handleLike: (name: string) => void;
   handleDelete: (
     event: React.MouseEvent<HTMLButtonElement>,
@@ -24,33 +25,38 @@ const CountryCardWrapper = ({
   handleLike,
   handleDelete,
 }: CountryCardWrapperProps) => {
+  const { lang = 'en' } = useParams<{ lang: Lang }>();
+
   return (
     <>
       {countries.map((country) => (
         <div
           className={`${styles.countryItem} ${
-            country.isDeleted ? styles.deletedCountry : ""
+            country.isDeleted ? styles.deletedCountry : ''
           }`}
-          key={country.name}
+          key={country.name[lang] || country.name.en}
         >
           <Card>
-            <Link to={`${country.name}`} className={styles.link}>
-              <CardHeader photo={country.photo} name={country.name} />
+            <Link to={`${country.name[lang]}`} className={styles.link}>
+              <CardHeader photo={country.photo} name={country.name[lang]} />
               <CardContent
-                name={country.name ?? "Unknown Name"}
+                name={country.name[lang] ?? 'Unknown Name'}
                 population={country.population}
-                capitalCity={country.capital}
+                capitalCity={country.capital[lang] ?? 'Unknown Capital'}
               />
-              <CardFooter flag={country.flag} countryName={country.name} />
+              <CardFooter
+                flag={country.flag}
+                countryName={country.name[lang]}
+              />
             </Link>
             <CardButtonsWrapper
               likeButtonProps={{
                 icon: <FavoriteBorderIcon />,
                 initialLikes: country.likes,
-                onLike: () => handleLike(country.name),
+                onLike: () => handleLike(country.name[lang]),
               }}
               deleteButtonProps={{
-                onDelete: (event) => handleDelete(event, country.name),
+                onDelete: (event) => handleDelete(event, country.name[lang]),
                 isDeleted: country.isDeleted || false,
               }}
             />

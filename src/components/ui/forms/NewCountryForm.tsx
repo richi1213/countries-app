@@ -5,13 +5,13 @@ import { TextField, Button } from '@mui/material';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { translations } from 'components/ui/forms/translations';
 import { Lang } from '@/types';
-import { CountryData } from '@/pages/countries/components/list/CountryList';
+import { TranslatedCountryData } from '@/pages/countries/components/list/types';
 import { capitalizeWords } from '@/helpers/capitalizeWords';
 
 type NewCountryFormProps = {
   handleClose: () => void;
-  handleAddCountry: (newCountry: CountryData) => void;
-  existingCountries: CountryData[];
+  handleAddCountry: (newCountry: TranslatedCountryData) => void;
+  existingCountries: TranslatedCountryData[];
 };
 
 const NewCountryForm: React.FC<NewCountryFormProps> = ({
@@ -135,7 +135,7 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
 
     const isCountryAlreadyAdded = existingCountries.some(
       (country) =>
-        country.name.toLowerCase() === formData.countryName.toLowerCase()
+        country.name.en.toLowerCase() === formData.countryName.toLowerCase()
     );
 
     if (isCountryAlreadyAdded) {
@@ -143,9 +143,15 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
       return;
     }
 
-    const newCountry: CountryData = {
-      name: capitalizeWords(formData.countryName),
-      capital: capitalizeWords(formData.capital),
+    const newCountry: TranslatedCountryData = {
+      name: {
+        en: capitalizeWords(formData.countryName),
+        ka: '',
+      },
+      capital: {
+        en: capitalizeWords(formData.capital),
+        ka: '',
+      },
       population: formData.population,
       photo: formData.photoFile || '',
       flag: formData.flagFile || '',

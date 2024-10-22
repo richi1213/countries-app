@@ -1,18 +1,25 @@
-import { CountryData } from '@/pages/countries/components/list/CountryList';
+import { TranslatedCountryData } from '@/pages/countries/components/list/types';
+import { Lang } from '@/types';
 
 export type State = {
-  countries: CountryData[];
+  countries: TranslatedCountryData[];
   isAscending: boolean;
 };
 
 type Action =
-  | { type: 'country/liked'; payload: string }
-  | { type: 'country/setSortOrderAndSort'; payload: boolean }
+  | { type: 'country/liked'; payload: { name: string; lang: Lang } }
+  | {
+      type: 'country/setSortOrderAndSort';
+      payload: { isAscending: boolean; lang: Lang };
+    }
   | {
       type: 'country/toggleDelete';
-      payload: { name: string; isDeleted: boolean };
+      payload: { name: string; isDeleted: boolean; lang: Lang };
     }
-  | { type: 'country/added'; payload: CountryData };
+  | {
+      type: 'country/added';
+      payload: { country: TranslatedCountryData; lang: Lang };
+    };
 
 export const reducer = (state: State, action: Action): State => {
   switch (action.type) {
@@ -20,7 +27,7 @@ export const reducer = (state: State, action: Action): State => {
       return {
         ...state,
         countries: state.countries.map((country) =>
-          country.name === action.payload
+          country.name[action.payload.lang] === action.payload.name
             ? { ...country, likes: country.likes + 1 }
             : country
         ),
@@ -35,12 +42,12 @@ export const reducer = (state: State, action: Action): State => {
       );
 
       const sortedNonDeletedCountries = [...nonDeletedCountries].sort((a, b) =>
-        action.payload ? a.likes - b.likes : b.likes - a.likes
+        action.payload.isAscending ? a.likes - b.likes : b.likes - a.likes
       );
 
       return {
         ...state,
-        isAscending: action.payload,
+        isAscending: action.payload.isAscending,
         countries: [...sortedNonDeletedCountries, ...deletedCountries],
       };
 
@@ -49,7 +56,7 @@ export const reducer = (state: State, action: Action): State => {
         ...state,
         countries: [
           ...state.countries.map((country) =>
-            country.name === action.payload.name
+            country.name[action.payload.lang] === action.payload.name
               ? { ...country, isDeleted: action.payload.isDeleted }
               : country
           ),
@@ -61,8 +68,9 @@ export const reducer = (state: State, action: Action): State => {
     case 'country/added':
       return {
         ...state,
-        countries: [action.payload, ...state.countries],
+        countries: [action.payload.country, ...state.countries],
       };
+
     default:
       return state;
   }

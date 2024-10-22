@@ -4,8 +4,8 @@ import styles from '@/pages/countries/components/country-details/CountryDetails.
 import CountryHeader from '@/pages/countries/components/country-details/country-header/CountryHeader';
 import GoBackButton from 'components/ui/buttons/go-back/GoBackButton';
 import CountryMapLinks from '@/pages/countries/components/country-details/map-links/CountryMapLinks';
-import { Lang } from '~/src/types';
-import { translations } from '~/src/pages/countries/components/country-details/translations';
+import { Lang } from '@/types';
+import { translations } from '@/pages/countries/components/country-details/translations';
 
 const CountryDetails = () => {
   const { lang } = useParams<{ lang: Lang }>();
