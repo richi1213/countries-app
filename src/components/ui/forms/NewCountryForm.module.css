@@ -1,9 +1,10 @@
-.textField {
+.textField,
+.tabs {
   margin-bottom: 16px;
 }
 
 .buttonGroup {
-  margin-top: 20px;
+  margin-top: 16px;
   display: flex;
   justify-content: space-between;
 }
@@ -12,9 +13,13 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 16px;
+  gap: 12px;
 }
 
 .uploadButton {
   width: 10rem;
+}
+
+.submitButton {
+  margin-top: 16px;
 }

@@ -1,6 +1,5 @@
 import { Suspense, useReducer, useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
-
 import { SortButton, AddCountryButton } from 'components/ui/buttons';
 import CountryCardWrapper from '@/pages/countries/components/list/card-wrapper/CountryCardWrapper';
 import styles from '@/pages/countries/components/list/CountryList.module.css';
@@ -52,7 +51,9 @@ const CountryList = () => {
     event.preventDefault();
     (event.currentTarget as HTMLButtonElement).blur();
 
-    const country = state.countries.find((country) => country.name.en === name);
+    const country = state.countries.find(
+      (country) => country.name[lang] === name
+    );
     if (country) {
       dispatch({
         type: 'country/toggleDelete',

@@ -22,21 +22,25 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
   const { lang } = useParams<{ lang: Lang }>();
   const translated = translations[lang ?? 'en'];
 
-  const [formData, setFormData] = useState({
+  const initialCountryFormData = {
     countryName: { en: '', ka: '' },
     capital: { en: '', ka: '' },
     population: 0,
     photoFile: '',
     flagFile: '',
-  });
+  };
+  const [formData, setFormData] = useState(initialCountryFormData);
 
-  const [countryFormDataError, setCountryFormDataError] = useState({
-    countryNameError: '',
-    capitalError: '',
-    populationError: '',
-    photoFileError: '',
-    flagFileError: '',
-  });
+  const initialCountryFormDataError = {
+    countryNameError: { en: '', ka: '' },
+    capitalError: { en: '', ka: '' },
+    populationError: { en: '', ka: '' },
+    photoFileError: { en: '', ka: '' },
+    flagFileError: { en: '', ka: '' },
+  };
+  const [countryFormDataError, setCountryFormDataError] = useState(
+    initialCountryFormDataError
+  );
 
   const [currentTab, setCurrentTab] = useState<Lang>('en');
 
@@ -60,7 +64,7 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
         ) {
           errorMessage =
             name === 'countryName'
-              ? translations[lang].errCountry // Use the error message for the current language
+              ? translations[lang].errCountry
               : translations[lang].errCapital;
         }
         break;
@@ -83,7 +87,10 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
 
     setCountryFormDataError((prevError) => ({
       ...prevError,
-      [`${name}Error`]: errorMessage,
+      [`${name}Error` as keyof typeof prevError]: {
+        ...prevError[`${name}Error` as keyof typeof prevError],
+        [lang]: errorMessage,
+      },
     }));
   };
 
@@ -172,24 +179,22 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
       flagFile: '',
     });
     setCountryFormDataError({
-      countryNameError: '',
-      capitalError: '',
-      populationError: '',
-      photoFileError: '',
-      flagFileError: '',
+      countryNameError: { en: '', ka: '' },
+      capitalError: { en: '', ka: '' },
+      populationError: { en: '', ka: '' },
+      photoFileError: { en: '', ka: '' },
+      flagFileError: { en: '', ka: '' },
     });
     handleClose();
   };
 
   // Updated isFormValid to check both 'en' and 'ka' fields
   const isFormValid = () => {
-    // Validate for both 'en' and 'ka'
+    // Validate fields for both languages
     validateField('countryName', formData.countryName.en, 'en');
     validateField('countryName', formData.countryName.ka, 'ka');
     validateField('capital', formData.capital.en, 'en');
     validateField('capital', formData.capital.ka, 'ka');
-
-    // Validate other fields
     validateField(
       'population',
       formData.population?.toString() || '',
@@ -198,12 +203,18 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
     validateField('photoFile', formData.photoFile, currentTab);
     validateField('flagFile', formData.flagFile, currentTab);
 
+    // Manually check if any errors exist
     return !(
-      countryFormDataError.countryNameError ||
-      countryFormDataError.capitalError ||
-      countryFormDataError.populationError ||
-      countryFormDataError.photoFileError ||
-      countryFormDataError.flagFileError ||
+      countryFormDataError.countryNameError.en ||
+      countryFormDataError.countryNameError.ka ||
+      countryFormDataError.capitalError.en ||
+      countryFormDataError.capitalError.ka ||
+      countryFormDataError.populationError.en ||
+      countryFormDataError.populationError.ka ||
+      countryFormDataError.photoFileError.en ||
+      countryFormDataError.photoFileError.ka ||
+      countryFormDataError.flagFileError.en ||
+      countryFormDataError.flagFileError.ka ||
       formData.countryName.en === '' ||
       formData.countryName.ka === '' ||
       formData.capital.en === '' ||
@@ -217,6 +228,7 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
         value={currentTab}
         onChange={handleTabChange}
         aria-label='Language tabs'
+        className={styles.tabs}
       >
         <Tab label='English' value='en' />
         <Tab label='ქართული' value='ka' />
@@ -225,34 +237,34 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
       {/* Conditionally render name and capital fields based on the current tab */}
       <TextField
         className={styles.textField}
-        label={translated.lCountryName}
+        label={translations[currentTab].lCountryName}
         name='countryName'
         value={formData.countryName[currentTab]}
         onChange={handleChange}
         fullWidth
         required
         aria-label='Country Name'
-        error={!!countryFormDataError.countryNameError}
-        helperText={countryFormDataError.countryNameError || ' '}
+        error={!!countryFormDataError.countryNameError[currentTab]}
+        helperText={countryFormDataError.countryNameError[currentTab] || ' '}
       />
 
       <TextField
         className={styles.textField}
-        label={translated.lCapital}
+        label={translations[currentTab].lCapital}
         name='capital'
         value={formData.capital[currentTab]}
         onChange={handleChange}
         fullWidth
         required
         aria-label='Capital'
-        error={!!countryFormDataError.capitalError}
-        helperText={countryFormDataError.capitalError || ' '}
+        error={!!countryFormDataError.capitalError[currentTab]}
+        helperText={countryFormDataError.capitalError[currentTab] || ' '}
       />
 
       {/* The rest of the form stays the same */}
       <TextField
         className={styles.textField}
-        label={translated.lPopulation}
+        label={translations[currentTab].lPopulation}
         type='number'
         name='population'
         value={formData.population ?? ''}
@@ -260,8 +272,8 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
         fullWidth
         required
         aria-label='Population'
-        error={!!countryFormDataError.populationError}
-        helperText={countryFormDataError.populationError || ' '}
+        error={!!countryFormDataError.populationError[currentTab]}
+        helperText={countryFormDataError.populationError[currentTab] || ' '}
       />
 
       {/* Upload buttons and errors */}
@@ -274,7 +286,7 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
           startIcon={<CloudUploadIcon fontSize='small' />}
           className={styles.uploadButton}
         >
-          {translated.uploadCapital}
+          {translations[currentTab].uploadCapital}
           <input
             type='file'
             name='photoFile'
@@ -284,8 +296,10 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
             className={styles.hiddenInput}
           />
         </Button>
-        {countryFormDataError.photoFileError && (
-          <p className={styles.error}>{countryFormDataError.photoFileError}</p>
+        {countryFormDataError.photoFileError[currentTab] && (
+          <p className={styles.error}>
+            {countryFormDataError.photoFileError[currentTab]}
+          </p>
         )}
 
         <Button
@@ -296,7 +310,7 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
           startIcon={<CloudUploadIcon fontSize='small' />}
           className={styles.uploadButton}
         >
-          {translated.uploadFlag}
+          {translations[currentTab].uploadFlag}
           <input
             type='file'
             name='flagFile'
@@ -306,8 +320,10 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
             className={styles.hiddenInput}
           />
         </Button>
-        {countryFormDataError.flagFileError && (
-          <p className={styles.error}>{countryFormDataError.flagFileError}</p>
+        {countryFormDataError.flagFileError[currentTab] && (
+          <p className={styles.error}>
+            {countryFormDataError.flagFileError[currentTab]}
+          </p>
         )}
       </div>
 
@@ -317,7 +333,7 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
         variant='contained'
         fullWidth
       >
-        {translated.addCountry}
+        {translations[currentTab].addCountry}
       </Button>
     </form>
   );

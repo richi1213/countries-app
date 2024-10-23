@@ -37,7 +37,7 @@ const CountryCardWrapper = ({
           key={country.name[lang] || country.name.en}
         >
           <Card>
-            <Link to={`${country.name[lang]}`} className={styles.link}>
+            <Link to={`${country.name.en}`} className={styles.link}>
               <CardHeader photo={country.photo} name={country.name[lang]} />
               <CardContent
                 name={country.name[lang] ?? 'Unknown Name'}
