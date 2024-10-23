@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import styles from 'components/ui/forms/NewCountryForm.module.css';
-import { TextField, Button } from '@mui/material';
+import { TextField, Button, Tabs, Tab } from '@mui/material';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { translations } from 'components/ui/forms/translations';
 import { Lang } from '@/types';
@@ -23,12 +23,13 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
   const translated = translations[lang ?? 'en'];
 
   const [formData, setFormData] = useState({
-    countryName: '',
-    capital: '',
+    countryName: { en: '', ka: '' },
+    capital: { en: '', ka: '' },
     population: 0,
     photoFile: '',
     flagFile: '',
   });
+
   const [countryFormDataError, setCountryFormDataError] = useState({
     countryNameError: '',
     capitalError: '',
@@ -37,36 +38,42 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
     flagFileError: '',
   });
 
-  const validateField = (name: string, value: string | null) => {
+  const [currentTab, setCurrentTab] = useState<Lang>('en');
+
+  const handleTabChange = (event: React.SyntheticEvent, newValue: Lang) => {
+    setCurrentTab(newValue);
+  };
+
+  const validateField = (
+    name: string,
+    value: string | null,
+    lang: Lang = currentTab
+  ) => {
     let errorMessage = '';
 
     switch (name) {
       case 'countryName':
-        if (
-          typeof value === 'string' &&
-          (value.length < 4 || value.length > 30)
-        ) {
-          errorMessage = translated.errCountry;
-        }
-        break;
       case 'capital':
         if (
           typeof value === 'string' &&
           (value.length < 4 || value.length > 30)
         ) {
-          errorMessage = translated.errCapital;
+          errorMessage =
+            name === 'countryName'
+              ? translations[lang].errCountry // Use the error message for the current language
+              : translations[lang].errCapital;
         }
         break;
       case 'population':
         if (Number(value) <= 0) {
-          errorMessage = translated.errPopulation;
+          errorMessage = translations[lang].errPopulation;
         }
         break;
       case 'photoFile':
       case 'flagFile':
         if (value && !/^data:image\/(jpeg|png);base64,/.test(value)) {
           errorMessage = `${name === 'photoFile' ? 'Photo' : 'Flag'} ${
-            translated.errFileType
+            translations[lang].errFileType
           }`;
         }
         break;
@@ -78,22 +85,6 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
       ...prevError,
       [`${name}Error`]: errorMessage,
     }));
-  };
-
-  const isFormValid = () => {
-    validateField('countryName', formData.countryName);
-    validateField('capital', formData.capital);
-    validateField('population', formData.population?.toString() || '');
-    validateField('photoFile', formData.photoFile);
-    validateField('flagFile', formData.flagFile);
-
-    return !(
-      countryFormDataError.countryNameError ||
-      countryFormDataError.capitalError ||
-      countryFormDataError.populationError ||
-      countryFormDataError.photoFileError ||
-      countryFormDataError.flagFileError
-    );
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -116,6 +107,16 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
 
         reader.readAsDataURL(file);
       }
+    } else if (name === 'countryName' || name === 'capital') {
+      // Handle name and capital input per language
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: {
+          ...prevData[name],
+          [currentTab]: value,
+        },
+      }));
+      validateField(name, value);
     } else {
       setFormData((prevData) => ({
         ...prevData,
@@ -125,6 +126,7 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
     }
   };
 
+  // Updated handleSubmit
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -135,7 +137,7 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
 
     const isCountryAlreadyAdded = existingCountries.some(
       (country) =>
-        country.name.en.toLowerCase() === formData.countryName.toLowerCase()
+        country.name.en.toLowerCase() === formData.countryName.en.toLowerCase()
     );
 
     if (isCountryAlreadyAdded) {
@@ -145,12 +147,12 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
 
     const newCountry: TranslatedCountryData = {
       name: {
-        en: capitalizeWords(formData.countryName),
-        ka: '',
+        en: capitalizeWords(formData.countryName.en),
+        ka: capitalizeWords(formData.countryName.ka),
       },
       capital: {
-        en: capitalizeWords(formData.capital),
-        ka: '',
+        en: capitalizeWords(formData.capital.en),
+        ka: capitalizeWords(formData.capital.ka),
       },
       population: formData.population,
       photo: formData.photoFile || '',
@@ -163,8 +165,8 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
 
     // Clear form fields after submission
     setFormData({
-      countryName: '',
-      capital: '',
+      countryName: { en: '', ka: '' },
+      capital: { en: '', ka: '' },
       population: 0,
       photoFile: '',
       flagFile: '',
@@ -179,13 +181,53 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
     handleClose();
   };
 
+  // Updated isFormValid to check both 'en' and 'ka' fields
+  const isFormValid = () => {
+    // Validate for both 'en' and 'ka'
+    validateField('countryName', formData.countryName.en, 'en');
+    validateField('countryName', formData.countryName.ka, 'ka');
+    validateField('capital', formData.capital.en, 'en');
+    validateField('capital', formData.capital.ka, 'ka');
+
+    // Validate other fields
+    validateField(
+      'population',
+      formData.population?.toString() || '',
+      currentTab
+    );
+    validateField('photoFile', formData.photoFile, currentTab);
+    validateField('flagFile', formData.flagFile, currentTab);
+
+    return !(
+      countryFormDataError.countryNameError ||
+      countryFormDataError.capitalError ||
+      countryFormDataError.populationError ||
+      countryFormDataError.photoFileError ||
+      countryFormDataError.flagFileError ||
+      formData.countryName.en === '' ||
+      formData.countryName.ka === '' ||
+      formData.capital.en === '' ||
+      formData.capital.ka === ''
+    );
+  };
+
   return (
     <form onSubmit={handleSubmit}>
+      <Tabs
+        value={currentTab}
+        onChange={handleTabChange}
+        aria-label='Language tabs'
+      >
+        <Tab label='English' value='en' />
+        <Tab label='ქართული' value='ka' />
+      </Tabs>
+
+      {/* Conditionally render name and capital fields based on the current tab */}
       <TextField
         className={styles.textField}
         label={translated.lCountryName}
         name='countryName'
-        value={formData.countryName}
+        value={formData.countryName[currentTab]}
         onChange={handleChange}
         fullWidth
         required
@@ -193,11 +235,12 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
         error={!!countryFormDataError.countryNameError}
         helperText={countryFormDataError.countryNameError || ' '}
       />
+
       <TextField
         className={styles.textField}
         label={translated.lCapital}
         name='capital'
-        value={formData.capital}
+        value={formData.capital[currentTab]}
         onChange={handleChange}
         fullWidth
         required
@@ -205,6 +248,8 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
         error={!!countryFormDataError.capitalError}
         helperText={countryFormDataError.capitalError || ' '}
       />
+
+      {/* The rest of the form stays the same */}
       <TextField
         className={styles.textField}
         label={translated.lPopulation}
@@ -219,6 +264,7 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
         helperText={countryFormDataError.populationError || ' '}
       />
 
+      {/* Upload buttons and errors */}
       <div className={styles.uploadFileButtonGroup}>
         <Button
           variant='text'
@@ -265,14 +311,14 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
         )}
       </div>
 
-      <div className={styles.buttonGroup}>
-        <Button type='submit' variant='contained' color='primary'>
-          {translated.addCountry}
-        </Button>
-        <Button variant='outlined' onClick={handleClose}>
-          {translated.cancel}
-        </Button>
-      </div>
+      <Button
+        type='submit'
+        className={styles.submitButton}
+        variant='contained'
+        fullWidth
+      >
+        {translated.addCountry}
+      </Button>
     </form>
   );
 };
