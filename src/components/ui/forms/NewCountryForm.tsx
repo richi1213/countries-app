@@ -39,7 +39,7 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
     flagFileError: { en: '', ka: '' },
   };
   const [countryFormDataError, setCountryFormDataError] = useState(
-    initialCountryFormDataError
+    initialCountryFormDataError,
   );
 
   const [currentTab, setCurrentTab] = useState<Lang>('en');
@@ -51,7 +51,7 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
   const validateField = (
     name: string,
     value: string | null,
-    lang: Lang = currentTab
+    lang: Lang = currentTab,
   ) => {
     let errorMessage = '';
 
@@ -144,7 +144,7 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
 
     const isCountryAlreadyAdded = existingCountries.some(
       (country) =>
-        country.name.en.toLowerCase() === formData.countryName.en.toLowerCase()
+        country.name.en.toLowerCase() === formData.countryName.en.toLowerCase(),
     );
 
     if (isCountryAlreadyAdded) {
@@ -198,7 +198,7 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
     validateField(
       'population',
       formData.population?.toString() || '',
-      currentTab
+      currentTab,
     );
     validateField('photoFile', formData.photoFile, currentTab);
     validateField('flagFile', formData.flagFile, currentTab);

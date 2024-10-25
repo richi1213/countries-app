@@ -1,4 +1,4 @@
-import styles from "components/ui/cards/card-header/CardHeader.module.css";
+import styles from 'components/ui/cards/card-header/CardHeader.module.css';
 
 type CardHeaderProps = {
   photo?: string;
@@ -8,7 +8,7 @@ type CardHeaderProps = {
 const CardHeader = ({ photo, name }: CardHeaderProps): JSX.Element => {
   return (
     <div className={styles.cardHeader}>
-      <img src={photo} alt={name} loading="lazy" />
+      <img src={photo} alt={name} loading='lazy' />
     </div>
   );
 };

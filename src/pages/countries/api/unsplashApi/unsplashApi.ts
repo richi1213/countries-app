@@ -1,10 +1,10 @@
-import axios from "axios";
+import axios from 'axios';
 
 const UNSPLASH_BASE_URL = import.meta.env.VITE_UNSPLASH_BASE_URL;
 const UNSPLASH_ACCESS_KEY = import.meta.env.VITE_UNSPLASH_ACCESS_KEY;
 
 export const fetchCapitalCityPhoto = async (
-  capital: string
+  capital: string,
 ): Promise<string | null> => {
   try {
     const response = await axios.get(UNSPLASH_BASE_URL, {

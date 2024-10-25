@@ -9,7 +9,9 @@
 
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease, opacity 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    opacity 0.3s ease;
 
   position: fixed;
   top: 150px;

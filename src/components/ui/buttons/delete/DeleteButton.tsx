@@ -1,6 +1,6 @@
-import styles from "components/ui/buttons/delete/DeleteButton.module.css";
-import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
-import RestoreFromTrashOutlinedIcon from "@mui/icons-material/RestoreFromTrashOutlined";
+import styles from 'components/ui/buttons/delete/DeleteButton.module.css';
+import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
+import RestoreFromTrashOutlinedIcon from '@mui/icons-material/RestoreFromTrashOutlined';
 
 export type DeleteButtonProps = {
   onDelete: (event: React.MouseEvent<HTMLButtonElement>) => void;

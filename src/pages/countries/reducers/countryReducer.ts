@@ -27,7 +27,7 @@ export const reducer = (state: State, action: Action): State => {
       const newCountries = state.countries.map((country) =>
         country.name[action.payload.lang] === action.payload.name
           ? { ...country, likes: country.likes + 1 }
-          : country
+          : country,
       );
       return {
         ...state,
@@ -37,14 +37,14 @@ export const reducer = (state: State, action: Action): State => {
 
     case 'country/setSortOrderAndSort': {
       const nonDeletedCountries = state.countries.filter(
-        (country) => !country.isDeleted
+        (country) => !country.isDeleted,
       );
       const deletedCountries = state.countries.filter(
-        (country) => country.isDeleted
+        (country) => country.isDeleted,
       );
 
       const sortedNonDeletedCountries = [...nonDeletedCountries].sort((a, b) =>
-        action.payload.isAscending ? a.likes - b.likes : b.likes - a.likes
+        action.payload.isAscending ? a.likes - b.likes : b.likes - a.likes,
       );
 
       return {
@@ -58,13 +58,13 @@ export const reducer = (state: State, action: Action): State => {
       const newCountries = state.countries.map((country) =>
         country.name[action.payload.lang] === action.payload.name
           ? { ...country, isDeleted: action.payload.isDeleted }
-          : country
+          : country,
       );
 
       return {
         ...state,
         countries: newCountries.sort((a, b) =>
-          a.isDeleted === b.isDeleted ? 0 : a.isDeleted ? 1 : -1
+          a.isDeleted === b.isDeleted ? 0 : a.isDeleted ? 1 : -1,
         ),
       };
     }

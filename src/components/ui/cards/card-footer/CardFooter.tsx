@@ -1,4 +1,4 @@
-import styles from "components/ui/cards/card-footer/CardFooter.module.css";
+import styles from 'components/ui/cards/card-footer/CardFooter.module.css';
 
 type CardFooterProps = {
   flag: string;
@@ -12,7 +12,7 @@ const CardFooter = ({ flag, countryName }: CardFooterProps): JSX.Element => {
         src={flag}
         alt={`Flag of ${countryName}`}
         className={styles.flag}
-        loading="lazy"
+        loading='lazy'
       />
     </div>
   );

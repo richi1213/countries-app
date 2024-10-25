@@ -44,8 +44,8 @@ const router = createBrowserRouter(
       </Route>
 
       <Route path='*' element={<NotFound />} />
-    </>
-  )
+    </>,
+  ),
 );
 
 const App: React.FC = () => {

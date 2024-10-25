@@ -1,5 +1,5 @@
-import { ReactNode, useState } from "react";
-import styles from "components/ui/buttons/like/LikeButton.module.css";
+import { ReactNode, useState } from 'react';
+import styles from 'components/ui/buttons/like/LikeButton.module.css';
 
 export type LikeButtonProps = {
   icon: ReactNode | JSX.Element | string;

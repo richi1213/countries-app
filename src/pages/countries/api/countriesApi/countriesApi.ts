@@ -17,11 +17,11 @@ export type BaseCountryData = {
 const BASE_URL = import.meta.env.VITE_REST_COUNTRIES_URL;
 
 export const fetchColdCountryData = async (
-  country: string
+  country: string,
 ): Promise<BaseCountryData | null> => {
   try {
     const response = await axios.get<CountryApiResponse[]>(
-      `${BASE_URL}${country}?fullText=true`
+      `${BASE_URL}${country}?fullText=true`,
     );
 
     if (!Array.isArray(response.data) || response.data.length === 0) {
@@ -39,7 +39,7 @@ export const fetchColdCountryData = async (
   } catch (error: any) {
     if (axios.isAxiosError(error)) {
       console.error(
-        `Error fetching data for ${country}: ${error.response?.status}`
+        `Error fetching data for ${country}: ${error.response?.status}`,
       );
     } else {
       console.error(`Error fetching data for ${country}:`, error.message);

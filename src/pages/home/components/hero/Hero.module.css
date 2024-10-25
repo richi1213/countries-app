@@ -1,6 +1,6 @@
 .heroImage {
   position: relative;
-  background-image: url("assets/images/wp.jpg");
+  background-image: url('assets/images/wp.jpg');
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;

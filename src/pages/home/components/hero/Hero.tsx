@@ -10,13 +10,13 @@ import { translations } from '@/pages/home/components/hero/translations';
 
 const Card = lazy(() => import('~/src/components/ui/cards/Card'));
 const CardContent = lazy(
-  () => import('~/src/components/ui/cards/card-content/CardContent')
+  () => import('~/src/components/ui/cards/card-content/CardContent'),
 );
 const CardFooter = lazy(
-  () => import('~/src/components/ui/cards/card-footer/CardFooter')
+  () => import('~/src/components/ui/cards/card-footer/CardFooter'),
 );
 const CardHeader = lazy(
-  () => import('~/src/components/ui/cards/card-header/CardHeader')
+  () => import('~/src/components/ui/cards/card-header/CardHeader'),
 );
 
 const Hero: React.FC = () => {

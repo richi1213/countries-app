@@ -81,7 +81,7 @@ const CountryDetails = () => {
           <p key={item.label} className={styles.countryInfo}>
             <strong>{item.label}:</strong> {item.value}
           </p>
-        ) : null
+        ) : null,
       )}
       <CountryMapLinks countryData={country} />
     </div>

@@ -46,13 +46,13 @@ const CountryList = () => {
 
   const handleDelete = (
     event: React.MouseEvent<HTMLButtonElement>,
-    name: string
+    name: string,
   ) => {
     event.preventDefault();
     (event.currentTarget as HTMLButtonElement).blur();
 
     const country = state.countries.find(
-      (country) => country.name[lang] === name
+      (country) => country.name[lang] === name,
     );
     if (country) {
       dispatch({

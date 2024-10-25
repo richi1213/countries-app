@@ -1,5 +1,5 @@
-import styles from "@/pages/countries/components/country-details/country-header/CountryHeader.module.css";
-import { Country } from "@/pages/countries/components/country-details/types";
+import styles from '@/pages/countries/components/country-details/country-header/CountryHeader.module.css';
+import { Country } from '@/pages/countries/components/country-details/types';
 
 type CountryHeaderProps = {
   countryData: Country;

@@ -16,7 +16,7 @@ type CountryCardWrapperProps = {
   handleLike: (name: string) => void;
   handleDelete: (
     event: React.MouseEvent<HTMLButtonElement>,
-    name: string
+    name: string,
   ) => void;
 };
 

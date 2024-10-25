@@ -3,8 +3,8 @@ import {
   DeleteButton,
   DeleteButtonProps,
   LikeButtonProps,
-} from "components/ui/buttons";
-import styles from "components/ui/cards/card-buttons-wrapper/CardButtonsWrapper.module.css";
+} from 'components/ui/buttons';
+import styles from 'components/ui/cards/card-buttons-wrapper/CardButtonsWrapper.module.css';
 
 type CardButtonsWrapperProps = {
   likeButtonProps: LikeButtonProps;
