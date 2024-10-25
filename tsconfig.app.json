@@ -11,7 +11,8 @@
     "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "moduleDetection": "force",
-    "noEmit": true,
+    "noEmit": false,
+    "emitDeclarationOnly": true,
     "jsx": "react-jsx",
 
     /* Linting */
@@ -29,7 +30,9 @@
       "assets": ["./src/assets"],
       "components/*": ["./src/components/*"],
       "components": ["./src/components"]
-    }
+    },
+
+    "composite": true
   },
   "include": ["src"]
 }

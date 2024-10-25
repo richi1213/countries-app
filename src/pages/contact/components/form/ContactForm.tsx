@@ -20,24 +20,27 @@ const ContactForm = () => {
 
     switch (name) {
       case 'firstName':
-      case 'lastName':
+      case 'lastName': {
         if (value.length < 3 || value.length > 30) {
           errorMessage = `${
             name === 'firstName' ? 'First name' : 'Last name'
           } ${translated.nErr}`;
         }
         break;
-      case 'email':
+      }
+      case 'email': {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(value)) {
           errorMessage = translated.mailErr;
         }
         break;
-      case 'message':
+      }
+      case 'message': {
         if (value.length < 4) {
           errorMessage = translated.mErr;
         }
         break;
+      }
       default:
         break;
     }

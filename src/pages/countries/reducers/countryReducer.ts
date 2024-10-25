@@ -23,17 +23,19 @@ type Action =
 
 export const reducer = (state: State, action: Action): State => {
   switch (action.type) {
-    case 'country/liked':
+    case 'country/liked': {
+      const newCountries = state.countries.map((country) =>
+        country.name[action.payload.lang] === action.payload.name
+          ? { ...country, likes: country.likes + 1 }
+          : country
+      );
       return {
         ...state,
-        countries: state.countries.map((country) =>
-          country.name[action.payload.lang] === action.payload.name
-            ? { ...country, likes: country.likes + 1 }
-            : country
-        ),
+        countries: newCountries,
       };
+    }
 
-    case 'country/setSortOrderAndSort':
+    case 'country/setSortOrderAndSort': {
       const nonDeletedCountries = state.countries.filter(
         (country) => !country.isDeleted
       );
@@ -50,26 +52,29 @@ export const reducer = (state: State, action: Action): State => {
         isAscending: action.payload.isAscending,
         countries: [...sortedNonDeletedCountries, ...deletedCountries],
       };
+    }
 
-    case 'country/toggleDelete':
+    case 'country/toggleDelete': {
+      const newCountries = state.countries.map((country) =>
+        country.name[action.payload.lang] === action.payload.name
+          ? { ...country, isDeleted: action.payload.isDeleted }
+          : country
+      );
+
       return {
         ...state,
-        countries: [
-          ...state.countries.map((country) =>
-            country.name[action.payload.lang] === action.payload.name
-              ? { ...country, isDeleted: action.payload.isDeleted }
-              : country
-          ),
-        ].sort((a, b) =>
+        countries: newCountries.sort((a, b) =>
           a.isDeleted === b.isDeleted ? 0 : a.isDeleted ? 1 : -1
         ),
       };
+    }
 
-    case 'country/added':
+    case 'country/added': {
       return {
         ...state,
         countries: [action.payload.country, ...state.countries],
       };
+    }
 
     default:
       return state;
