@@ -36,13 +36,15 @@ export const fetchColdCountryData = async (
       population: population ?? 0,
       capital: capital?.[0] ?? 'N/A',
     };
-  } catch (error: any) {
+  } catch (error: unknown) {
     if (axios.isAxiosError(error)) {
       console.error(
         `Error fetching data for ${country}: ${error.response?.status}`,
       );
-    } else {
+    } else if (error instanceof Error) {
       console.error(`Error fetching data for ${country}:`, error.message);
+    } else {
+      console.error(`Error fetching data for ${country}:`, error);
     }
     return null;
   }

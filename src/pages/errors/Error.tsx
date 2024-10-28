@@ -1,8 +1,14 @@
 import { useRouteError, Link } from 'react-router-dom';
 import styles from '@/pages/errors/Error.module.css';
 
+type RouteError = {
+  message: string;
+  statusText?: string;
+  status?: number;
+};
+
 const Error = () => {
-  const error: any = useRouteError();
+  const error = useRouteError() as RouteError;
 
   return (
     <div className={styles.errorContainer}>
