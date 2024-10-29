@@ -11,6 +11,7 @@ import {
   About,
   Countries,
   Contact,
+  Verification,
   NotFound,
   Error,
   countriesLoader,
@@ -41,6 +42,7 @@ const router = createBrowserRouter(
           />
         </Route>
         <Route path='contact' element={<Contact />} />
+        <Route path='verification' element={<Verification />} />
       </Route>
 
       <Route path='*' element={<NotFound />} />

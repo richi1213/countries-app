@@ -36,6 +36,9 @@ const Nav: React.FC = () => {
         <NavLink to={`/${lang}/contact`} className={handleActiveNav}>
           {translated.contact}
         </NavLink>
+        <NavLink to={`/${lang}/verification`} className={handleActiveNav}>
+          {translated.verification}
+        </NavLink>
       </div>
     </nav>
   );
