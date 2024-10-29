@@ -7,12 +7,11 @@
     "skipLibCheck": true,
 
     /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
+    "moduleResolution": "Bundler",
+    // "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "moduleDetection": "force",
-    "noEmit": false,
-    "emitDeclarationOnly": true,
+    // "noEmit": false,
     "jsx": "react-jsx",
 
     /* Linting */
@@ -20,6 +19,8 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true,
+    "composite": true,
 
     /* Path */
     "baseUrl": "./",
@@ -30,9 +31,7 @@
       "assets": ["./src/assets"],
       "components/*": ["./src/components/*"],
       "components": ["./src/components"]
-    },
-
-    "composite": true
+    }
   },
   "include": ["src"]
 }
