@@ -5,13 +5,16 @@ import { TextField, Button, Tabs, Tab } from '@mui/material';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { translations } from 'components/ui/forms/translations';
 import { Lang } from '@/types';
-import { TranslatedCountryData } from '@/pages/countries/components/list/types';
+import { TransformedCountryData } from '@/pages/countries/components/list/types';
 import { capitalizeWords } from '@/helpers/capitalizeWords';
+import { postData } from '~/src/pages/countries/api/database/services';
+import { PostData } from '~/src/pages/countries/api/database/types';
+import { BaseCountryData } from '~/src/pages/countries/api/types';
 
 type NewCountryFormProps = {
   handleClose: () => void;
-  handleAddCountry: (newCountry: TranslatedCountryData) => void;
-  existingCountries: TranslatedCountryData[];
+  handleAddCountry: (newCountry: TransformedCountryData) => void;
+  existingCountries: TransformedCountryData[];
 };
 
 const NewCountryForm: React.FC<NewCountryFormProps> = ({
@@ -133,8 +136,7 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
     }
   };
 
-  // Updated handleSubmit
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if (!isFormValid()) {
@@ -152,7 +154,7 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
       return;
     }
 
-    const newCountry: TranslatedCountryData = {
+    const newCountry: TransformedCountryData = {
       name: {
         en: capitalizeWords(formData.countryName.en),
         ka: capitalizeWords(formData.countryName.ka),
@@ -168,24 +170,47 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
       isDeleted: false,
     };
 
-    handleAddCountry(newCountry);
+    const { name, flag, population, capital, photo } = newCountry;
+    const countryToPost: BaseCountryData = {
+      name: {
+        en: name.en,
+        ka: name.ka,
+      },
+      capital: {
+        en: capital.en,
+        ka: capital.ka,
+      },
+      flag,
+      population,
+      photo,
+    };
 
-    // Clear form fields after submission
-    setFormData({
-      countryName: { en: '', ka: '' },
-      capital: { en: '', ka: '' },
-      population: 0,
-      photoFile: '',
-      flagFile: '',
-    });
-    setCountryFormDataError({
-      countryNameError: { en: '', ka: '' },
-      capitalError: { en: '', ka: '' },
-      populationError: { en: '', ka: '' },
-      photoFileError: { en: '', ka: '' },
-      flagFileError: { en: '', ka: '' },
-    });
-    handleClose();
+    try {
+      const postDataPayload: PostData = { countryData: countryToPost };
+      const response = await postData(postDataPayload);
+      console.log('Country added successfully:', response);
+
+      handleAddCountry(newCountry);
+
+      setFormData({
+        countryName: { en: '', ka: '' },
+        capital: { en: '', ka: '' },
+        population: 0,
+        photoFile: '',
+        flagFile: '',
+      });
+      setCountryFormDataError({
+        countryNameError: { en: '', ka: '' },
+        capitalError: { en: '', ka: '' },
+        populationError: { en: '', ka: '' },
+        photoFileError: { en: '', ka: '' },
+        flagFileError: { en: '', ka: '' },
+      });
+
+      handleClose();
+    } catch (error) {
+      console.error('Error adding country:', error);
+    }
   };
 
   // Updated isFormValid to check both 'en' and 'ka' fields

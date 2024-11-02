@@ -9,6 +9,7 @@ import { reducer, State } from '@/pages/countries/reducers/countryReducer';
 import { Lang } from '@/types';
 import { TransformedCountryData } from '@/pages/countries/components/list/types';
 import { BaseCountryData } from '@/pages/countries/api/types';
+import { deleteData } from '@/pages/countries/api/database/services';
 
 const CountryList = () => {
   const countriesData = useLoaderData() as BaseCountryData[];
@@ -33,7 +34,7 @@ const CountryList = () => {
     dispatch({ type: 'country/liked', payload: { name, lang } });
   };
 
-  const handleDelete = (
+  const handleDelete = async (
     event: React.MouseEvent<HTMLButtonElement>,
     name: string,
   ) => {
@@ -43,11 +44,20 @@ const CountryList = () => {
     const country = state.countries.find(
       (country) => country.name[lang] === name,
     );
+
     if (country) {
+      const isDeleted = !country.isDeleted;
+
       dispatch({
         type: 'country/toggleDelete',
-        payload: { name, isDeleted: !country.isDeleted, lang },
+        payload: { name, isDeleted, lang },
       });
+
+      try {
+        await deleteData(name);
+      } catch (error) {
+        console.error('Error deleting country:', error);
+      }
     }
   };
 

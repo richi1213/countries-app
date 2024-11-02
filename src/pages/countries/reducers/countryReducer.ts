@@ -1,4 +1,4 @@
-import { TransformedCountryData } from '@/pages/countries/components/list/CountryList';
+import { TransformedCountryData } from '@/pages/countries/components/list/types';
 import { Lang } from '@/types';
 
 export type State = {

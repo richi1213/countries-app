@@ -1,4 +1,5 @@
 export type CountryApiResponse = {
+  id: string;
   name: {
     en: string;
     ka: string;
@@ -35,6 +36,7 @@ export type CountryApiResponse = {
 };
 
 export type BaseCountryData = {
+  id: string;
   name: {
     en: string;
     ka: string;
@@ -49,6 +51,7 @@ export type BaseCountryData = {
 };
 
 export type BaseCountryDataDetails = {
+  id: string;
   name: {
     en: string;
     ka: string;
