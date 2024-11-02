@@ -6,32 +6,21 @@ import styles from '@/pages/countries/components/list/CountryList.module.css';
 import CountryCardWrapperSkeleton from '@/pages/countries/components/list/card-wrapper/skeleton/CountryCardWrapperSkeleton';
 import AddCountryModal from 'components/ui/modals/AddCountryModal';
 import { reducer, State } from '@/pages/countries/reducers/countryReducer';
-import { transformedCountryTranslationsMap } from '@/pages/countries/components/list/countryTranslations';
-import { CountryData } from '@/pages/countries/components/list/types';
-import { TranslatedCountryData } from '@/pages/countries/components/list/types';
 import { Lang } from '@/types';
+import { TransformedCountryData } from '@/pages/countries/components/list/types';
+import { BaseCountryData } from '@/pages/countries/api/types';
 
 const CountryList = () => {
-  const countriesData = useLoaderData() as CountryData[];
+  const countriesData = useLoaderData() as BaseCountryData[];
 
-  const translatedCountriesData = countriesData.map((country) => {
-    const translated = transformedCountryTranslationsMap.get(country.name);
-
-    return {
-      ...country,
-      name: translated
-        ? { en: translated.en[0], ka: translated.ka[0] }
-        : { en: country.name, ka: country.name },
-      capital: translated
-        ? { en: translated.en[1], ka: translated.ka[1] }
-        : { en: country.capital, ka: country.capital },
-      likes: country.likes || 0,
-      isDeleted: false,
-    };
-  }) as TranslatedCountryData[];
+  const transformedCountriesData = countriesData.map((country) => ({
+    ...country,
+    likes: 0,
+    isDeleted: false,
+  })) as TransformedCountryData[];
 
   const initialCountries: State = {
-    countries: translatedCountriesData,
+    countries: transformedCountriesData,
     isAscending: true,
   };
 
@@ -69,8 +58,8 @@ const CountryList = () => {
     });
   };
 
-  const handleAddCountry = (newCountry: TranslatedCountryData) => {
-    const countryData: TranslatedCountryData = {
+  const handleAddCountry = (newCountry: TransformedCountryData) => {
+    const countryData: TransformedCountryData = {
       ...newCountry,
       likes: 0,
       isDeleted: false,

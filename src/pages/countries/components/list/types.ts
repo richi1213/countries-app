@@ -1,23 +1,6 @@
-import { BaseCountryData } from '@/pages/countries/api/countriesApi/countriesApi';
+import { BaseCountryData } from '@/pages/countries/api/types';
 
-export type CountryData = BaseCountryData & {
-  photo?: string;
-  likes: number;
-  isDeleted: boolean;
-};
-
-export type TranslatedCountryData = {
-  name: {
-    en: string;
-    ka: string;
-  };
-  capital: {
-    en: string;
-    ka: string;
-  };
-  population: number;
-  flag: string;
-  photo?: string;
+export type TransformedCountryData = BaseCountryData & {
   likes: number;
   isDeleted: boolean;
 };

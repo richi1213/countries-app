@@ -16,7 +16,7 @@ export const coldCountries: string[] = [
   'Austria',
   'Germany',
   'Poland',
-  'Czech Republic',
+  'Czechia',
   'Slovakia',
   'Ukraine',
   'Belarus',

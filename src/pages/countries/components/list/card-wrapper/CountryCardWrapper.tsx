@@ -5,14 +5,14 @@ import {
   CardFooter,
   CardButtonsWrapper,
 } from 'components/ui/cards';
-import { TranslatedCountryData } from '@/pages/countries/components/list/types';
+import { TransformedCountryData } from '@/pages/countries/components/list/types';
 import { Link, useParams } from 'react-router-dom';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import styles from '@/pages/countries/components/list/card-wrapper/CountryCardWrapper.module.css';
-import { Lang } from '~/src/types';
+import { Lang } from '@/types';
 
 type CountryCardWrapperProps = {
-  countries: TranslatedCountryData[];
+  countries: TransformedCountryData[];
   handleLike: (name: string) => void;
   handleDelete: (
     event: React.MouseEvent<HTMLButtonElement>,
@@ -29,40 +29,45 @@ const CountryCardWrapper = ({
 
   return (
     <>
-      {countries.map((country) => (
-        <div
-          className={`${styles.countryItem} ${
-            country.isDeleted ? styles.deletedCountry : ''
-          }`}
-          key={country.name[lang] || country.name.en}
-        >
-          <Card>
-            <Link to={`${country.name.en}`} className={styles.link}>
-              <CardHeader photo={country.photo} name={country.name[lang]} />
-              <CardContent
-                name={country.name[lang] ?? 'Unknown Name'}
-                population={country.population}
-                capitalCity={country.capital[lang] ?? 'Unknown Capital'}
+      {countries.map((country) => {
+        if (!country || !country.name) {
+          return null;
+        }
+
+        const countryName = country.name[lang] || country.name.en;
+
+        return (
+          <div
+            className={`${styles.countryItem} ${
+              country.isDeleted ? styles.deletedCountry : ''
+            }`}
+            key={countryName}
+          >
+            <Card>
+              <Link to={`${country.name.en}`} className={styles.link}>
+                <CardHeader photo={country.photo} name={countryName} />
+                <CardContent
+                  name={countryName}
+                  population={country.population}
+                  capitalCity={country.capital[lang] ?? 'Unknown Capital'}
+                />
+                <CardFooter flag={country.flag} countryName={countryName} />
+              </Link>
+              <CardButtonsWrapper
+                likeButtonProps={{
+                  icon: <FavoriteBorderIcon />,
+                  initialLikes: country.likes,
+                  onLike: () => handleLike(country.name[lang]),
+                }}
+                deleteButtonProps={{
+                  onDelete: (event) => handleDelete(event, country.name[lang]),
+                  isDeleted: country.isDeleted || false,
+                }}
               />
-              <CardFooter
-                flag={country.flag}
-                countryName={country.name[lang]}
-              />
-            </Link>
-            <CardButtonsWrapper
-              likeButtonProps={{
-                icon: <FavoriteBorderIcon />,
-                initialLikes: country.likes,
-                onLike: () => handleLike(country.name[lang]),
-              }}
-              deleteButtonProps={{
-                onDelete: (event) => handleDelete(event, country.name[lang]),
-                isDeleted: country.isDeleted || false,
-              }}
-            />
-          </Card>
-        </div>
-      ))}
+            </Card>
+          </div>
+        );
+      })}
     </>
   );
 };

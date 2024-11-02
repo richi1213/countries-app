@@ -1,8 +1,8 @@
-import { TranslatedCountryData } from '@/pages/countries/components/list/types';
+import { TransformedCountryData } from '@/pages/countries/components/list/CountryList';
 import { Lang } from '@/types';
 
 export type State = {
-  countries: TranslatedCountryData[];
+  countries: TransformedCountryData[];
   isAscending: boolean;
 };
 
@@ -18,7 +18,7 @@ type Action =
     }
   | {
       type: 'country/added';
-      payload: { country: TranslatedCountryData; lang: Lang };
+      payload: { country: TransformedCountryData; lang: Lang };
     };
 
 export const reducer = (state: State, action: Action): State => {
