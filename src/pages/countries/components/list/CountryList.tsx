@@ -109,8 +109,6 @@ const CountryList = () => {
     }
   };
 
-  console.log(transformedCountriesData);
-
   return (
     <div className={styles.countryList}>
       <SortButton onSort={toggleSortOrder} isAscending={state.isAscending} />

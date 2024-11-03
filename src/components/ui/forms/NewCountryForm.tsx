@@ -11,6 +11,13 @@ import { postData } from '@/pages/countries/api/database/services';
 import { BaseCountryData } from '@/pages/countries/api/types';
 import { v4 as uuidv4 } from 'uuid';
 
+type FormFieldNames =
+  | 'countryName'
+  | 'capital'
+  | 'population'
+  | 'photoFile'
+  | 'flagFile';
+
 type NewCountryFormProps = {
   handleClose: () => void;
   handleAddCountry: (newCountry: TransformedCountryData) => void;
@@ -117,20 +124,20 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
 
         reader.readAsDataURL(file);
       }
-    } else if (name === 'countryName' || name === 'capital') {
-      setFormData((prevData) => ({
-        ...prevData,
-        [name]: {
-          ...prevData[name],
-          [currentTab]: value,
-        },
-      }));
-      validateField(name, value);
-    } else {
+    } else if (name === 'population') {
       const populationValue = value === '' ? 0 : Number(value);
       setFormData((prevData) => ({
         ...prevData,
         [name]: populationValue,
+      }));
+      validateField(name, value);
+    } else {
+      setFormData((prevData) => ({
+        ...prevData,
+        [name as FormFieldNames]: {
+          ...(prevData[name as FormFieldNames] as { en: string; ka: string }),
+          [currentTab]: value,
+        },
       }));
       validateField(name, value);
     }
@@ -171,6 +178,7 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
     };
 
     const { id, name, flag, population, capital, photo } = newCountry;
+
     const countryToPost: BaseCountryData = {
       id: id,
       name: {
@@ -191,6 +199,7 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
       console.log('Country added successfully:', response);
 
       handleAddCountry(newCountry);
+      console.log(newCountry);
 
       setFormData({
         countryName: { en: '', ka: '' },

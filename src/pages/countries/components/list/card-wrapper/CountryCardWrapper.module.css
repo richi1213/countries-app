@@ -10,7 +10,7 @@
   color: inherit;
 }
 
-.deletedCountry {
+/* .deletedCountry {
   opacity: 0.5;
   background-color: #9ca3af;
   filter: blur(0.8px);
@@ -19,4 +19,4 @@
     opacity 0.3s ease,
     filter 0.3s ease,
     transform 0.3s ease;
-}
+} */
