@@ -7,9 +7,9 @@ import { translations } from 'components/ui/forms/translations';
 import { Lang } from '@/types';
 import { TransformedCountryData } from '@/pages/countries/components/list/types';
 import { capitalizeWords } from '@/helpers/capitalizeWords';
-import { postData } from '~/src/pages/countries/api/database/services';
-import { PostData } from '~/src/pages/countries/api/database/types';
-import { BaseCountryData } from '~/src/pages/countries/api/types';
+import { postData } from '@/pages/countries/api/database/services';
+import { BaseCountryData } from '@/pages/countries/api/types';
+import { v4 as uuidv4 } from 'uuid';
 
 type NewCountryFormProps = {
   handleClose: () => void;
@@ -118,7 +118,6 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
         reader.readAsDataURL(file);
       }
     } else if (name === 'countryName' || name === 'capital') {
-      // Handle name and capital input per language
       setFormData((prevData) => ({
         ...prevData,
         [name]: {
@@ -128,9 +127,10 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
       }));
       validateField(name, value);
     } else {
+      const populationValue = value === '' ? 0 : Number(value);
       setFormData((prevData) => ({
         ...prevData,
-        [name]: name === 'population' && value === '' ? null : value,
+        [name]: populationValue,
       }));
       validateField(name, value);
     }
@@ -155,6 +155,7 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
     }
 
     const newCountry: TransformedCountryData = {
+      id: uuidv4(),
       name: {
         en: capitalizeWords(formData.countryName.en),
         ka: capitalizeWords(formData.countryName.ka),
@@ -169,8 +170,9 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
       likes: 0,
     };
 
-    const { name, flag, population, capital, photo } = newCountry;
+    const { id, name, flag, population, capital, photo } = newCountry;
     const countryToPost: BaseCountryData = {
+      id: id,
       name: {
         en: name.en,
         ka: name.ka,
@@ -185,8 +187,7 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
     };
 
     try {
-      const postDataPayload: PostData = { countryData: countryToPost };
-      const response = await postData(postDataPayload);
+      const response = await postData(countryToPost);
       console.log('Country added successfully:', response);
 
       handleAddCountry(newCountry);
@@ -212,9 +213,7 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
     }
   };
 
-  // Updated isFormValid to check both 'en' and 'ka' fields
   const isFormValid = () => {
-    // Validate fields for both languages
     validateField('countryName', formData.countryName.en, 'en');
     validateField('countryName', formData.countryName.ka, 'ka');
     validateField('capital', formData.capital.en, 'en');

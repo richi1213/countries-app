@@ -10,20 +10,23 @@ import { Link, useParams } from 'react-router-dom';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import styles from '@/pages/countries/components/list/card-wrapper/CountryCardWrapper.module.css';
 import { Lang } from '@/types';
+import { MouseEvent } from 'react';
 
 type CountryCardWrapperProps = {
   countries: TransformedCountryData[];
   handleLike: (name: string) => void;
   handleDelete: (
-    event: React.MouseEvent<HTMLButtonElement>,
+    event: MouseEvent<HTMLButtonElement>,
     countryId: string,
   ) => void;
+  handleEdit: (event: MouseEvent<HTMLButtonElement>, countryId: string) => void;
 };
 
 const CountryCardWrapper = ({
   countries,
   handleLike,
   handleDelete,
+  handleEdit,
 }: CountryCardWrapperProps) => {
   const { lang = 'en' } = useParams<{ lang: Lang }>();
 
@@ -38,7 +41,7 @@ const CountryCardWrapper = ({
         const countryId = country.id || '';
 
         return (
-          <div className={styles.countryItem} key={countryName}>
+          <div className={styles.countryItem} key={countryId}>
             <Card>
               <Link to={`${country.name.en}`} className={styles.link}>
                 <CardHeader photo={country.photo} name={countryName} />
@@ -54,6 +57,9 @@ const CountryCardWrapper = ({
                   icon: <FavoriteBorderIcon />,
                   initialLikes: country.likes,
                   onLike: () => handleLike(countryName),
+                }}
+                editButtonProps={{
+                  onEdit: (event) => handleEdit(event, countryId),
                 }}
                 deleteButtonProps={{
                   onDelete: (event) => handleDelete(event, countryId),

@@ -19,6 +19,10 @@ type Action =
   | {
       type: 'country/added';
       payload: { country: TransformedCountryData };
+    }
+  | {
+      type: 'country/edited';
+      payload: { id: string; updatedData: Partial<TransformedCountryData> };
     };
 
 export const reducer = (state: State, action: Action): State => {
@@ -61,9 +65,29 @@ export const reducer = (state: State, action: Action): State => {
     }
 
     case 'country/added': {
+      const existingCountry = state.countries.find(
+        (country) => country.id === action.payload.country.id,
+      );
+
+      if (!existingCountry) {
+        return {
+          ...state,
+          countries: [action.payload.country, ...state.countries],
+        };
+      }
+      return state;
+    }
+
+    case 'country/edited': {
+      const newCountries = state.countries.map((country) => {
+        if (country.id === action.payload.id) {
+          return { ...country, ...action.payload.updatedData };
+        }
+        return country;
+      });
       return {
         ...state,
-        countries: [action.payload.country, ...state.countries],
+        countries: newCountries,
       };
     }
 

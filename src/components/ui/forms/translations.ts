@@ -18,6 +18,8 @@ export const translations = {
     uploadFlag: 'Upload Flag',
     addCountry: 'Add Country',
     cancel: 'Cancel',
+
+    saveChanges: 'Save changes',
   },
   ka: {
     errCountry: 'ქვეყნის დასახელება უნდა იყოს 4-დან 30 სიბოლომდე.',
@@ -39,5 +41,7 @@ export const translations = {
     uploadFlag: 'დროშის ატვირთვა',
     addCountry: 'ქვეყნის დამატება',
     cancel: 'გაუქმება',
+
+    saveChanges: 'ცვლილებების დამახსოვრება',
   },
 } as const;
