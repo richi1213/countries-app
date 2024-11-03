@@ -1,9 +1,9 @@
 import styles from '@/pages/countries/components/country-details/map-links/CountryMapLinks.module.css';
-import { Country } from '@/pages/countries/components/country-details/types';
+import { BaseCountryDataDetails } from '@/pages/countries/api/types';
 import { useParams } from 'react-router-dom';
 
 type CountryMapLinksProps = {
-  countryData: Country;
+  countryData: BaseCountryDataDetails;
 };
 
 const CountryMapLinks = ({ countryData }: CountryMapLinksProps) => {
@@ -17,7 +17,7 @@ const CountryMapLinks = ({ countryData }: CountryMapLinksProps) => {
       <ul className={styles.mapLinks}>
         <li>
           <a
-            href={countryData.maps.googleMaps}
+            href={countryData.maps.google}
             target='_blank'
             rel='noopener noreferrer'
           >
@@ -26,7 +26,7 @@ const CountryMapLinks = ({ countryData }: CountryMapLinksProps) => {
         </li>
         <li>
           <a
-            href={countryData.maps.openStreetMaps}
+            href={countryData.maps.osm}
             target='_blank'
             rel='noopener noreferrer'
           >

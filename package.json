@@ -10,7 +10,9 @@
     "prettier": "prettier . --write",
     "preview": "vite preview",
     "prepare": "husky",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "seed-db": "node data/init.js",
+    "start-json-server": "json-server --watch data/database.json"
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
@@ -18,9 +20,12 @@
     "@mui/icons-material": "^6.1.2",
     "@mui/material": "^6.1.2",
     "axios": "^1.7.7",
+    "dotenv": "^16.4.5",
+    "json-server": "^1.0.0-beta.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.26.2",
+    "uuid": "^11.0.2",
     "vite-tsconfig-paths": "^5.0.1"
   },
   "devDependencies": {

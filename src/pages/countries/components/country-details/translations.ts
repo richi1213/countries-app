@@ -1,6 +1,6 @@
 export const translations = {
   en: {
-    officialName: 'Official Name:',
+    officialName: 'Official Name',
     capital: 'Capital',
     region: 'Region',
     subRegion: 'Subregion',
@@ -18,7 +18,7 @@ export const translations = {
     unknown: 'Unknown',
   },
   ka: {
-    officialName: 'ოფიციალური სახელი:',
+    officialName: 'ოფიციალური სახელი',
     capital: 'დედაქალაქი',
     region: 'რეგიონი',
     subRegion: 'ქვემო რეგიონი',
