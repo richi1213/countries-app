@@ -18,9 +18,10 @@ export const fetchColdCountryData = async (
       throw new Error('No data found for the specified country.');
     }
 
-    const { name, flag, population, capital, photo } = response.data[0];
+    const { id, name, flag, population, capital, photo } = response.data[0];
 
     return {
+      id,
       name,
       flag,
       population,

@@ -5,11 +5,11 @@ import CountryCardWrapper from '@/pages/countries/components/list/card-wrapper/C
 import styles from '@/pages/countries/components/list/CountryList.module.css';
 import CountryCardWrapperSkeleton from '@/pages/countries/components/list/card-wrapper/skeleton/CountryCardWrapperSkeleton';
 import AddCountryModal from 'components/ui/modals/AddCountryModal';
-import { reducer, State } from '@/pages/countries/reducers/countryReducer';
 import { Lang } from '@/types';
 import { TransformedCountryData } from '@/pages/countries/components/list/types';
 import { BaseCountryData } from '@/pages/countries/api/types';
 import { deleteData } from '@/pages/countries/api/database/services';
+import { reducer, State } from '@/pages/countries/reducers/countryReducer';
 
 const CountryList = () => {
   const countriesData = useLoaderData() as BaseCountryData[];
@@ -17,7 +17,6 @@ const CountryList = () => {
   const transformedCountriesData = countriesData.map((country) => ({
     ...country,
     likes: 0,
-    isDeleted: false,
   })) as TransformedCountryData[];
 
   const initialCountries: State = {
@@ -31,30 +30,30 @@ const CountryList = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleLike = (name: string) => {
-    dispatch({ type: 'country/liked', payload: { name, lang } });
+    dispatch({
+      type: 'country/liked',
+      payload: { name, lang },
+    });
   };
 
   const handleDelete = async (
     event: React.MouseEvent<HTMLButtonElement>,
-    name: string,
+    countryId: string,
   ) => {
     event.preventDefault();
     (event.currentTarget as HTMLButtonElement).blur();
 
-    const country = state.countries.find(
-      (country) => country.name[lang] === name,
-    );
+    const country = state.countries.find((country) => country.id === countryId);
 
     if (country) {
-      const isDeleted = !country.isDeleted;
-
       dispatch({
-        type: 'country/toggleDelete',
-        payload: { name, isDeleted, lang },
+        type: 'country/deleted',
+        payload: { name: country.name[lang], lang },
       });
 
       try {
-        await deleteData(name);
+        await deleteData(countryId);
+        console.log(`Deleted ${country.name.en}`);
       } catch (error) {
         console.error('Error deleting country:', error);
       }
@@ -72,11 +71,10 @@ const CountryList = () => {
     const countryData: TransformedCountryData = {
       ...newCountry,
       likes: 0,
-      isDeleted: false,
     };
     dispatch({
       type: 'country/added',
-      payload: { country: countryData, lang },
+      payload: { country: countryData },
     });
   };
 

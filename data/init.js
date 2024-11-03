@@ -10,17 +10,6 @@ const BASE_URL = process.env.VITE_REST_COUNTRIES_URL;
 const UNSPLASH_BASE_URL = process.env.VITE_UNSPLASH_BASE_URL;
 const UNSPLASH_ACCESS_KEY = process.env.VITE_UNSPLASH_ACCESS_KEY;
 
-const convertUrlToBase64 = async (url) => {
-  try {
-    const response = await axios.get(url, { responseType: 'arraybuffer' });
-    const buffer = Buffer.from(response.data, 'binary').toString('base64');
-    return `data:image/svg+xml;base64,${buffer}`;
-  } catch (error) {
-    console.error('Failed to convert URL to Base64:', error);
-    throw error;
-  }
-};
-
 const writeToDatabase = async (filePath, data) => {
   try {
     const dataWithCountriesKey = { countries: data };
@@ -35,6 +24,7 @@ const writeToDatabase = async (filePath, data) => {
   }
 };
 
+// Fetch country data from the REST Countries API
 const fetchColdCountryData = async (country) => {
   try {
     const response = await axios.get(`${BASE_URL}${country}?fullText=true`);
@@ -62,14 +52,12 @@ const fetchColdCountryData = async (country) => {
       maps,
     } = response.data[0];
 
-    const flagBase64 = await convertUrlToBase64(flags.svg || '');
-
     return {
       name: {
         en: name.common,
       },
       officialName: name.official,
-      flag: flagBase64,
+      flag: flags.svg || flags.png || '',
       population,
       capital: {
         en: capital?.[0] ?? 'N/A',
@@ -101,6 +89,7 @@ const fetchColdCountryData = async (country) => {
   }
 };
 
+// Fetch a photo of the capital city from Unsplash
 const fetchCapitalCityPhoto = async (capital) => {
   try {
     const response = await axios.get(UNSPLASH_BASE_URL, {
@@ -169,53 +158,49 @@ const transformedCountryTranslationsMap = new Map([
   ['China', { en: ['China', 'Beijing'], ka: ['ჩინეთი', 'პეკინი'] }],
 ]);
 
-export const countriesInit = async () => {
+// Get translation for a given country
+const getTranslations = (countryName) => {
+  return (
+    transformedCountryTranslationsMap.get(countryName) || {
+      en: ['N/A', 'N/A'],
+      ka: ['N/A', 'N/A'],
+    }
+  );
+};
+
+// Main function to initialize and fetch all data
+const countriesInit = async () => {
   const dataPromises = Array.from(transformedCountryTranslationsMap.keys()).map(
     async (countryName) => {
-      try {
-        const countryData = await fetchColdCountryData(countryName);
+      const countryData = await fetchColdCountryData(countryName);
+      if (!countryData || !countryData.capital.en) return null;
 
-        if (countryData && countryData.capital.en) {
-          const photoUrl = await fetchCapitalCityPhoto(countryData.capital.en);
+      const photoUrl = await fetchCapitalCityPhoto(countryData.capital.en);
+      const translations = getTranslations(countryName);
 
-          const translations =
-            transformedCountryTranslationsMap.get(countryName);
-
-          return {
-            ...countryData,
-            photo: photoUrl,
-            name: {
-              en: translations?.en[0] || countryData.name.en,
-              ka: translations?.ka[0] || 'N/A',
-            },
-            capital: {
-              en: translations?.en[1] || countryData.capital.en,
-              ka: translations?.ka[1] || 'N/A',
-            },
-          };
-        }
-
-        return null;
-      } catch (error) {
-        console.error(`Error fetching data for ${countryName}:`, error);
-        return null;
-      }
+      return {
+        ...countryData,
+        photo: photoUrl,
+        name: { en: translations.en[0], ka: translations.ka[0] },
+        capital: { en: translations.en[1], ka: translations.ka[1] },
+      };
     },
   );
 
-  const results = await Promise.all(dataPromises);
-  const filteredResults = results.filter((data) => data !== null);
+  const results = await Promise.allSettled(dataPromises);
+  const filteredResults = results
+    .filter((res) => res.status === 'fulfilled' && res.value)
+    .map((res) => res.value);
 
   const __filename = fileURLToPath(import.meta.url);
   const __dirname = path.dirname(__filename);
   const filePath = path.join(__dirname, 'database.json');
 
   await writeToDatabase(filePath, filteredResults);
-
   return filteredResults;
 };
 
-// IIFE to call countriesInit
+// IIFE to initialize countries
 (async () => {
   try {
     const countriesData = await countriesInit();

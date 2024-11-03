@@ -14,9 +14,9 @@ export const postData = async (data: PostData): Promise<BaseCountryData> => {
   }
 };
 
-export const deleteData = async (countryName: string): Promise<void> => {
+export const deleteData = async (countryId: string): Promise<void> => {
   try {
-    await axios.delete(`${BASE_URL}?name.en=${countryName}`);
+    await axios.delete(`${BASE_URL}/${countryId}`);
   } catch (error) {
     console.error('Error deleting data:', error);
     throw error;

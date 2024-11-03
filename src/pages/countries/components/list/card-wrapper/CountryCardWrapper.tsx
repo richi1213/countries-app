@@ -16,7 +16,7 @@ type CountryCardWrapperProps = {
   handleLike: (name: string) => void;
   handleDelete: (
     event: React.MouseEvent<HTMLButtonElement>,
-    name: string,
+    countryId: string,
   ) => void;
 };
 
@@ -35,14 +35,10 @@ const CountryCardWrapper = ({
         }
 
         const countryName = country.name[lang] || country.name.en;
+        const countryId = country.id || '';
 
         return (
-          <div
-            className={`${styles.countryItem} ${
-              country.isDeleted ? styles.deletedCountry : ''
-            }`}
-            key={countryName}
-          >
+          <div className={styles.countryItem} key={countryName}>
             <Card>
               <Link to={`${country.name.en}`} className={styles.link}>
                 <CardHeader photo={country.photo} name={countryName} />
@@ -57,11 +53,10 @@ const CountryCardWrapper = ({
                 likeButtonProps={{
                   icon: <FavoriteBorderIcon />,
                   initialLikes: country.likes,
-                  onLike: () => handleLike(country.name[lang]),
+                  onLike: () => handleLike(countryName),
                 }}
                 deleteButtonProps={{
-                  onDelete: (event) => handleDelete(event, country.name[lang]),
-                  isDeleted: country.isDeleted || false,
+                  onDelete: (event) => handleDelete(event, countryId),
                 }}
               />
             </Card>

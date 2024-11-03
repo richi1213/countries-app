@@ -36,7 +36,7 @@ export type CountryApiResponse = {
 };
 
 export type BaseCountryData = {
-  id: string;
+  id?: string;
   name: {
     en: string;
     ka: string;
@@ -51,7 +51,7 @@ export type BaseCountryData = {
 };
 
 export type BaseCountryDataDetails = {
-  id: string;
+  id?: string;
   name: {
     en: string;
     ka: string;

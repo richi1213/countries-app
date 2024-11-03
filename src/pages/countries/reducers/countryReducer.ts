@@ -13,22 +13,23 @@ type Action =
       payload: { isAscending: boolean; lang: Lang };
     }
   | {
-      type: 'country/toggleDelete';
-      payload: { name: string; isDeleted: boolean; lang: Lang };
+      type: 'country/deleted';
+      payload: { name: string; lang: Lang };
     }
   | {
       type: 'country/added';
-      payload: { country: TransformedCountryData; lang: Lang };
+      payload: { country: TransformedCountryData };
     };
 
 export const reducer = (state: State, action: Action): State => {
   switch (action.type) {
     case 'country/liked': {
-      const newCountries = state.countries.map((country) =>
-        country.name[action.payload.lang] === action.payload.name
+      const newCountries = state.countries.map((country) => {
+        const countryName = country.name?.[action.payload.lang] || '';
+        return countryName === action.payload.name
           ? { ...country, likes: country.likes + 1 }
-          : country,
-      );
+          : country;
+      });
       return {
         ...state,
         countries: newCountries,
@@ -36,36 +37,26 @@ export const reducer = (state: State, action: Action): State => {
     }
 
     case 'country/setSortOrderAndSort': {
-      const nonDeletedCountries = state.countries.filter(
-        (country) => !country.isDeleted,
-      );
-      const deletedCountries = state.countries.filter(
-        (country) => country.isDeleted,
-      );
-
-      const sortedNonDeletedCountries = [...nonDeletedCountries].sort((a, b) =>
+      const sortedCountries = [...state.countries].sort((a, b) =>
         action.payload.isAscending ? a.likes - b.likes : b.likes - a.likes,
       );
 
       return {
         ...state,
         isAscending: action.payload.isAscending,
-        countries: [...sortedNonDeletedCountries, ...deletedCountries],
+        countries: sortedCountries,
       };
     }
 
-    case 'country/toggleDelete': {
-      const newCountries = state.countries.map((country) =>
-        country.name[action.payload.lang] === action.payload.name
-          ? { ...country, isDeleted: action.payload.isDeleted }
-          : country,
+    case 'country/deleted': {
+      const newCountries = state.countries.filter(
+        (country) =>
+          (country.name?.[action.payload.lang] || '') !== action.payload.name,
       );
 
       return {
         ...state,
-        countries: newCountries.sort((a, b) =>
-          a.isDeleted === b.isDeleted ? 0 : a.isDeleted ? 1 : -1,
-        ),
+        countries: newCountries,
       };
     }
 

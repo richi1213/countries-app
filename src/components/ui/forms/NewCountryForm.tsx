@@ -167,7 +167,6 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
       photo: formData.photoFile || '',
       flag: formData.flagFile || '',
       likes: 0,
-      isDeleted: false,
     };
 
     const { name, flag, population, capital, photo } = newCountry;
