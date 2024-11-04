@@ -4,7 +4,7 @@ import {
   BaseCountryDataDetails,
 } from '@/pages/countries/api/types';
 
-const BASE_URL = 'http://localhost:3000/countries';
+const BASE_URL = import.meta.env.VITE_COLD_COUNTRIES;
 
 export const fetchColdCountryDetails = async (
   country: string,
