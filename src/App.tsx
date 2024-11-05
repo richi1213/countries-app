@@ -14,8 +14,6 @@ import {
   Verification,
   NotFound,
   Error,
-  countriesLoader,
-  countryDetailsLoader,
   CountryDetails,
   languageLoader,
 } from '@/pages';
@@ -34,12 +32,8 @@ const router = createBrowserRouter(
         <Route index element={<Home />} />
         <Route path='about' element={<About />} />
         <Route path='countries' errorElement={<Error />}>
-          <Route index element={<Countries />} loader={countriesLoader} />
-          <Route
-            path=':name'
-            element={<CountryDetails />}
-            loader={countryDetailsLoader}
-          />
+          <Route index element={<Countries />} />
+          <Route path=':name' element={<CountryDetails />} />
         </Route>
         <Route path='contact' element={<Contact />} />
         <Route path='verification' element={<Verification />} />

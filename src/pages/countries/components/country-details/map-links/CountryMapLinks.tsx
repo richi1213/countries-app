@@ -17,7 +17,7 @@ const CountryMapLinks = ({ countryData }: CountryMapLinksProps) => {
       <ul className={styles.mapLinks}>
         <li>
           <a
-            href={countryData.maps.google}
+            href={countryData.maps?.google}
             target='_blank'
             rel='noopener noreferrer'
           >
@@ -26,7 +26,7 @@ const CountryMapLinks = ({ countryData }: CountryMapLinksProps) => {
         </li>
         <li>
           <a
-            href={countryData.maps.osm}
+            href={countryData.maps?.osm}
             target='_blank'
             rel='noopener noreferrer'
           >

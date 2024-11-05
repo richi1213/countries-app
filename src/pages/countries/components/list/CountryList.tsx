@@ -1,5 +1,5 @@
-import { MouseEvent, Suspense, useReducer, useState } from 'react';
-import { useLoaderData, useParams } from 'react-router-dom';
+import { MouseEvent, useEffect, useReducer, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { SortButton, AddCountryButton } from 'components/ui/buttons';
 import CountryCardWrapper from '@/pages/countries/components/list/card-wrapper/CountryCardWrapper';
 import styles from '@/pages/countries/components/list/CountryList.module.css';
@@ -7,34 +7,72 @@ import CountryCardWrapperSkeleton from '@/pages/countries/components/list/card-w
 import ReusableModal from 'components/ui/modals/ReusableModal';
 import { Lang } from '@/types';
 import { TransformedCountryData } from '@/pages/countries/components/list/types';
-import { BaseCountryData } from '@/pages/countries/api/types';
-import { deleteData } from '@/pages/countries/api/database/services';
+import { CountryApiResponse } from '@/pages/countries/api/types';
+import { deleteData, getData } from '@/pages/countries/api/database/services';
 import NewCountryForm from 'components/ui/forms/NewCountryForm';
 import { translations } from '@/components/ui/modals/translations';
 import EditCountryForm from 'components/ui/forms/EditCountryForm';
 import { reducer, State } from '@/pages/countries/reducers/countryReducer';
+import { useQuery } from '@tanstack/react-query';
+import Error from '@/pages/errors/Error';
 
-const CountryList = () => {
-  const countriesData = useLoaderData() as BaseCountryData[];
-
-  const transformedCountriesData = countriesData.map((country) => ({
-    ...country,
-    likes: 0,
-  })) as TransformedCountryData[];
-
-  const initialCountries: State = {
-    countries: transformedCountriesData,
-    isAscending: true,
-  };
-
+const CountryList: React.FC = () => {
   const { lang = 'en' } = useParams<{ lang: Lang }>();
-
-  const [state, dispatch] = useReducer(reducer, initialCountries);
   const [isAddNewCountryModalOpen, setIsAddNewCountryModalOpen] =
     useState(false);
   const [isEditCountryModalOpen, setIsEditCountryModalOpen] = useState(false);
   const [selectedCountry, setSelectedCountry] =
     useState<TransformedCountryData | null>(null);
+  const [isInitialized, setIsInitialized] = useState(false);
+
+  const { data, error, isLoading } = useQuery<Partial<CountryApiResponse[]>>({
+    queryKey: ['baseCountries'],
+    queryFn: getData,
+  });
+
+  const transformedCountriesData = data?.map((country) => ({
+    id: country?.id,
+    name: country?.name,
+    flag: country?.flag,
+    population: country?.population,
+    capital: country?.capital,
+    photo: country?.photo,
+    likes: 0,
+  })) as TransformedCountryData[];
+
+  const initialCountries: State = {
+    countries: [],
+    isAscending: true,
+  };
+
+  const [state, dispatch] = useReducer(reducer, initialCountries);
+
+  useEffect(() => {
+    if (
+      transformedCountriesData &&
+      transformedCountriesData.length > 0 &&
+      !isInitialized
+    ) {
+      dispatch({
+        type: 'country/setInitialData',
+        payload: transformedCountriesData,
+      });
+      setIsInitialized(true);
+    }
+  }, [transformedCountriesData, isInitialized]);
+
+  if (isLoading) {
+    return <CountryCardWrapperSkeleton />;
+  }
+
+  if (error) {
+    return (
+      <Error
+        customMessage='Failed to load countries.'
+        customStatusText={error.message}
+      />
+    );
+  }
 
   const handleLike = (name: string) => {
     dispatch({
@@ -48,7 +86,7 @@ const CountryList = () => {
     countryId: string,
   ) => {
     event.preventDefault();
-    (event.currentTarget as HTMLButtonElement).blur();
+    event.currentTarget.blur();
 
     const country = state.countries.find((country) => country.id === countryId);
 
@@ -75,13 +113,9 @@ const CountryList = () => {
   };
 
   const handleAddCountry = (newCountry: TransformedCountryData) => {
-    const countryData: TransformedCountryData = {
-      ...newCountry,
-      likes: 0,
-    };
     dispatch({
       type: 'country/added',
-      payload: { country: countryData },
+      payload: { country: { ...newCountry, likes: 0 } },
     });
   };
 
@@ -98,7 +132,6 @@ const CountryList = () => {
   };
 
   const handleEdit = (updatedData: Partial<TransformedCountryData>) => {
-    console.log(updatedData);
     if (selectedCountry && selectedCountry.id) {
       dispatch({
         type: 'country/edited',
@@ -115,14 +148,13 @@ const CountryList = () => {
       <AddCountryButton
         handleOpenModal={() => setIsAddNewCountryModalOpen(true)}
       />
-      <Suspense fallback={<CountryCardWrapperSkeleton />}>
-        <CountryCardWrapper
-          countries={state.countries}
-          handleLike={handleLike}
-          handleDelete={handleDelete}
-          handleEdit={handleEditCountry}
-        />
-      </Suspense>
+
+      <CountryCardWrapper
+        countries={state.countries}
+        handleLike={handleLike}
+        handleDelete={handleDelete}
+        handleEdit={handleEditCountry}
+      />
 
       <ReusableModal
         open={isEditCountryModalOpen && selectedCountry !== null}

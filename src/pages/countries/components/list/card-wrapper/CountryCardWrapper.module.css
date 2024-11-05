@@ -9,14 +9,3 @@
   text-decoration: none;
   color: inherit;
 }
-
-/* .deletedCountry {
-  opacity: 0.5;
-  background-color: #9ca3af;
-  filter: blur(0.8px);
-  transform: scale(1.05);
-  transition:
-    opacity 0.3s ease,
-    filter 0.3s ease,
-    transform 0.3s ease;
-} */

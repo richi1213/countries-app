@@ -47,8 +47,8 @@
         "google": "https://goo.gl/maps/jmEVLugreeqiZXxbA",
         "osm": "https://www.openstreetmap.org/relation/1428125"
       },
-      "photo": "https://images.unsplash.com/photo-1465167797660-a2163cb7105a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxPdHRhd2F8ZW58MHx8fHwxNzMwNjQ3ODMzfDA&ixlib=rb-4.0.3&q=80&w=400",
-      "id": "9069"
+      "photo": "https://images.unsplash.com/photo-1465167797660-a2163cb7105a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxPdHRhd2F8ZW58MHx8fHwxNzMwNzk2NjIwfDA&ixlib=rb-4.0.3&q=80&w=400",
+      "id": "9878"
     },
     {
       "name": {
@@ -89,8 +89,8 @@
         "google": "https://goo.gl/maps/WxFWSQuc3oamNxoE6",
         "osm": "https://www.openstreetmap.org/relation/299133"
       },
-      "photo": "https://images.unsplash.com/photo-1725215763908-83dede205f4d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxSZXlramF2aWt8ZW58MHx8fHwxNzMwNjEyMzQ3fDA&ixlib=rb-4.0.3&q=80&w=400",
-      "id": "abb8"
+      "photo": "https://images.unsplash.com/photo-1725215763908-83dede205f4d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxSZXlramF2aWt8ZW58MHx8fHwxNzMwNzk2NjE5fDA&ixlib=rb-4.0.3&q=80&w=400",
+      "id": "d00f"
     },
     {
       "name": {
@@ -133,8 +133,56 @@
         "google": "https://goo.gl/maps/j3289UPEQXt1ceSy8",
         "osm": "https://www.openstreetmap.org/relation/2184073"
       },
-      "photo": "https://images.unsplash.com/photo-1618422960849-739830070f39?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxOdXVrfGVufDB8fHx8MTczMDY0Nzg1MHww&ixlib=rb-4.0.3&q=80&w=400",
-      "id": "bf66"
+      "photo": "https://images.unsplash.com/photo-1618422960849-739830070f39?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxOdXVrfGVufDB8fHx8MTczMDc5NjYyMXww&ixlib=rb-4.0.3&q=80&w=400",
+      "id": "4e79"
+    },
+    {
+      "name": {
+        "en": "Norway",
+        "ka": "ნორვეგია"
+      },
+      "officialName": "Kingdom of Norway",
+      "flag": "https://flagcdn.com/no.svg",
+      "population": 5379475,
+      "capital": {
+        "en": "Oslo",
+        "ka": "ოსლო"
+      },
+      "region": "Europe",
+      "subregion": "Northern Europe",
+      "area": 323802,
+      "languages": [
+        "Norwegian Nynorsk",
+        "Norwegian Bokmål",
+        "Sami"
+      ],
+      "currencies": [
+        {
+          "name": "Norwegian krone",
+          "symbol": "kr"
+        }
+      ],
+      "timezones": [
+        "UTC+01:00"
+      ],
+      "demonyms": {
+        "male": "Norwegian",
+        "female": "Norwegian"
+      },
+      "borders": [
+        "FIN",
+        "SWE",
+        "RUS"
+      ],
+      "drivingSide": "right",
+      "fifaCode": "NOR",
+      "startOfWeek": "monday",
+      "maps": {
+        "google": "https://goo.gl/maps/htWRrphA7vNgQNdSA",
+        "osm": "https://www.openstreetmap.org/relation/2978650"
+      },
+      "photo": "https://images.unsplash.com/photo-1433757741270-94a3bcadc2f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxPc2xvfGVufDB8fHx8MTczMDczMjM5OHww&ixlib=rb-4.0.3&q=80&w=400",
+      "id": "2f28"
     },
     {
       "name": {
@@ -179,7 +227,7 @@
         "osm": "https://www.openstreetmap.org/relation/52822"
       },
       "photo": "https://images.unsplash.com/photo-1556740762-234ad84a3bb1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxTdG9ja2hvbG18ZW58MHx8fHwxNzMwNzMyMzk4fDA&ixlib=rb-4.0.3&q=80&w=400",
-      "id": "2104"
+      "id": "e26c"
     },
     {
       "name": {
@@ -226,7 +274,7 @@
         "osm": "openstreetmap.org/relation/54224"
       },
       "photo": "https://images.unsplash.com/photo-1522885147691-06d859633fb8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxIZWxzaW5raXxlbnwwfHx8fDE3MzA3MzIzOTh8MA&ixlib=rb-4.0.3&q=80&w=400",
-      "id": "bf92"
+      "id": "2e3c"
     },
     {
       "name": {
@@ -274,72 +322,7 @@
         "osm": "https://www.openstreetmap.org/relation/50046"
       },
       "photo": "https://images.unsplash.com/photo-1502473379243-ba6449c3b6c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxDb3BlbmhhZ2VufGVufDB8fHx8MTczMDczMjM5N3ww&ixlib=rb-4.0.3&q=80&w=400",
-      "id": "9d8b"
-    },
-    {
-      "name": {
-        "en": "Russia",
-        "ka": "რუსეთი"
-      },
-      "officialName": "Russian Federation",
-      "flag": "https://flagcdn.com/ru.svg",
-      "population": 144104080,
-      "capital": {
-        "en": "Moscow",
-        "ka": "მოსკოვი"
-      },
-      "region": "Europe",
-      "subregion": "Eastern Europe",
-      "area": 17098242,
-      "languages": [
-        "Russian"
-      ],
-      "currencies": [
-        {
-          "name": "Russian ruble",
-          "symbol": "₽"
-        }
-      ],
-      "timezones": [
-        "UTC+03:00",
-        "UTC+04:00",
-        "UTC+06:00",
-        "UTC+07:00",
-        "UTC+08:00",
-        "UTC+09:00",
-        "UTC+10:00",
-        "UTC+11:00",
-        "UTC+12:00"
-      ],
-      "demonyms": {
-        "male": "Russian",
-        "female": "Russian"
-      },
-      "borders": [
-        "AZE",
-        "BLR",
-        "CHN",
-        "EST",
-        "FIN",
-        "GEO",
-        "KAZ",
-        "PRK",
-        "LVA",
-        "LTU",
-        "MNG",
-        "NOR",
-        "POL",
-        "UKR"
-      ],
-      "drivingSide": "right",
-      "fifaCode": "RUS",
-      "startOfWeek": "monday",
-      "maps": {
-        "google": "https://goo.gl/maps/4F4PpDhGJgVvLby57",
-        "osm": "https://www.openstreetmap.org/relation/60189#map=3/65.15/105.29"
-      },
-      "photo": "https://images.unsplash.com/photo-1541447271487-09612b3f49f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxNb3Njb3d8ZW58MHx8fHwxNzMwNjU2MDcxfDA&ixlib=rb-4.0.3&q=80&w=400",
-      "id": "25e2"
+      "id": "2a39"
     },
     {
       "name": {
@@ -384,7 +367,7 @@
         "osm": "https://www.openstreetmap.org/relation/79510"
       },
       "photo": "https://images.unsplash.com/photo-1526154668476-dfe52ce0bfcc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxUYWxsaW5ufGVufDB8fHx8MTczMDczMjM5OHww&ixlib=rb-4.0.3&q=80&w=400",
-      "id": "33c1"
+      "id": "e161"
     },
     {
       "name": {
@@ -430,8 +413,8 @@
         "google": "https://goo.gl/maps/iQpUkH7ghq31ZtXe9",
         "osm": "https://www.openstreetmap.org/relation/72594"
       },
-      "photo": "https://images.unsplash.com/photo-1629961193013-3d74dc17aeab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxSaWdhfGVufDB8fHx8MTczMDYxMjM0N3ww&ixlib=rb-4.0.3&q=80&w=400",
-      "id": "6a51"
+      "photo": "https://images.unsplash.com/photo-1629961193013-3d74dc17aeab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxSaWdhfGVufDB8fHx8MTczMDc5NjYxOXww&ixlib=rb-4.0.3&q=80&w=400",
+      "id": "1e6d"
     },
     {
       "name": {
@@ -478,7 +461,7 @@
         "osm": "https://www.openstreetmap.org/relation/72596"
       },
       "photo": "https://images.unsplash.com/photo-1645998628999-c642d3200917?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxWaWxuaXVzfGVufDB8fHx8MTczMDczMjM5OHww&ixlib=rb-4.0.3&q=80&w=400",
-      "id": "7856"
+      "id": "0396"
     },
     {
       "name": {
@@ -532,8 +515,8 @@
         "google": "https://goo.gl/maps/e8M246zY4BSjkjAv6",
         "osm": "https://www.openstreetmap.org/relation/148838#map=2/20.6/-85.8"
       },
-      "photo": "https://images.unsplash.com/photo-1543372654-b45dd90eeee5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxXYXNoaW5ndG9uJTJDJTIwRC5DLnxlbnwwfHx8fDE3MzA2MTIzNDd8MA&ixlib=rb-4.0.3&q=80&w=400",
-      "id": "5b50"
+      "photo": "https://images.unsplash.com/photo-1543372654-b45dd90eeee5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxXYXNoaW5ndG9uJTJDJTIwRC5DLnxlbnwwfHx8fDE3MzA3OTY2MjB8MA&ixlib=rb-4.0.3&q=80&w=400",
+      "id": "fb8f"
     },
     {
       "name": {
@@ -584,7 +567,7 @@
         "osm": "https://www.openstreetmap.org/relation/62149"
       },
       "photo": "https://images.unsplash.com/photo-1526129318478-62ed807ebdf9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxMb25kb258ZW58MHx8fHwxNzMwNzMyMzk3fDA&ixlib=rb-4.0.3&q=80&w=400",
-      "id": "a83c"
+      "id": "13c4"
     },
     {
       "name": {
@@ -635,7 +618,7 @@
         "osm": "https://www.openstreetmap.org/relation/51701"
       },
       "photo": "https://images.unsplash.com/photo-1521066350215-051129ff0a8a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxCZXJufGVufDB8fHx8MTczMDczMjM5N3ww&ixlib=rb-4.0.3&q=80&w=400",
-      "id": "1a74"
+      "id": "ecba"
     },
     {
       "name": {
@@ -686,7 +669,7 @@
         "osm": "https://www.openstreetmap.org/relation/16239"
       },
       "photo": "https://images.unsplash.com/photo-1516550893923-42d28e5677af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxWaWVubmF8ZW58MHx8fHwxNzMwNzMyMzk4fDA&ixlib=rb-4.0.3&q=80&w=400",
-      "id": "0c31"
+      "id": "5ccf"
     },
     {
       "name": {
@@ -737,8 +720,8 @@
         "google": "https://goo.gl/maps/mD9FBMq1nvXUBrkv6",
         "osm": "https://www.openstreetmap.org/relation/51477"
       },
-      "photo": "https://images.unsplash.com/photo-1528728329032-2972f65dfb3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxCZXJsaW58ZW58MHx8fHwxNzMwNjU2NjAwfDA&ixlib=rb-4.0.3&q=80&w=400",
-      "id": "abaa"
+      "photo": "https://images.unsplash.com/photo-1528728329032-2972f65dfb3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxCZXJsaW58ZW58MHx8fHwxNzMwNzk2NjIwfDA&ixlib=rb-4.0.3&q=80&w=400",
+      "id": "938c"
     },
     {
       "name": {
@@ -788,7 +771,7 @@
         "osm": "https://www.openstreetmap.org/relation/49715"
       },
       "photo": "https://images.unsplash.com/photo-1519197924294-4ba991a11128?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxXYXJzYXd8ZW58MHx8fHwxNzMwNzMyMzk3fDA&ixlib=rb-4.0.3&q=80&w=400",
-      "id": "68a0"
+      "id": "fbe4"
     },
     {
       "name": {
@@ -836,7 +819,7 @@
         "osm": "https://www.openstreetmap.org/relation/51684"
       },
       "photo": "https://images.unsplash.com/photo-1503410781609-75b1d892dd28?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxQcmFndWV8ZW58MHx8fHwxNzMwNzMyMzk4fDA&ixlib=rb-4.0.3&q=80&w=400",
-      "id": "0666"
+      "id": "3150"
     },
     {
       "name": {
@@ -884,7 +867,7 @@
         "osm": "https://www.openstreetmap.org/relation/14296"
       },
       "photo": "https://images.unsplash.com/photo-1621944860890-ec7d53c45a5f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxCcmF0aXNsYXZhfGVufDB8fHx8MTczMDczMjM5OHww&ixlib=rb-4.0.3&q=80&w=400",
-      "id": "9adc"
+      "id": "e0dc"
     },
     {
       "name": {
@@ -933,8 +916,8 @@
         "google": "https://goo.gl/maps/DvgJMiPJ7aozKFZv7",
         "osm": "https://www.openstreetmap.org/relation/60199"
       },
-      "photo": "https://images.unsplash.com/photo-1616093708407-8d93651b2b04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxLeWl2fGVufDB8fHx8MTczMDY0NzgzM3ww&ixlib=rb-4.0.3&q=80&w=400",
-      "id": "4bbe"
+      "photo": "https://images.unsplash.com/photo-1616093708407-8d93651b2b04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxLeWl2fGVufDB8fHx8MTczMDc5NjYyMHww&ixlib=rb-4.0.3&q=80&w=400",
+      "id": "7e46"
     },
     {
       "name": {
@@ -983,7 +966,7 @@
         "osm": "https://www.openstreetmap.org/relation/59065"
       },
       "photo": "https://images.unsplash.com/photo-1689034915352-f33897491a81?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxNaW5za3xlbnwwfHx8fDE3MzA3MzIzOTh8MA&ixlib=rb-4.0.3&q=80&w=400",
-      "id": "20a0"
+      "id": "3de2"
     },
     {
       "name": {
@@ -1033,7 +1016,7 @@
         "osm": "https://www.openstreetmap.org/relation/214665"
       },
       "photo": "https://images.unsplash.com/photo-1663250429863-c7ddff5b2dd0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxOdXItU3VsdGFufGVufDB8fHx8MTczMDczMjM5OHww&ixlib=rb-4.0.3&q=80&w=400",
-      "id": "c29e"
+      "id": "7cc6"
     },
     {
       "name": {
@@ -1079,7 +1062,7 @@
         "osm": "https://www.openstreetmap.org/relation/161033"
       },
       "photo": "https://images.unsplash.com/photo-1588530013770-67361359a970?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxVbGFuJTIwQmF0b3J8ZW58MHx8fHwxNzMwNzMyMzk4fDA&ixlib=rb-4.0.3&q=80&w=400",
-      "id": "632f"
+      "id": "d30e"
     },
     {
       "name": {
@@ -1121,7 +1104,7 @@
         "osm": "https://www.openstreetmap.org/relation/382313"
       },
       "photo": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxUb2t5b3xlbnwwfHx8fDE3MzA3MzIzOTd8MA&ixlib=rb-4.0.3&q=80&w=400",
-      "id": "4d07"
+      "id": "2d44"
     },
     {
       "name": {
@@ -1165,7 +1148,7 @@
         "osm": "https://www.openstreetmap.org/relation/307756"
       },
       "photo": "https://images.unsplash.com/photo-1506905635675-bb2205492c53?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxTZW91bHxlbnwwfHx8fDE3MzA3MzIzOTd8MA&ixlib=rb-4.0.3&q=80&w=400",
-      "id": "8a02"
+      "id": "7586"
     },
     {
       "name": {
@@ -1224,7 +1207,7 @@
         "osm": "https://www.openstreetmap.org/relation/270056"
       },
       "photo": "https://images.unsplash.com/photo-1542185269-844e51205907?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxCZWlqaW5nfGVufDB8fHx8MTczMDczMjM5OHww&ixlib=rb-4.0.3&q=80&w=400",
-      "id": "852a"
+      "id": "8d83"
     }
   ]
 }

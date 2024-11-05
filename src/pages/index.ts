@@ -9,6 +9,4 @@ export { default as Error } from '@/pages/errors/Error';
 export { default as CountryDetails } from '@/pages/countries/components/country-details/CountryDetails';
 
 // loaders
-export { countriesLoader } from '@/pages/countries/loaders/countriesLoader';
-export { countryDetailsLoader } from '@/pages/countries/loaders/countryDetailsLoader';
 export { languageLoader } from '@/pages/errors/not-found/languageLoader';

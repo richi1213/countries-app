@@ -7,18 +7,25 @@ type RouteError = {
   status?: number;
 };
 
-const Error = () => {
+type ErrorProps = {
+  customMessage?: string;
+  customStatusText?: string;
+};
+
+const Error: React.FC<ErrorProps> = ({ customMessage, customStatusText }) => {
   const error = useRouteError() as RouteError;
 
   return (
     <div className={styles.errorContainer}>
       <h1 className={styles.errorTitle}>Oops! Something went wrong.</h1>
       <p className={styles.errorMessage}>
-        {error?.message || 'An unknown error occurred.'}
+        {customMessage || error?.message || 'An unknown error occurred.'}
       </p>
-      {error?.statusText && (
-        <p className={styles.errorDetails}>{error.statusText}</p>
-      )}
+      {customStatusText || error?.statusText ? (
+        <p className={styles.errorDetails}>
+          {customStatusText || error.statusText}
+        </p>
+      ) : null}
       <Link to='/' className={styles.errorButton}>
         Go to Homepage
       </Link>

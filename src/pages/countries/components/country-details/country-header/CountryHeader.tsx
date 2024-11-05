@@ -11,11 +11,13 @@ const CountryHeader = ({ countryData }: CountryHeaderProps) => {
   const { lang } = useParams<{ lang: Lang }>();
   return (
     <>
-      <h2 className={styles.countryTitle}>{countryData.name[lang ?? 'en']}</h2>
+      <h2 className={styles.countryTitle}>
+        {countryData.name?.[lang ?? 'en']}
+      </h2>
       <img
         className={styles.countryFlag}
         src={countryData.flag}
-        alt={`Flag of ${countryData.name[lang ?? 'en']}`}
+        alt={`Flag of ${countryData.name?.[lang ?? 'en']}`}
       />
     </>
   );
