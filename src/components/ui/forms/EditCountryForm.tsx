@@ -8,6 +8,7 @@ import { Lang } from '@/types';
 import { TransformedCountryData } from '@/pages/countries/components/list/types';
 import { editData } from '@/pages/countries/api/database/services';
 import { BaseCountryData } from '@/pages/countries/api/types';
+import { useMutation } from '@tanstack/react-query';
 
 type FormData = {
   countryName: { en: string; ka: string };
@@ -114,6 +115,25 @@ const EditCountryForm: React.FC<EditCountryFormProps> = ({
     }
   };
 
+  const { mutate } = useMutation({
+    mutationFn: editData,
+    onError: (error) => {
+      console.error('Error updating country:', error);
+    },
+    onSuccess: () => {
+      const updatedCountry: TransformedCountryData = {
+        ...existingCountry,
+        name: formData.countryName,
+        capital: formData.capital,
+        population: formData.population,
+        photo: formData.photoFile || existingCountry.photo,
+        flag: formData.flagFile || existingCountry.flag,
+      };
+      handleEditCountry(updatedCountry);
+      handleClose();
+    },
+  });
+
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -126,30 +146,11 @@ const EditCountryForm: React.FC<EditCountryFormProps> = ({
       photo: formData.photoFile || existingCountry.photo,
     };
 
-    try {
-      let response = null;
-      if (existingCountry.id) {
-        response = await editData(existingCountry.id, updatedData);
-      }
-
-      if (response) {
-        const updatedCountry: TransformedCountryData = {
-          ...existingCountry,
-          name: formData.countryName,
-          capital: formData.capital,
-          population: formData.population,
-          photo: formData.photoFile || existingCountry.photo,
-          flag: formData.flagFile || existingCountry.flag,
-        };
-
-        console.log('Country updated successfully:', response);
-        handleEditCountry(updatedCountry);
-        handleClose();
-      } else {
-        console.error('No response from server');
-      }
-    } catch (error) {
-      console.error('Error updating country:', error);
+    if (existingCountry.id) {
+      mutate({
+        countryId: existingCountry.id,
+        updatedData: updatedData,
+      });
     }
   };
 

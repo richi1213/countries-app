@@ -77,10 +77,13 @@ export const deleteData = async (countryId: string): Promise<void> => {
   }
 };
 
-export const editData = async (
-  countryId: string,
-  updatedData: Partial<CountryApiResponse>,
-): Promise<BaseCountryData> => {
+export const editData = async ({
+  countryId,
+  updatedData,
+}: {
+  countryId: string;
+  updatedData: Partial<CountryApiResponse>;
+}): Promise<BaseCountryData> => {
   try {
     const response = await httpClient.patch(`/${countryId}`, updatedData);
     return response.data;

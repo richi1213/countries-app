@@ -13,7 +13,7 @@ import NewCountryForm from 'components/ui/forms/NewCountryForm';
 import { translations } from '@/components/ui/modals/translations';
 import EditCountryForm from 'components/ui/forms/EditCountryForm';
 import { reducer, State } from '@/pages/countries/reducers/countryReducer';
-import { useQuery } from '@tanstack/react-query';
+import { useMutation, useQuery } from '@tanstack/react-query';
 import Error from '@/pages/errors/Error';
 
 const CountryList: React.FC = () => {
@@ -28,6 +28,13 @@ const CountryList: React.FC = () => {
   const { data, error, isLoading } = useQuery<Partial<CountryApiResponse[]>>({
     queryKey: ['baseCountries'],
     queryFn: getData,
+  });
+
+  const { mutate } = useMutation<void, Error, string>({
+    mutationFn: deleteData,
+    onError: (error) => {
+      console.error('Error deleting country:', error);
+    },
   });
 
   const transformedCountriesData = data?.map((country) => ({
@@ -95,14 +102,9 @@ const CountryList: React.FC = () => {
         type: 'country/deleted',
         payload: { name: country.name[lang], lang },
       });
-
-      try {
-        await deleteData(countryId);
-        console.log(`Deleted ${country.name.en}`);
-      } catch (error) {
-        console.error('Error deleting country:', error);
-      }
     }
+
+    mutate(countryId);
   };
 
   const toggleSortOrder = () => {

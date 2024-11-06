@@ -10,6 +10,7 @@ import { capitalizeWords } from '@/helpers/capitalizeWords';
 import { postData } from '@/pages/countries/api/database/services';
 import { BaseCountryData } from '@/pages/countries/api/types';
 import { v4 as uuidv4 } from 'uuid';
+import { useMutation } from '@tanstack/react-query';
 
 type FormFieldNames =
   | 'countryName'
@@ -143,6 +144,10 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
     }
   };
 
+  const { mutate } = useMutation({
+    mutationFn: postData,
+  });
+
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -180,7 +185,7 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
     const { id, name, flag, population, capital, photo } = newCountry;
 
     const countryToPost: BaseCountryData = {
-      id: id,
+      id,
       name: {
         en: name.en,
         ka: name.ka,
@@ -194,32 +199,17 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
       photo,
     };
 
-    try {
-      const response = await postData(countryToPost);
-      console.log('Country added successfully:', response);
-
-      handleAddCountry(newCountry);
-      console.log(newCountry);
-
-      setFormData({
-        countryName: { en: '', ka: '' },
-        capital: { en: '', ka: '' },
-        population: 0,
-        photoFile: '',
-        flagFile: '',
-      });
-      setCountryFormDataError({
-        countryNameError: { en: '', ka: '' },
-        capitalError: { en: '', ka: '' },
-        populationError: { en: '', ka: '' },
-        photoFileError: { en: '', ka: '' },
-        flagFileError: { en: '', ka: '' },
-      });
-
-      handleClose();
-    } catch (error) {
-      console.error('Error adding country:', error);
-    }
+    mutate(countryToPost, {
+      onSuccess: () => {
+        handleAddCountry(newCountry);
+        setFormData(initialCountryFormData);
+        setCountryFormDataError(initialCountryFormDataError);
+        handleClose();
+      },
+      onError: (error: Error) => {
+        console.error('Error adding country:', error);
+      },
+    });
   };
 
   const isFormValid = () => {
@@ -235,7 +225,6 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
     validateField('photoFile', formData.photoFile, currentTab);
     validateField('flagFile', formData.flagFile, currentTab);
 
-    // Manually check if any errors exist
     return !(
       countryFormDataError.countryNameError.en ||
       countryFormDataError.countryNameError.ka ||
