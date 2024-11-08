@@ -1,4 +1,10 @@
-import { MouseEvent, useEffect, useReducer, useState } from 'react';
+import {
+  MouseEvent,
+  useCallback,
+  useEffect,
+  useReducer,
+  useState,
+} from 'react';
 import { useParams } from 'react-router-dom';
 import { SortButton, AddCountryButton } from 'components/ui/buttons';
 import CountryCardWrapper from '@/pages/countries/components/list/card-wrapper/CountryCardWrapper';
@@ -21,6 +27,7 @@ import EditCountryForm from 'components/ui/forms/EditCountryForm';
 import { reducer, State } from '@/pages/countries/reducers/countryReducer';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import Error from '@/pages/errors/Error';
+import debounce from 'lodash.debounce';
 
 const CountryList: React.FC = () => {
   const { lang = 'en' } = useParams<{ lang: Lang }>();
@@ -79,6 +86,17 @@ const CountryList: React.FC = () => {
     }
   }, [countriesData, isInitialized]);
 
+  // Debounced function for adding likes
+  const debouncedAddLikes = useCallback(
+    debounce((id: string, updatedLikes: number) => {
+      addLikes({
+        countryId: id,
+        updatedData: { likes: updatedLikes },
+      });
+    }, 3000),
+    [addLikes],
+  );
+
   if (isLoading) {
     return <CountryCardWrapperSkeleton />;
   }
@@ -101,10 +119,7 @@ const CountryList: React.FC = () => {
     const likedCountry = state.countries.find((country) => country.id === id);
     const updatedLikes = likedCountry ? likedCountry.likes + 1 : 1;
 
-    addLikes({
-      countryId: id,
-      updatedData: { likes: updatedLikes },
-    });
+    debouncedAddLikes(id, updatedLikes);
   };
 
   const handleDelete = async (

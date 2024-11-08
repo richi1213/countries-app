@@ -24,6 +24,7 @@
     "axios": "^1.7.7",
     "dotenv": "^16.4.5",
     "json-server": "^1.0.0-beta.3",
+    "lodash.debounce": "^4.0.8",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.26.2",
@@ -32,6 +33,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
+    "@types/lodash.debounce": "^4.0.9",
     "@types/node": "^22.7.3",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",

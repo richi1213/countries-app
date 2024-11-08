@@ -48,7 +48,7 @@
         "osm": "https://www.openstreetmap.org/relation/1428125"
       },
       "photo": "https://images.unsplash.com/photo-1465167797660-a2163cb7105a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxPdHRhd2F8ZW58MHx8fHwxNzMxMDc5MDY0fDA&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 18,
+      "likes": 22,
       "id": "5f7e"
     },
     {
@@ -1351,63 +1351,6 @@
       "photo": "https://images.unsplash.com/photo-1586318355105-09019060cf51?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxOZXclMjBEZWxoaXxlbnwwfHx8fDE3MzEwODE0MTN8MA&ixlib=rb-4.0.3&q=80&w=400",
       "likes": 0,
       "id": "b9eb"
-    },
-    {
-      "name": {
-        "en": "Brazil",
-        "ka": "ბრაზილია"
-      },
-      "officialName": "Federative Republic of Brazil",
-      "flag": "https://flagcdn.com/br.svg",
-      "population": 212559409,
-      "capital": {
-        "en": "Brasília",
-        "ka": "ბრაზილია"
-      },
-      "region": "Americas",
-      "subregion": "South America",
-      "area": 8515767,
-      "languages": [
-        "Portuguese"
-      ],
-      "currencies": [
-        {
-          "name": "Brazilian real",
-          "symbol": "R$"
-        }
-      ],
-      "timezones": [
-        "UTC-05:00",
-        "UTC-04:00",
-        "UTC-03:00",
-        "UTC-02:00"
-      ],
-      "demonyms": {
-        "male": "Brazilian",
-        "female": "Brazilian"
-      },
-      "borders": [
-        "ARG",
-        "BOL",
-        "COL",
-        "GUF",
-        "GUY",
-        "PRY",
-        "PER",
-        "SUR",
-        "URY",
-        "VEN"
-      ],
-      "drivingSide": "right",
-      "fifaCode": "BRA",
-      "startOfWeek": "monday",
-      "maps": {
-        "google": "https://goo.gl/maps/waCKk21HeeqFzkNC9",
-        "osm": "https://www.openstreetmap.org/relation/59470"
-      },
-      "photo": null,
-      "likes": 0,
-      "id": "8572"
     },
     {
       "name": {
