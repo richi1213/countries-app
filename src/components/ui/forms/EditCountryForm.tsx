@@ -5,7 +5,6 @@ import { TextField, Button, Tabs, Tab } from '@mui/material';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { translations } from 'components/ui/forms/translations';
 import { Lang } from '@/types';
-import { TransformedCountryData } from '@/pages/countries/components/list/types';
 import { editData } from '@/pages/countries/api/database/services';
 import { BaseCountryData } from '@/pages/countries/api/types';
 import { useMutation } from '@tanstack/react-query';
@@ -20,8 +19,8 @@ type FormData = {
 
 type EditCountryFormProps = {
   handleClose: () => void;
-  handleEditCountry: (updatedCountry: TransformedCountryData) => void;
-  existingCountry: TransformedCountryData;
+  handleEditCountry: (updatedCountry: BaseCountryData) => void;
+  existingCountry: BaseCountryData;
 };
 
 const EditCountryForm: React.FC<EditCountryFormProps> = ({
@@ -121,7 +120,7 @@ const EditCountryForm: React.FC<EditCountryFormProps> = ({
       console.error('Error updating country:', error);
     },
     onSuccess: () => {
-      const updatedCountry: TransformedCountryData = {
+      const updatedCountry: BaseCountryData = {
         ...existingCountry,
         name: formData.countryName,
         capital: formData.capital,
@@ -144,6 +143,7 @@ const EditCountryForm: React.FC<EditCountryFormProps> = ({
       population: formData.population,
       capital: { en: formData.capital.en, ka: formData.capital.ka },
       photo: formData.photoFile || existingCountry.photo,
+      likes: existingCountry.likes,
     };
 
     if (existingCountry.id) {

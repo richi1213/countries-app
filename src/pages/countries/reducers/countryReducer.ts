@@ -7,14 +7,14 @@ export type State = {
 };
 
 type Action =
-  | { type: 'country/liked'; payload: { name: string; lang: Lang } }
+  | { type: 'country/liked'; payload: { id: string } }
   | {
       type: 'country/setSortOrderAndSort';
       payload: { isAscending: boolean; lang: Lang };
     }
   | {
       type: 'country/deleted';
-      payload: { name: string; lang: Lang };
+      payload: { id: string };
     }
   | {
       type: 'country/added';
@@ -32,10 +32,8 @@ type Action =
 export const reducer = (state: State, action: Action): State => {
   switch (action.type) {
     case 'country/liked': {
-      // akaa cvlilebebi sachiro
       const newCountries = state.countries.map((country) => {
-        const countryName = country.name?.[action.payload.lang] || '';
-        return countryName === action.payload.name
+        return country.id === action.payload.id
           ? { ...country, likes: country.likes + 1 }
           : country;
       });
@@ -59,8 +57,7 @@ export const reducer = (state: State, action: Action): State => {
 
     case 'country/deleted': {
       const newCountries = state.countries.filter(
-        (country) =>
-          (country.name?.[action.payload.lang] || '') !== action.payload.name,
+        (country) => country.id !== action.payload.id,
       );
 
       return {

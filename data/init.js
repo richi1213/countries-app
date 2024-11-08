@@ -156,6 +156,49 @@ const transformedCountryTranslationsMap = new Map([
     { en: ['South Korea', 'Seoul'], ka: ['სამხრეთ კორეა', 'სეული'] },
   ],
   ['China', { en: ['China', 'Beijing'], ka: ['ჩინეთი', 'პეკინი'] }],
+  ['India', { en: ['India', 'New Delhi'], ka: ['ინდოეთი', 'დელი'] }],
+  ['Brazil', { en: ['Brazil', 'Brasília'], ka: ['ბრაზილია', 'ბრაზილია'] }],
+  [
+    'Argentina',
+    { en: ['Argentina', 'Buenos Aires'], ka: ['არგენტინა', 'ბუენოს აირესი'] },
+  ],
+  [
+    'Australia',
+    { en: ['Australia', 'Canberra'], ka: ['ავსტრალია', 'კანბერა'] },
+  ],
+  [
+    'New Zealand',
+    { en: ['New Zealand', 'Wellington'], ka: ['ახალი ზელანდია', 'ველინგტონი'] },
+  ],
+  ['Mexico', { en: ['Mexico', 'Mexico City'], ka: ['მექსიკა', 'მეხიკო'] }],
+  ['France', { en: ['France', 'Paris'], ka: ['საფრანგეთი', 'პარიზი'] }],
+  ['Italy', { en: ['Italy', 'Rome'], ka: ['იტალია', 'რომი'] }],
+  ['Spain', { en: ['Spain', 'Madrid'], ka: ['ესპანეთი', 'მადრიდი'] }],
+  ['Portugal', { en: ['Portugal', 'Lisbon'], ka: ['პორტუგალია', 'ლისაბონი'] }],
+  ['Greece', { en: ['Greece', 'Athens'], ka: ['საბერძნეთი', 'ათენი'] }],
+  ['Turkey', { en: ['Turkey', 'Ankara'], ka: ['თურქეთი', 'ანკარა'] }],
+  [
+    'Saudi Arabia',
+    { en: ['Saudi Arabia', 'Riyadh'], ka: ['საუდის არაბეთი', 'ერიადი'] },
+  ],
+  ['Iran', { en: ['Iran', 'Tehran'], ka: ['ირანი', 'თეირანი'] }],
+  ['Iraq', { en: ['Iraq', 'Baghdad'], ka: ['ირაყი', 'ბაღდადი'] }],
+  ['Israel', { en: ['Israel', 'Jerusalem'], ka: ['ისრაელი', 'იერუსალიმი'] }],
+  ['Egypt', { en: ['Egypt', 'Cairo'], ka: ['ეგვიპტე', 'კაირო'] }],
+  [
+    'South Africa',
+    { en: ['South Africa', 'Pretoria'], ka: ['სამხრეთ აფრიკა', 'პრეტორია'] },
+  ],
+  ['Nigeria', { en: ['Nigeria', 'Abuja'], ka: ['ნიგერია', 'აბუჯა'] }],
+  ['Kenya', { en: ['Kenya', 'Nairobi'], ka: ['კენია', 'ნაირობი'] }],
+  ['Ghana', { en: ['Ghana', 'Accra'], ka: ['განა', 'აკრა'] }],
+  ['Colombia', { en: ['Colombia', 'Bogotá'], ka: ['კოლუმბია', 'ბოგოტა'] }],
+  ['Chile', { en: ['Chile', 'Santiago'], ka: ['ჩილე', 'სანტიაგო'] }],
+  ['Peru', { en: ['Peru', 'Lima'], ka: ['პერუ', 'ლიმა'] }],
+  [
+    'Venezuela',
+    { en: ['Venezuela', 'Caracas'], ka: ['ვენესუელა', 'კარაკასი'] },
+  ],
 ]);
 
 // Get translation for a given country

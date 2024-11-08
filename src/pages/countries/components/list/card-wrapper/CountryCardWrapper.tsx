@@ -5,16 +5,16 @@ import {
   CardFooter,
   CardButtonsWrapper,
 } from 'components/ui/cards';
-import { TransformedCountryData } from '@/pages/countries/components/list/types';
 import { Link, useParams } from 'react-router-dom';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import styles from '@/pages/countries/components/list/card-wrapper/CountryCardWrapper.module.css';
 import { Lang } from '@/types';
 import { MouseEvent } from 'react';
+import { BaseCountryData } from '@/pages/countries/api/types';
 
 type CountryCardWrapperProps = {
-  countries: TransformedCountryData[];
-  handleLike: (name: string) => void;
+  countries: BaseCountryData[];
+  handleLike: (id: string) => void;
   handleDelete: (
     event: MouseEvent<HTMLButtonElement>,
     countryId: string,
@@ -56,7 +56,7 @@ const CountryCardWrapper = ({
                 likeButtonProps={{
                   icon: <FavoriteBorderIcon />,
                   initialLikes: country.likes,
-                  onLike: () => handleLike(countryName),
+                  onLike: () => handleLike(countryId),
                 }}
                 editButtonProps={{
                   onEdit: (event) => handleEdit(event, countryId),

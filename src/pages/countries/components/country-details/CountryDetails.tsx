@@ -20,6 +20,8 @@ const CountryDetails: React.FC = () => {
     queryKey: ['baseCountryDetails', name],
     queryFn: () => getCountryData(name!),
     enabled: !!name,
+    gcTime: 60 * 1000,
+    staleTime: 40 * 1000,
   });
 
   if (isLoading) {

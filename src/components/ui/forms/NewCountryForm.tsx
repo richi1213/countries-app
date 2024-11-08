@@ -5,7 +5,6 @@ import { TextField, Button, Tabs, Tab } from '@mui/material';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { translations } from 'components/ui/forms/translations';
 import { Lang } from '@/types';
-import { TransformedCountryData } from '@/pages/countries/components/list/types';
 import { capitalizeWords } from '@/helpers/capitalizeWords';
 import { postData } from '@/pages/countries/api/database/services';
 import { BaseCountryData } from '@/pages/countries/api/types';
@@ -21,8 +20,8 @@ type FormFieldNames =
 
 type NewCountryFormProps = {
   handleClose: () => void;
-  handleAddCountry: (newCountry: TransformedCountryData) => void;
-  existingCountries: TransformedCountryData[];
+  handleAddCountry: (newCountry: BaseCountryData) => void;
+  existingCountries: BaseCountryData[];
 };
 
 const NewCountryForm: React.FC<NewCountryFormProps> = ({
@@ -166,7 +165,7 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
       return;
     }
 
-    const newCountry: TransformedCountryData = {
+    const newCountry: BaseCountryData = {
       id: uuidv4(),
       name: {
         en: capitalizeWords(formData.countryName.en),
@@ -182,7 +181,7 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
       likes: 0,
     };
 
-    const { id, name, flag, population, capital, photo } = newCountry;
+    const { id, name, flag, population, capital, photo, likes } = newCountry;
 
     const countryToPost: BaseCountryData = {
       id,
@@ -197,6 +196,7 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
       flag,
       population,
       photo,
+      likes,
     };
 
     mutate(countryToPost, {

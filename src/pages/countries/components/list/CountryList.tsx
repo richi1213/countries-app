@@ -10,7 +10,11 @@ import {
   BaseCountryData,
   CountryApiResponse,
 } from '@/pages/countries/api/types';
-import { deleteData, getData } from '@/pages/countries/api/database/services';
+import {
+  deleteData,
+  editData,
+  getData,
+} from '@/pages/countries/api/database/services';
 import NewCountryForm from 'components/ui/forms/NewCountryForm';
 import { translations } from '@/components/ui/modals/translations';
 import EditCountryForm from 'components/ui/forms/EditCountryForm';
@@ -30,12 +34,21 @@ const CountryList: React.FC = () => {
   const { data, error, isLoading } = useQuery<Partial<CountryApiResponse[]>>({
     queryKey: ['baseCountries'],
     queryFn: getData,
+    staleTime: 5 * 60 * 1000,
+    gcTime: 10 * 60 * 1000,
   });
 
-  const { mutate } = useMutation<void, Error, string>({
+  const { mutate: deleteCountry } = useMutation<void, Error, string>({
     mutationFn: deleteData,
     onError: (error) => {
       console.error('Error deleting country:', error);
+    },
+  });
+
+  const { mutate: addLikes } = useMutation({
+    mutationFn: editData,
+    onError: (error) => {
+      console.error('Error updating country data:', error);
     },
   });
 
@@ -79,11 +92,18 @@ const CountryList: React.FC = () => {
     );
   }
 
-  const handleLike = (name: string) => {
-    // SHECVAKE AK
+  const handleLike = (id: string) => {
     dispatch({
       type: 'country/liked',
-      payload: { name, lang },
+      payload: { id },
+    });
+
+    const likedCountry = state.countries.find((country) => country.id === id);
+    const updatedLikes = likedCountry ? likedCountry.likes + 1 : 1;
+
+    addLikes({
+      countryId: id,
+      updatedData: { likes: updatedLikes },
     });
   };
 
@@ -99,11 +119,11 @@ const CountryList: React.FC = () => {
     if (country) {
       dispatch({
         type: 'country/deleted',
-        payload: { name: country.name[lang], lang },
+        payload: { id: countryId },
       });
     }
 
-    mutate(countryId);
+    deleteCountry(countryId);
   };
 
   const toggleSortOrder = () => {
