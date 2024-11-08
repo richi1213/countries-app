@@ -6,8 +6,10 @@ import styles from '@/pages/countries/components/list/CountryList.module.css';
 import CountryCardWrapperSkeleton from '@/pages/countries/components/list/card-wrapper/skeleton/CountryCardWrapperSkeleton';
 import ReusableModal from 'components/ui/modals/ReusableModal';
 import { Lang } from '@/types';
-import { TransformedCountryData } from '@/pages/countries/components/list/types';
-import { CountryApiResponse } from '@/pages/countries/api/types';
+import {
+  BaseCountryData,
+  CountryApiResponse,
+} from '@/pages/countries/api/types';
 import { deleteData, getData } from '@/pages/countries/api/database/services';
 import NewCountryForm from 'components/ui/forms/NewCountryForm';
 import { translations } from '@/components/ui/modals/translations';
@@ -22,7 +24,7 @@ const CountryList: React.FC = () => {
     useState(false);
   const [isEditCountryModalOpen, setIsEditCountryModalOpen] = useState(false);
   const [selectedCountry, setSelectedCountry] =
-    useState<TransformedCountryData | null>(null);
+    useState<BaseCountryData | null>(null);
   const [isInitialized, setIsInitialized] = useState(false);
 
   const { data, error, isLoading } = useQuery<Partial<CountryApiResponse[]>>({
@@ -37,15 +39,15 @@ const CountryList: React.FC = () => {
     },
   });
 
-  const transformedCountriesData = data?.map((country) => ({
+  const countriesData = data?.map((country) => ({
     id: country?.id,
     name: country?.name,
     flag: country?.flag,
     population: country?.population,
     capital: country?.capital,
     photo: country?.photo,
-    likes: 0,
-  })) as TransformedCountryData[];
+    likes: country?.likes,
+  })) as BaseCountryData[];
 
   const initialCountries: State = {
     countries: [],
@@ -55,18 +57,14 @@ const CountryList: React.FC = () => {
   const [state, dispatch] = useReducer(reducer, initialCountries);
 
   useEffect(() => {
-    if (
-      transformedCountriesData &&
-      transformedCountriesData.length > 0 &&
-      !isInitialized
-    ) {
+    if (countriesData && countriesData.length > 0 && !isInitialized) {
       dispatch({
         type: 'country/setInitialData',
-        payload: transformedCountriesData,
+        payload: countriesData,
       });
       setIsInitialized(true);
     }
-  }, [transformedCountriesData, isInitialized]);
+  }, [countriesData, isInitialized]);
 
   if (isLoading) {
     return <CountryCardWrapperSkeleton />;
@@ -82,6 +80,7 @@ const CountryList: React.FC = () => {
   }
 
   const handleLike = (name: string) => {
+    // SHECVAKE AK
     dispatch({
       type: 'country/liked',
       payload: { name, lang },
@@ -114,7 +113,7 @@ const CountryList: React.FC = () => {
     });
   };
 
-  const handleAddCountry = (newCountry: TransformedCountryData) => {
+  const handleAddCountry = (newCountry: BaseCountryData) => {
     dispatch({
       type: 'country/added',
       payload: { country: { ...newCountry, likes: 0 } },
@@ -133,7 +132,7 @@ const CountryList: React.FC = () => {
     }
   };
 
-  const handleEdit = (updatedData: Partial<TransformedCountryData>) => {
+  const handleEdit = (updatedData: Partial<BaseCountryData>) => {
     if (selectedCountry && selectedCountry.id) {
       dispatch({
         type: 'country/edited',

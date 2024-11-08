@@ -183,6 +183,7 @@ const countriesInit = async () => {
         photo: photoUrl,
         name: { en: translations.en[0], ka: translations.ka[0] },
         capital: { en: translations.en[1], ka: translations.ka[1] },
+        likes: 0,
       };
     },
   );

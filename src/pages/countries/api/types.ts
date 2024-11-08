@@ -33,6 +33,7 @@ export type CountryApiResponse = {
     osm: string;
   };
   photo: string;
+  likes: 0;
 };
 
 export type BaseCountryData = {
@@ -48,6 +49,7 @@ export type BaseCountryData = {
     ka: string;
   };
   photo: string;
+  likes: number;
 };
 
 export type BaseCountryDataDetails = {

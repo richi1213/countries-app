@@ -1,8 +1,8 @@
-import { TransformedCountryData } from '@/pages/countries/components/list/types';
 import { Lang } from '@/types';
+import { BaseCountryData } from '@/pages/countries/api/types';
 
 export type State = {
-  countries: TransformedCountryData[];
+  countries: BaseCountryData[];
   isAscending: boolean;
 };
 
@@ -18,20 +18,21 @@ type Action =
     }
   | {
       type: 'country/added';
-      payload: { country: TransformedCountryData };
+      payload: { country: BaseCountryData };
     }
   | {
       type: 'country/edited';
-      payload: { id: string; updatedData: Partial<TransformedCountryData> };
+      payload: { id: string; updatedData: Partial<BaseCountryData> };
     }
   | {
       type: 'country/setInitialData';
-      payload: TransformedCountryData[];
+      payload: BaseCountryData[];
     };
 
 export const reducer = (state: State, action: Action): State => {
   switch (action.type) {
     case 'country/liked': {
+      // akaa cvlilebebi sachiro
       const newCountries = state.countries.map((country) => {
         const countryName = country.name?.[action.payload.lang] || '';
         return countryName === action.payload.name
