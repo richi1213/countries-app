@@ -86,14 +86,17 @@ const CountryList: React.FC = () => {
     }
   }, [countriesData, isInitialized]);
 
-  // Debounced function for adding likes
   const debouncedAddLikes = useCallback(
-    debounce((id: string, updatedLikes: number) => {
-      addLikes({
-        countryId: id,
-        updatedData: { likes: updatedLikes },
-      });
-    }, 3000),
+    (id: string, updatedLikes: number) => {
+      const debouncedFn = debounce((id: string, updatedLikes: number) => {
+        addLikes({
+          countryId: id,
+          updatedData: { likes: updatedLikes },
+        });
+      }, 3000);
+
+      debouncedFn(id, updatedLikes);
+    },
     [addLikes],
   );
 
