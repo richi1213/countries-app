@@ -1,17 +1,12 @@
-import { Lang } from '@/types';
 import { BaseCountryData } from '@/pages/countries/api/types';
 
 export type State = {
   countries: BaseCountryData[];
-  isAscending: boolean;
+  // isAscending: boolean;
 };
 
 type Action =
   | { type: 'country/liked'; payload: { id: string } }
-  | {
-      type: 'country/setSortOrderAndSort';
-      payload: { isAscending: boolean; lang: Lang };
-    }
   | {
       type: 'country/deleted';
       payload: { id: string };
@@ -40,18 +35,6 @@ export const reducer = (state: State, action: Action): State => {
       return {
         ...state,
         countries: newCountries,
-      };
-    }
-
-    case 'country/setSortOrderAndSort': {
-      const sortedCountries = [...state.countries].sort((a, b) =>
-        action.payload.isAscending ? a.likes - b.likes : b.likes - a.likes,
-      );
-
-      return {
-        ...state,
-        isAscending: action.payload.isAscending,
-        countries: sortedCountries,
       };
     }
 

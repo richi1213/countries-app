@@ -1,6 +1,5 @@
 // pages
 export { default as Home } from '@/pages/home/views/Home';
-export { default as About } from '@/pages/about/views/About';
 export { default as Countries } from '@/pages/countries/views/Countries';
 export { default as Contact } from '@/pages/contact/views/Contact';
 export { default as Verification } from '@/pages/verification/views/Verification';

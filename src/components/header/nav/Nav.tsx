@@ -27,9 +27,6 @@ const Nav: React.FC = () => {
         <NavLink to={`/${lang}`} className={handleActiveNav} end>
           {translated.home}
         </NavLink>
-        <NavLink to={`/${lang}/about`} className={handleActiveNav}>
-          {translated.about}
-        </NavLink>
         <NavLink to={`/${lang}/countries`} className={handleActiveNav}>
           {translated.countries}
         </NavLink>

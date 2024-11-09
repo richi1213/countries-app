@@ -8,7 +8,6 @@ import {
 import { RootLayout } from 'components';
 import {
   Home,
-  About,
   Countries,
   Contact,
   Verification,
@@ -30,7 +29,6 @@ const router = createBrowserRouter(
         loader={languageLoader}
       >
         <Route index element={<Home />} />
-        <Route path='about' element={<About />} />
         <Route path='countries' errorElement={<Error />}>
           <Route index element={<Countries />} />
           <Route path=':name' element={<CountryDetails />} />
@@ -47,7 +45,5 @@ const router = createBrowserRouter(
 const App: React.FC = () => {
   return <RouterProvider router={router} />;
 };
-
-App.displayName = 'App Component';
 
 export default App;

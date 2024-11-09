@@ -5,7 +5,7 @@ import {
   useReducer,
   useState,
 } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
 import { SortButton, AddCountryButton } from 'components/ui/buttons';
 import CountryCardWrapper from '@/pages/countries/components/list/card-wrapper/CountryCardWrapper';
 import styles from '@/pages/countries/components/list/CountryList.module.css';
@@ -37,10 +37,14 @@ const CountryList: React.FC = () => {
   const [selectedCountry, setSelectedCountry] =
     useState<BaseCountryData | null>(null);
   const [isInitialized, setIsInitialized] = useState(false);
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const sortParam = searchParams.get('sort') || 'desc';
+  const isAscending = sortParam === 'asc';
 
   const { data, error, isLoading } = useQuery<Partial<CountryApiResponse[]>>({
-    queryKey: ['baseCountries'],
-    queryFn: getData,
+    queryKey: ['baseCountries', sortParam],
+    queryFn: () => getData('likes', sortParam),
     staleTime: 5 * 60 * 1000,
     gcTime: 10 * 60 * 1000,
   });
@@ -71,7 +75,6 @@ const CountryList: React.FC = () => {
 
   const initialCountries: State = {
     countries: [],
-    isAscending: true,
   };
 
   const [state, dispatch] = useReducer(reducer, initialCountries);
@@ -145,10 +148,8 @@ const CountryList: React.FC = () => {
   };
 
   const toggleSortOrder = () => {
-    dispatch({
-      type: 'country/setSortOrderAndSort',
-      payload: { isAscending: !state.isAscending, lang },
-    });
+    const newSortOrder = isAscending ? 'asc' : 'desc';
+    setSearchParams({ sort: newSortOrder });
   };
 
   const handleAddCountry = (newCountry: BaseCountryData) => {
@@ -183,7 +184,7 @@ const CountryList: React.FC = () => {
 
   return (
     <div className={styles.countryList}>
-      <SortButton onSort={toggleSortOrder} isAscending={state.isAscending} />
+      <SortButton onSort={toggleSortOrder} isAscending={isAscending} />
       <AddCountryButton
         handleOpenModal={() => setIsAddNewCountryModalOpen(true)}
       />

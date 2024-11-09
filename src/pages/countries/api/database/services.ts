@@ -6,9 +6,12 @@ import {
   CountryApiResponse,
 } from '@/pages/countries/api/types';
 
-export const getData = async (): Promise<Partial<CountryApiResponse[]>> => {
+export const getData = async (
+  sortBy: string = 'likes',
+  order: string = 'desc',
+): Promise<Partial<CountryApiResponse[]>> => {
   try {
-    const response = await httpClient.get('/');
+    const response = await httpClient.get(`?_sort=${sortBy}&_order=${order}`);
     return response.data;
   } catch (error) {
     if (isAxiosError(error)) {
