@@ -12,10 +12,7 @@ import styles from '@/pages/countries/components/list/CountryList.module.css';
 import CountryCardWrapperSkeleton from '@/pages/countries/components/list/card-wrapper/skeleton/CountryCardWrapperSkeleton';
 import ReusableModal from 'components/ui/modals/ReusableModal';
 import { Lang } from '@/types';
-import {
-  BaseCountryData,
-  CountryApiResponse,
-} from '@/pages/countries/api/types';
+import { BaseCountryData, ResponseData } from '@/pages/countries/api/types';
 import {
   deleteData,
   editData,
@@ -25,7 +22,7 @@ import NewCountryForm from 'components/ui/forms/NewCountryForm';
 import { translations } from '@/components/ui/modals/translations';
 import EditCountryForm from 'components/ui/forms/EditCountryForm';
 import { reducer, State } from '@/pages/countries/reducers/countryReducer';
-import { useMutation, useQuery } from '@tanstack/react-query';
+import { useMutation, useInfiniteQuery } from '@tanstack/react-query';
 import Error from '@/pages/errors/Error';
 import debounce from 'lodash.debounce';
 
@@ -39,14 +36,34 @@ const CountryList: React.FC = () => {
   const [isInitialized, setIsInitialized] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const sortParam = searchParams.get('sort') || 'desc';
-  const isAscending = sortParam === 'asc';
+  const sortOrder = searchParams.get('sort') || 'likes';
 
-  const { data, error, isLoading } = useQuery<Partial<CountryApiResponse[]>>({
-    queryKey: ['baseCountries', sortParam],
-    queryFn: () => getData('likes', sortParam),
-    staleTime: 5 * 60 * 1000,
-    gcTime: 10 * 60 * 1000,
+  const isAscending = searchParams.get('sort') === 'likes';
+
+  const pageSize = Number(searchParams.get('per_page')) || 9;
+
+  const {
+    data,
+    error,
+    isLoading,
+    isFetchingNextPage,
+    fetchNextPage,
+    hasNextPage,
+  } = useInfiniteQuery<ResponseData>({
+    queryKey: ['baseCountries'],
+    queryFn: async ({ pageParam = 1 }) => {
+      setSearchParams({
+        sort: sortOrder,
+        page: pageParam as string,
+        per_page: pageSize.toString(),
+      });
+
+      return getData(sortOrder, Number(pageParam), pageSize);
+    },
+    getNextPageParam: (lastFetchedPage) => {
+      return lastFetchedPage.pages[0]?.next ?? null;
+    },
+    initialPageParam: 1,
   });
 
   const { mutate: deleteCountry } = useMutation<void, Error, string>({
@@ -63,21 +80,30 @@ const CountryList: React.FC = () => {
     },
   });
 
-  const countriesData = data?.map((country) => ({
-    id: country?.id,
-    name: country?.name,
-    flag: country?.flag,
-    population: country?.population,
-    capital: country?.capital,
-    photo: country?.photo,
-    likes: country?.likes,
-  })) as BaseCountryData[];
+  const countriesData = data?.pages?.flatMap((page) =>
+    // @ts-expect-error was unable to read nested property
+    page.data.map((country: BaseCountryData) => ({
+      id: country?.id,
+      name: country?.name,
+      flag: country?.flag,
+      population: country?.population,
+      capital: country?.capital,
+      photo: country?.photo,
+      likes: country?.likes,
+    })),
+  ) as BaseCountryData[];
+
+  // console.log(data?.pages[0]?.next);
 
   const initialCountries: State = {
     countries: [],
   };
 
   const [state, dispatch] = useReducer(reducer, initialCountries);
+
+  // useEffect(() => {
+  //   if (hasNextPage && !isFetchingNextPage) fetchNextPage();
+  // }, [hasNextPage, isFetchingNextPage, fetchNextPage]);
 
   useEffect(() => {
     if (countriesData && countriesData.length > 0 && !isInitialized) {
@@ -87,7 +113,7 @@ const CountryList: React.FC = () => {
       });
       setIsInitialized(true);
     }
-  }, [countriesData, isInitialized]);
+  }, [countriesData, isInitialized, data]);
 
   const debouncedAddLikes = useCallback(
     (id: string, updatedLikes: number) => {
@@ -147,9 +173,25 @@ const CountryList: React.FC = () => {
     deleteCountry(countryId);
   };
 
-  const toggleSortOrder = () => {
-    const newSortOrder = isAscending ? 'asc' : 'desc';
+  const toggleSortOrder = async () => {
+    const newSortOrder = isAscending ? '-likes' : 'likes';
     setSearchParams({ sort: newSortOrder });
+
+    // const currentPage = searchParams.get('page');
+
+    // const fetchedData = await getData(
+    //   newSortOrder,
+    //   Number(currentPage),
+    //   pageSize,
+    // );
+    // console.log(currentPage);
+
+    const validData = countriesData.filter((item) => item !== undefined);
+
+    dispatch({
+      type: 'country/setInitialData',
+      payload: validData,
+    });
   };
 
   const handleAddCountry = (newCountry: BaseCountryData) => {
@@ -195,6 +237,18 @@ const CountryList: React.FC = () => {
         handleDelete={handleDelete}
         handleEdit={handleEditCountry}
       />
+
+      <button
+        onClick={() => fetchNextPage()}
+        disabled={!isFetchingNextPage}
+        // disabled={false}
+      >
+        {isFetchingNextPage
+          ? 'Loading more...'
+          : (data?.pages.length ?? 0) < 5
+            ? 'Load more'
+            : 'Nothing more'}
+      </button>
 
       <ReusableModal
         open={isEditCountryModalOpen && selectedCountry !== null}

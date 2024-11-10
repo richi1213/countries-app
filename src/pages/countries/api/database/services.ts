@@ -4,14 +4,18 @@ import {
   BaseCountryData,
   BaseCountryDataDetails,
   CountryApiResponse,
+  ResponseData,
 } from '@/pages/countries/api/types';
 
 export const getData = async (
-  sortBy: string = 'likes',
-  order: string = 'desc',
-): Promise<Partial<CountryApiResponse[]>> => {
+  sortBy: string = '-likes',
+  page: number,
+  pageSize: number,
+): Promise<ResponseData> => {
   try {
-    const response = await httpClient.get(`?_sort=${sortBy}&_order=${order}`);
+    const response = await httpClient.get(
+      `?_sort=${sortBy}&_page=${page}&_per_page=${pageSize}`,
+    );
     return response.data;
   } catch (error) {
     if (isAxiosError(error)) {

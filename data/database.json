@@ -48,12 +48,12 @@
         "osm": "https://www.openstreetmap.org/relation/1428125"
       },
       "photo": "https://images.unsplash.com/photo-1465167797660-a2163cb7105a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxPdHRhd2F8ZW58MHx8fHwxNzMxMDc5MDY0fDA&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 22,
+      "likes": 33,
       "id": "5f7e"
     },
     {
       "name": {
-        "en": "Icelanddd",
+        "en": "Iceland",
         "ka": "ისლანდია"
       },
       "officialName": "Iceland",
@@ -185,7 +185,7 @@
         "osm": "https://www.openstreetmap.org/relation/2978650"
       },
       "photo": "https://images.unsplash.com/photo-1433757741270-94a3bcadc2f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxPc2xvfGVufDB8fHx8MTczMTA3OTA2NHww&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 0,
+      "likes": 23,
       "id": "6934"
     },
     {
@@ -231,7 +231,7 @@
         "osm": "https://www.openstreetmap.org/relation/52822"
       },
       "photo": "https://images.unsplash.com/photo-1556740762-234ad84a3bb1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxTdG9ja2hvbG18ZW58MHx8fHwxNzMxMDc5MDY0fDA&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 2,
+      "likes": 4,
       "id": "d095"
     },
     {
@@ -592,7 +592,7 @@
         "osm": "https://www.openstreetmap.org/relation/148838#map=2/20.6/-85.8"
       },
       "photo": "https://images.unsplash.com/photo-1543372654-b45dd90eeee5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxXYXNoaW5ndG9uJTJDJTIwRC5DLnxlbnwwfHx8fDE3MzEwNzkwNjR8MA&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 6,
+      "likes": 10,
       "id": "165e"
     },
     {
@@ -801,7 +801,7 @@
         "osm": "https://www.openstreetmap.org/relation/51477"
       },
       "photo": "https://images.unsplash.com/photo-1528728329032-2972f65dfb3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxCZXJsaW58ZW58MHx8fHwxNzMxMDc5MDY0fDA&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 1,
+      "likes": 4,
       "id": "3c71"
     },
     {
