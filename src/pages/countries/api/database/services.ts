@@ -16,16 +16,17 @@ export const getData = async (
     const response = await httpClient.get(
       `?_sort=${sortBy}&_page=${page}&_per_page=${pageSize}`,
     );
-    return response.data;
+
+    const { data, pages } = response.data;
+    const hasNextPage = pages.next !== null;
+
+    return {
+      data,
+      currentOffset: page,
+      nextOffset: hasNextPage ? page + 1 : null,
+    };
   } catch (error) {
-    if (isAxiosError(error)) {
-      console.error(
-        'Axios error getting data:',
-        error.response?.data || error.message,
-      );
-    } else {
-      console.error('Error getting data:', error);
-    }
+    console.error('Error getting data:', error);
     throw error;
   }
 };

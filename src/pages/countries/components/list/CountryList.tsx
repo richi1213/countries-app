@@ -3,11 +3,18 @@ import {
   useCallback,
   useEffect,
   useReducer,
+  useRef,
   useState,
 } from 'react';
-import { useParams, useSearchParams } from 'react-router-dom';
-import { SortButton, AddCountryButton } from 'components/ui/buttons';
-import CountryCardWrapper from '@/pages/countries/components/list/card-wrapper/CountryCardWrapper';
+import { Link, useParams, useSearchParams } from 'react-router-dom';
+import { AddCountryButton } from 'components/ui/buttons';
+import {
+  Card,
+  CardHeader,
+  CardContent,
+  CardFooter,
+  CardButtonsWrapper,
+} from 'components/ui/cards';
 import styles from '@/pages/countries/components/list/CountryList.module.css';
 import CountryCardWrapperSkeleton from '@/pages/countries/components/list/card-wrapper/skeleton/CountryCardWrapperSkeleton';
 import ReusableModal from 'components/ui/modals/ReusableModal';
@@ -18,13 +25,16 @@ import {
   editData,
   getData,
 } from '@/pages/countries/api/database/services';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import NewCountryForm from 'components/ui/forms/NewCountryForm';
 import { translations } from '@/components/ui/modals/translations';
 import EditCountryForm from 'components/ui/forms/EditCountryForm';
 import { reducer, State } from '@/pages/countries/reducers/countryReducer';
 import { useMutation, useInfiniteQuery } from '@tanstack/react-query';
 import Error from '@/pages/errors/Error';
+import Loading from 'components/ui/loader/Loading';
 import debounce from 'lodash.debounce';
+import { useVirtualizer } from '@tanstack/react-virtual';
 
 const CountryList: React.FC = () => {
   const { lang = 'en' } = useParams<{ lang: Lang }>();
@@ -38,31 +48,33 @@ const CountryList: React.FC = () => {
 
   const sortOrder = searchParams.get('sort') || 'likes';
 
-  const isAscending = searchParams.get('sort') === 'likes';
-
   const pageSize = Number(searchParams.get('per_page')) || 9;
+
+  const updateSearchParams = (pageParam = 1) => {
+    setSearchParams({
+      sort: sortOrder,
+      page: pageParam.toString(),
+      per_page: pageSize.toString(),
+    });
+  };
 
   const {
     data,
+    status,
     error,
     isLoading,
+    hasNextPage,
     isFetchingNextPage,
     fetchNextPage,
-    hasNextPage,
+    isFetching,
   } = useInfiniteQuery<ResponseData>({
     queryKey: ['baseCountries'],
     queryFn: async ({ pageParam = 1 }) => {
-      setSearchParams({
-        sort: sortOrder,
-        page: pageParam as string,
-        per_page: pageSize.toString(),
-      });
-
-      return getData(sortOrder, Number(pageParam), pageSize);
+      const data = await getData(sortOrder, pageParam as number, pageSize);
+      updateSearchParams(pageParam as number);
+      return data;
     },
-    getNextPageParam: (lastFetchedPage) => {
-      return lastFetchedPage.pages[0]?.next ?? null;
-    },
+    getNextPageParam: (lastFetchedPage) => lastFetchedPage.nextOffset,
     initialPageParam: 1,
   });
 
@@ -81,7 +93,6 @@ const CountryList: React.FC = () => {
   });
 
   const countriesData = data?.pages?.flatMap((page) =>
-    // @ts-expect-error was unable to read nested property
     page.data.map((country: BaseCountryData) => ({
       id: country?.id,
       name: country?.name,
@@ -93,17 +104,39 @@ const CountryList: React.FC = () => {
     })),
   ) as BaseCountryData[];
 
-  // console.log(data?.pages[0]?.next);
+  //  VIRTUALIZATION
+  const parentRef = useRef<HTMLDivElement>(null);
+  const rowVirtualizer = useVirtualizer({
+    count: countriesData ? countriesData.length : 0,
+    getScrollElement: () => parentRef.current,
+    estimateSize: () => 60,
+    overscan: 9,
+  });
+
+  useEffect(() => {
+    if (!countriesData || isFetchingNextPage) return;
+    const [lastItem] = [...rowVirtualizer.getVirtualItems()].reverse();
+    if (!lastItem) return;
+    if (
+      lastItem.index >= countriesData.length - 1 &&
+      hasNextPage &&
+      !isFetchingNextPage
+    ) {
+      fetchNextPage();
+    }
+  }, [
+    hasNextPage,
+    fetchNextPage,
+    countriesData,
+    isFetchingNextPage,
+    rowVirtualizer,
+  ]);
 
   const initialCountries: State = {
     countries: [],
   };
 
   const [state, dispatch] = useReducer(reducer, initialCountries);
-
-  // useEffect(() => {
-  //   if (hasNextPage && !isFetchingNextPage) fetchNextPage();
-  // }, [hasNextPage, isFetchingNextPage, fetchNextPage]);
 
   useEffect(() => {
     if (countriesData && countriesData.length > 0 && !isInitialized) {
@@ -173,27 +206,6 @@ const CountryList: React.FC = () => {
     deleteCountry(countryId);
   };
 
-  const toggleSortOrder = async () => {
-    const newSortOrder = isAscending ? '-likes' : 'likes';
-    setSearchParams({ sort: newSortOrder });
-
-    // const currentPage = searchParams.get('page');
-
-    // const fetchedData = await getData(
-    //   newSortOrder,
-    //   Number(currentPage),
-    //   pageSize,
-    // );
-    // console.log(currentPage);
-
-    const validData = countriesData.filter((item) => item !== undefined);
-
-    dispatch({
-      type: 'country/setInitialData',
-      payload: validData,
-    });
-  };
-
   const handleAddCountry = (newCountry: BaseCountryData) => {
     dispatch({
       type: 'country/added',
@@ -224,31 +236,95 @@ const CountryList: React.FC = () => {
     }
   };
 
+  console.log(countriesData);
+
   return (
-    <div className={styles.countryList}>
-      <SortButton onSort={toggleSortOrder} isAscending={isAscending} />
+    <div>
       <AddCountryButton
         handleOpenModal={() => setIsAddNewCountryModalOpen(true)}
       />
 
-      <CountryCardWrapper
-        countries={state.countries}
-        handleLike={handleLike}
-        handleDelete={handleDelete}
-        handleEdit={handleEditCountry}
-      />
+      {status === 'pending' ? (
+        <Loading />
+      ) : (
+        <div
+          ref={parentRef}
+          className={styles.countryList}
+          style={{
+            height: `500px`,
+            width: `100%`,
+            overflow: 'auto',
+          }}
+        >
+          <div
+            style={{
+              height: `${rowVirtualizer.getTotalSize()}px`,
+              width: '100%',
+              position: 'relative',
+            }}
+          >
+            {rowVirtualizer.getVirtualItems().map((virtualRow) => {
+              const isLoaderRow = virtualRow.index > countriesData.length - 1;
+              const country = countriesData[virtualRow.index];
 
-      <button
-        onClick={() => fetchNextPage()}
-        disabled={!isFetchingNextPage}
-        // disabled={false}
-      >
-        {isFetchingNextPage
-          ? 'Loading more...'
-          : (data?.pages.length ?? 0) < 5
-            ? 'Load more'
-            : 'Nothing more'}
-      </button>
+              return (
+                <div
+                  className={styles.countryItem}
+                  key={virtualRow.index}
+                  style={{}}
+                >
+                  {isLoaderRow ? (
+                    hasNextPage ? (
+                      'Loading more...'
+                    ) : (
+                      'Nothing more to load'
+                    )
+                  ) : (
+                    <Card>
+                      <Link to={`${country.name.en}`} className={styles.link}>
+                        <CardHeader
+                          photo={country.photo}
+                          name={country.name[lang]}
+                        />
+                        <CardContent
+                          name={country.name[lang]}
+                          population={country.population}
+                          capitalCity={
+                            country.capital[lang] ?? 'Unknown Capital'
+                          }
+                        />
+                        <CardFooter
+                          flag={country.flag}
+                          countryName={country.name[lang]}
+                        />
+                      </Link>
+                      <CardButtonsWrapper
+                        likeButtonProps={{
+                          icon: <FavoriteBorderIcon />,
+                          initialLikes: country.likes,
+                          onLike: () => handleLike(country.id as string),
+                        }}
+                        editButtonProps={{
+                          onEdit: (event) =>
+                            handleEditCountry(event, country.id as string),
+                        }}
+                        deleteButtonProps={{
+                          onDelete: (event) =>
+                            handleDelete(event, country.id as string),
+                        }}
+                      />
+                    </Card>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      <div>
+        {isFetching && !isFetchingNextPage ? 'Background Updating...' : null}
+      </div>
 
       <ReusableModal
         open={isEditCountryModalOpen && selectedCountry !== null}

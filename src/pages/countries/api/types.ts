@@ -37,16 +37,9 @@ export type CountryApiResponse = {
 };
 
 export type ResponseData = {
-  pages: {
-    first: number;
-    prev: number | null;
-    next: number | null;
-    last: number;
-    pages: number;
-    items: number;
-    data: BaseCountryData[];
-  }[];
-  pageParams: number[];
+  data: BaseCountryData[];
+  currentOffset: number;
+  nextOffset: number | null;
 };
 
 export type BaseCountryData = {

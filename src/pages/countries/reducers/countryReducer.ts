@@ -2,7 +2,6 @@ import { BaseCountryData } from '@/pages/countries/api/types';
 
 export type State = {
   countries: BaseCountryData[];
-  // isAscending: boolean;
 };
 
 type Action =
