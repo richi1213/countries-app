@@ -2,6 +2,7 @@ import {
   MouseEvent,
   useCallback,
   useEffect,
+  useMemo,
   useReducer,
   useRef,
   useState,
@@ -16,7 +17,6 @@ import {
   CardButtonsWrapper,
 } from 'components/ui/cards';
 import styles from '@/pages/countries/components/list/CountryList.module.css';
-import CountryCardWrapperSkeleton from '@/pages/countries/components/list/card-wrapper/skeleton/CountryCardWrapperSkeleton';
 import ReusableModal from 'components/ui/modals/ReusableModal';
 import { Lang } from '@/types';
 import { BaseCountryData, ResponseData } from '@/pages/countries/api/types';
@@ -34,6 +34,7 @@ import { useMutation, useInfiniteQuery } from '@tanstack/react-query';
 import Error from '@/pages/errors/Error';
 import Loading from 'components/ui/loader/Loading';
 import debounce from 'lodash.debounce';
+import { useIntersection } from '@mantine/hooks';
 import { useVirtualizer } from '@tanstack/react-virtual';
 
 const CountryList: React.FC = () => {
@@ -43,14 +44,14 @@ const CountryList: React.FC = () => {
   const [isEditCountryModalOpen, setIsEditCountryModalOpen] = useState(false);
   const [selectedCountry, setSelectedCountry] =
     useState<BaseCountryData | null>(null);
-  const [isInitialized, setIsInitialized] = useState(false);
+
   const [searchParams, setSearchParams] = useSearchParams();
 
   const sortOrder = searchParams.get('sort') || 'likes';
 
   const pageSize = Number(searchParams.get('per_page')) || 9;
 
-  const updateSearchParams = (pageParam = 1) => {
+  const updateSearchParams = (pageParam: number) => {
     setSearchParams({
       sort: sortOrder,
       page: pageParam.toString(),
@@ -92,20 +93,30 @@ const CountryList: React.FC = () => {
     },
   });
 
-  const countriesData = data?.pages?.flatMap((page) =>
-    page.data.map((country: BaseCountryData) => ({
-      id: country?.id,
-      name: country?.name,
-      flag: country?.flag,
-      population: country?.population,
-      capital: country?.capital,
-      photo: country?.photo,
-      likes: country?.likes,
-    })),
-  ) as BaseCountryData[];
+  const countriesData = useMemo(
+    () =>
+      data?.pages?.flatMap((page) =>
+        page.data.map((country: BaseCountryData) => ({
+          id: country?.id,
+          name: country?.name,
+          flag: country?.flag,
+          population: country?.population,
+          capital: country?.capital,
+          photo: country?.photo,
+          likes: country?.likes,
+        })),
+      ) as BaseCountryData[],
+    [data],
+  );
 
-  //  VIRTUALIZATION
+  const lastCountryRef = useRef<HTMLDivElement>(null);
   const parentRef = useRef<HTMLDivElement>(null);
+
+  const { ref, entry } = useIntersection({
+    root: lastCountryRef.current,
+    threshold: 1,
+  });
+
   const rowVirtualizer = useVirtualizer({
     count: countriesData ? countriesData.length : 0,
     getScrollElement: () => parentRef.current,
@@ -114,39 +125,21 @@ const CountryList: React.FC = () => {
   });
 
   useEffect(() => {
-    if (!countriesData || isFetchingNextPage) return;
     const [lastItem] = [...rowVirtualizer.getVirtualItems()].reverse();
-    if (!lastItem) return;
-    if (
-      lastItem.index >= countriesData.length - 1 &&
-      hasNextPage &&
-      !isFetchingNextPage
-    ) {
+
+    if (!lastItem) {
+      return;
+    }
+    if (entry?.isIntersecting && hasNextPage && !isFetchingNextPage) {
       fetchNextPage();
     }
-  }, [
-    hasNextPage,
-    fetchNextPage,
-    countriesData,
-    isFetchingNextPage,
-    rowVirtualizer,
-  ]);
+  }, [entry, hasNextPage, isFetchingNextPage, fetchNextPage, rowVirtualizer]);
 
   const initialCountries: State = {
     countries: [],
   };
 
   const [state, dispatch] = useReducer(reducer, initialCountries);
-
-  useEffect(() => {
-    if (countriesData && countriesData.length > 0 && !isInitialized) {
-      dispatch({
-        type: 'country/setInitialData',
-        payload: countriesData,
-      });
-      setIsInitialized(true);
-    }
-  }, [countriesData, isInitialized, data]);
 
   const debouncedAddLikes = useCallback(
     (id: string, updatedLikes: number) => {
@@ -163,7 +156,7 @@ const CountryList: React.FC = () => {
   );
 
   if (isLoading) {
-    return <CountryCardWrapperSkeleton />;
+    return <Loading />;
   }
 
   if (error) {
@@ -236,7 +229,9 @@ const CountryList: React.FC = () => {
     }
   };
 
-  console.log(countriesData);
+  console.log('countries data', countriesData);
+
+  console.log('data', data);
 
   return (
     <div>
@@ -280,40 +275,49 @@ const CountryList: React.FC = () => {
                       'Nothing more to load'
                     )
                   ) : (
-                    <Card>
-                      <Link to={`${country.name.en}`} className={styles.link}>
-                        <CardHeader
-                          photo={country.photo}
-                          name={country.name[lang]}
+                    <div
+                      key={`${country.id}`}
+                      ref={
+                        virtualRow.index === countriesData.length - 1
+                          ? ref
+                          : undefined
+                      }
+                    >
+                      <Card>
+                        <Link to={`${country.name.en}`} className={styles.link}>
+                          <CardHeader
+                            photo={country.photo}
+                            name={country.name[lang]}
+                          />
+                          <CardContent
+                            name={country.name[lang]}
+                            population={country.population}
+                            capitalCity={
+                              country.capital[lang] ?? 'Unknown Capital'
+                            }
+                          />
+                          <CardFooter
+                            flag={country.flag}
+                            countryName={country.name[lang]}
+                          />
+                        </Link>
+                        <CardButtonsWrapper
+                          likeButtonProps={{
+                            icon: <FavoriteBorderIcon />,
+                            initialLikes: country.likes,
+                            onLike: () => handleLike(country.id as string),
+                          }}
+                          editButtonProps={{
+                            onEdit: (event) =>
+                              handleEditCountry(event, country.id as string),
+                          }}
+                          deleteButtonProps={{
+                            onDelete: (event) =>
+                              handleDelete(event, country.id as string),
+                          }}
                         />
-                        <CardContent
-                          name={country.name[lang]}
-                          population={country.population}
-                          capitalCity={
-                            country.capital[lang] ?? 'Unknown Capital'
-                          }
-                        />
-                        <CardFooter
-                          flag={country.flag}
-                          countryName={country.name[lang]}
-                        />
-                      </Link>
-                      <CardButtonsWrapper
-                        likeButtonProps={{
-                          icon: <FavoriteBorderIcon />,
-                          initialLikes: country.likes,
-                          onLike: () => handleLike(country.id as string),
-                        }}
-                        editButtonProps={{
-                          onEdit: (event) =>
-                            handleEditCountry(event, country.id as string),
-                        }}
-                        deleteButtonProps={{
-                          onDelete: (event) =>
-                            handleDelete(event, country.id as string),
-                        }}
-                      />
-                    </Card>
+                      </Card>
+                    </div>
                   )}
                 </div>
               );

@@ -17,10 +17,6 @@ type Action =
   | {
       type: 'country/edited';
       payload: { id: string; updatedData: Partial<BaseCountryData> };
-    }
-  | {
-      type: 'country/setInitialData';
-      payload: BaseCountryData[];
     };
 
 export const reducer = (state: State, action: Action): State => {
@@ -72,13 +68,6 @@ export const reducer = (state: State, action: Action): State => {
       return {
         ...state,
         countries: newCountries,
-      };
-    }
-
-    case 'country/setInitialData': {
-      return {
-        ...state,
-        countries: action.payload,
       };
     }
 
