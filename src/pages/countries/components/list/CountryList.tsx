@@ -120,7 +120,7 @@ const CountryList: React.FC = () => {
   const rowVirtualizer = useVirtualizer({
     count: countriesData ? countriesData.length : 0,
     getScrollElement: () => parentRef.current,
-    estimateSize: () => 60,
+    estimateSize: () => 400,
     overscan: 9,
   });
 
@@ -266,7 +266,14 @@ const CountryList: React.FC = () => {
                 <div
                   className={styles.countryItem}
                   key={virtualRow.index}
-                  style={{}}
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: `${virtualRow.size}px`,
+                    transform: `translateY(${virtualRow.start}px)`,
+                  }}
                 >
                   {isLoaderRow ? (
                     hasNextPage ? (
