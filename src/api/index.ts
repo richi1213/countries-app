@@ -1,6 +1,6 @@
-import axios, { CreateAxiosDefaults } from 'axios';
+import axios, { AxiosRequestConfig } from 'axios';
 
-const axiosConfig: CreateAxiosDefaults = {
+const axiosConfig: AxiosRequestConfig = {
   baseURL: import.meta.env.VITE_COLD_COUNTRIES || '/api',
   responseType: 'json',
 };
