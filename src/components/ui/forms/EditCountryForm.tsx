@@ -52,7 +52,8 @@ const EditCountryForm: React.FC<EditCountryFormProps> = ({
 
   const [currentTab, setCurrentTab] = useState<Lang>('en');
 
-  const handleTabChange = (_event: React.SyntheticEvent, newValue: Lang) => {
+  const handleTabChange = (event: React.SyntheticEvent, newValue: Lang) => {
+    event.preventDefault();
     setCurrentTab(newValue);
   };
 
