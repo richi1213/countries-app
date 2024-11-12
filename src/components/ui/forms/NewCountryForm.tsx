@@ -54,7 +54,7 @@ const NewCountryForm: React.FC<NewCountryFormProps> = ({
 
   const [currentTab, setCurrentTab] = useState<Lang>('en');
 
-  const handleTabChange = (event: React.SyntheticEvent, newValue: Lang) => {
+  const handleTabChange = (_event: React.SyntheticEvent, newValue: Lang) => {
     setCurrentTab(newValue);
   };
 
