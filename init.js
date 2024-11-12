@@ -236,9 +236,11 @@ const countriesInit = async () => {
     .filter((res) => res.status === 'fulfilled' && res.value)
     .map((res) => res.value);
 
-  const __filename = fileURLToPath(import.meta.url);
-  const __dirname = path.dirname(__filename);
-  const filePath = path.join(__dirname, 'database.json');
+  // const __filename = fileURLToPath(import.meta.url);
+  // const __dirname = path.dirname(__filename);
+  // const filePath = path.join(__dirname, 'database.json');
+
+  const filePath = './database.json';
 
   await writeToDatabase(filePath, filteredResults);
   return filteredResults;

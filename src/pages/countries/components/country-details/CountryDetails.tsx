@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { BaseCountryDataDetails } from '@/pages/countries/api/types';
+import { BaseCountryDataDetails } from '@/api/types';
 import styles from '@/pages/countries/components/country-details/CountryDetails.module.css';
 import CountryHeader from '@/pages/countries/components/country-details/country-header/CountryHeader';
 import GoBackButton from 'components/ui/buttons/go-back/GoBackButton';
@@ -7,7 +7,7 @@ import CountryMapLinks from '@/pages/countries/components/country-details/map-li
 import { Lang } from '@/types';
 import { translations } from '@/pages/countries/components/country-details/translations';
 import { useQuery } from '@tanstack/react-query';
-import { getCountryData } from '@/pages/countries/api/database/services';
+import { getCountryData } from '@/api/database/services';
 import Loading from 'components/ui/loader/Loading';
 import Error from '@/pages/errors/Error';
 

@@ -19,12 +19,8 @@ import {
 import styles from '@/pages/countries/components/list/CountryList.module.css';
 import ReusableModal from 'components/ui/modals/ReusableModal';
 import { Lang } from '@/types';
-import { BaseCountryData, ResponseData } from '@/pages/countries/api/types';
-import {
-  deleteData,
-  editData,
-  getData,
-} from '@/pages/countries/api/database/services';
+import { BaseCountryData, ResponseData } from '@/api/types';
+import { deleteData, editData, getData } from '@/api/database/services';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import NewCountryForm from 'components/ui/forms/NewCountryForm';
 import { translations } from '@/components/ui/modals/translations';

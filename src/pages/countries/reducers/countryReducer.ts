@@ -1,4 +1,4 @@
-import { BaseCountryData } from '@/pages/countries/api/types';
+import { BaseCountryData } from '@/api/types';
 
 export type State = {
   countries: BaseCountryData[];

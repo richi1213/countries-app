@@ -1,11 +1,11 @@
-import { httpClient } from '@/pages/countries/api';
+import { httpClient } from '@/api';
 import { isAxiosError } from 'axios';
 import {
   BaseCountryData,
   BaseCountryDataDetails,
   CountryApiResponse,
   ResponseData,
-} from '@/pages/countries/api/types';
+} from '@/api/types';
 
 export const getData = async (
   sortBy: string = '-likes',
@@ -14,7 +14,7 @@ export const getData = async (
 ): Promise<ResponseData> => {
   try {
     const response = await httpClient.get(
-      `?_sort=${sortBy}&_page=${page}&_per_page=${pageSize}`,
+      `/countries?_sort=${sortBy}&_page=${page}&_per_page=${pageSize}`,
     );
 
     const { data, pages } = response.data;
@@ -35,7 +35,7 @@ export const getCountryData = async (
   country: string,
 ): Promise<BaseCountryDataDetails[]> => {
   try {
-    const response = await httpClient.get(`?name.en=${country}`);
+    const response = await httpClient.get(`/countries?name.en=${country}`);
     return response.data;
   } catch (error) {
     if (isAxiosError(error)) {
@@ -54,7 +54,7 @@ export const postData = async (
   data: Partial<CountryApiResponse>,
 ): Promise<BaseCountryData> => {
   try {
-    const response = await httpClient.post('/', data);
+    const response = await httpClient.post('/countries', data);
     return response.data;
   } catch (error) {
     if (isAxiosError(error)) {
@@ -71,7 +71,7 @@ export const postData = async (
 
 export const deleteData = async (countryId: string): Promise<void> => {
   try {
-    await httpClient.delete(`/${countryId}`);
+    await httpClient.delete(`/countries/${countryId}`);
   } catch (error) {
     if (isAxiosError(error)) {
       console.error(
@@ -93,7 +93,10 @@ export const editData = async ({
   updatedData: Partial<CountryApiResponse>;
 }): Promise<BaseCountryData> => {
   try {
-    const response = await httpClient.patch(`/${countryId}`, updatedData);
+    const response = await httpClient.patch(
+      `/countries/${countryId}`,
+      updatedData,
+    );
     return response.data;
   } catch (error) {
     if (isAxiosError(error)) {

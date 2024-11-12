@@ -6,8 +6,8 @@ import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { translations } from 'components/ui/forms/translations';
 import { Lang } from '@/types';
 import { capitalizeWords } from '@/helpers/capitalizeWords';
-import { postData } from '@/pages/countries/api/database/services';
-import { BaseCountryData } from '@/pages/countries/api/types';
+import { postData } from '@/api/database/services';
+import { BaseCountryData } from '@/api/types';
 import { v4 as uuidv4 } from 'uuid';
 import { useMutation } from '@tanstack/react-query';
 

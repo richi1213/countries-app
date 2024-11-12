@@ -31,5 +31,5 @@
       "components": ["./src/components"]
     }
   },
-  "include": ["src", "data"]
+  "include": ["src", "data", "init.js"]
 }

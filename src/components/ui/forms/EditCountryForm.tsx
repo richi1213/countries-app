@@ -5,8 +5,8 @@ import { TextField, Button, Tabs, Tab } from '@mui/material';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { translations } from 'components/ui/forms/translations';
 import { Lang } from '@/types';
-import { editData } from '@/pages/countries/api/database/services';
-import { BaseCountryData } from '@/pages/countries/api/types';
+import { editData } from '@/api/database/services';
+import { BaseCountryData } from '@/api/types';
 import { useMutation } from '@tanstack/react-query';
 
 type FormData = {

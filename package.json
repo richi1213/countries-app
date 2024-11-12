@@ -11,8 +11,9 @@
     "preview": "vite preview",
     "prepare": "husky",
     "type-check": "tsc --noEmit",
-    "seed-db": "node data/init.js",
-    "start-json-server": "json-server --watch data/database.json"
+    "seed-db": "node init.js",
+    "run-db": "node server.cjs",
+    "start-json-server": "json-server --watch database.json"
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
@@ -25,7 +26,7 @@
     "@tanstack/react-virtual": "^3.10.9",
     "axios": "^1.7.7",
     "dotenv": "^16.4.5",
-    "json-server": "^1.0.0-beta.3",
+    "json-server": "^0.17.4",
     "lodash.debounce": "^4.0.8",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

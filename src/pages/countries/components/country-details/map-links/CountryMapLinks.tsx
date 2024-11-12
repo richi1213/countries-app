@@ -1,5 +1,5 @@
 import styles from '@/pages/countries/components/country-details/map-links/CountryMapLinks.module.css';
-import { BaseCountryDataDetails } from '@/pages/countries/api/types';
+import { BaseCountryDataDetails } from '@/api/types';
 import { useParams } from 'react-router-dom';
 
 type CountryMapLinksProps = {
