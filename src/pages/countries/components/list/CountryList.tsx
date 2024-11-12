@@ -8,7 +8,7 @@ import {
   useState,
 } from 'react';
 import { Link, useParams, useSearchParams } from 'react-router-dom';
-import { AddCountryButton } from 'components/ui/buttons';
+import { AddCountryButton, SortButton } from 'components/ui/buttons';
 import {
   Card,
   CardHeader,
@@ -46,8 +46,12 @@ const CountryList: React.FC = () => {
     useState<BaseCountryData | null>(null);
 
   const [searchParams, setSearchParams] = useSearchParams();
+  const sortOrder = searchParams.get('sort') || '-likes';
+  const [isAscending, setIsAscending] = useState(false);
 
-  const sortOrder = searchParams.get('sort') || 'likes';
+  useEffect(() => {
+    setIsAscending(sortOrder === 'likes');
+  }, [sortOrder]);
 
   const pageSize = Number(searchParams.get('per_page')) || 9;
 
@@ -68,6 +72,7 @@ const CountryList: React.FC = () => {
     isFetchingNextPage,
     fetchNextPage,
     isFetching,
+    refetch,
   } = useInfiniteQuery<ResponseData>({
     queryKey: ['baseCountries'],
     queryFn: async ({ pageParam = 1 }) => {
@@ -78,6 +83,10 @@ const CountryList: React.FC = () => {
     getNextPageParam: (lastFetchedPage) => lastFetchedPage.nextOffset,
     initialPageParam: 1,
   });
+
+  useEffect(() => {
+    refetch();
+  }, [sortOrder, refetch]);
 
   const { mutate: deleteCountry } = useMutation<void, Error, string>({
     mutationFn: deleteData,
@@ -121,7 +130,7 @@ const CountryList: React.FC = () => {
     count: countriesData ? countriesData.length : 0,
     getScrollElement: () => parentRef.current,
     estimateSize: () => 400,
-    overscan: 9,
+    overscan: 3,
   });
 
   useEffect(() => {
@@ -229,6 +238,11 @@ const CountryList: React.FC = () => {
     }
   };
 
+  const toggleSortOrder = () => {
+    const newSortOrder = sortOrder === 'likes' ? '-likes' : 'likes';
+    setSearchParams({ sort: newSortOrder });
+  };
+
   console.log('countries data', countriesData);
 
   console.log('data', data);
@@ -238,7 +252,7 @@ const CountryList: React.FC = () => {
       <AddCountryButton
         handleOpenModal={() => setIsAddNewCountryModalOpen(true)}
       />
-
+      <SortButton onSort={toggleSortOrder} isAscending={isAscending} />
       {status === 'pending' ? (
         <Loading />
       ) : (
