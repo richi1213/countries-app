@@ -40,6 +40,8 @@ export type ResponseData = {
   data: BaseCountryData[];
   currentOffset: number;
   nextOffset: number | null;
+  lastOffset: number;
+  totalCountries: number;
 };
 
 export type BaseCountryData = {

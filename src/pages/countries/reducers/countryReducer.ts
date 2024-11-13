@@ -33,17 +33,6 @@ export const reducer = (state: State, action: Action): State => {
       };
     }
 
-    case 'country/deleted': {
-      const newCountries = state.countries.filter(
-        (country) => country.id !== action.payload.id,
-      );
-
-      return {
-        ...state,
-        countries: newCountries,
-      };
-    }
-
     case 'country/added': {
       const existingCountry = state.countries.find(
         (country) => country.id === action.payload.country.id,

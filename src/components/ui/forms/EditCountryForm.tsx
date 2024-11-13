@@ -31,6 +31,8 @@ const EditCountryForm: React.FC<EditCountryFormProps> = ({
   const { lang } = useParams<{ lang: Lang }>();
   const translated = translations[lang ?? 'en'];
 
+  console.log('clicked');
+
   const [formData, setFormData] = useState<FormData>({
     countryName: existingCountry.name,
     capital: existingCountry.capital,

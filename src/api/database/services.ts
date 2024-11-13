@@ -17,13 +17,15 @@ export const getData = async (
       `/countries?_sort=${sortBy}&_page=${page}&_per_page=${pageSize}`,
     );
 
-    const { data, pages } = response.data;
+    const { data, pages, last, items } = response.data;
     const hasNextPage = pages.next !== null;
 
     return {
       data,
       currentOffset: page,
       nextOffset: hasNextPage ? page + 1 : null,
+      lastOffset: last,
+      totalCountries: items,
     };
   } catch (error) {
     console.error('Error getting data:', error);
@@ -71,7 +73,7 @@ export const postData = async (
 
 export const deleteData = async (countryId: string): Promise<void> => {
   try {
-    await httpClient.delete(`/countries/${countryId}`);
+    await httpClient.delete(`countries/${countryId}`);
   } catch (error) {
     if (isAxiosError(error)) {
       console.error(

@@ -15,7 +15,10 @@
       "region": "Americas",
       "subregion": "North America",
       "area": 9984670,
-      "languages": ["English", "French"],
+      "languages": [
+        "English",
+        "French"
+      ],
       "currencies": [
         {
           "name": "Canadian dollar",
@@ -34,7 +37,9 @@
         "male": "Canadian",
         "female": "Canadian"
       },
-      "borders": ["USA"],
+      "borders": [
+        "USA"
+      ],
       "drivingSide": "right",
       "fifaCode": "CAN",
       "startOfWeek": "sunday",
@@ -42,9 +47,8 @@
         "google": "https://goo.gl/maps/jmEVLugreeqiZXxbA",
         "osm": "https://www.openstreetmap.org/relation/1428125"
       },
-      "photo": "https://images.unsplash.com/photo-1465167797660-a2163cb7105a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxPdHRhd2F8ZW58MHx8fHwxNzMxMDc5MDY0fDA&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 1,
-      "id": "5f7e"
+      "photo": "https://images.unsplash.com/photo-1465167797660-a2163cb7105a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxPdHRhd2F8ZW58MHx8fHwxNzMxNTMxMTI5fDA&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -61,14 +65,18 @@
       "region": "Europe",
       "subregion": "Northern Europe",
       "area": 103000,
-      "languages": ["Icelandic"],
+      "languages": [
+        "Icelandic"
+      ],
       "currencies": [
         {
           "name": "Icelandic króna",
           "symbol": "kr"
         }
       ],
-      "timezones": ["UTC"],
+      "timezones": [
+        "UTC"
+      ],
       "demonyms": {
         "male": "Icelander",
         "female": "Icelander"
@@ -81,9 +89,8 @@
         "google": "https://goo.gl/maps/WxFWSQuc3oamNxoE6",
         "osm": "https://www.openstreetmap.org/relation/299133"
       },
-      "photo": "https://images.unsplash.com/photo-1725215763908-83dede205f4d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxSZXlramF2aWt8ZW58MHx8fHwxNzMxMDc5MDY0fDA&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 21,
-      "id": "081a"
+      "photo": "https://images.unsplash.com/photo-1725215763908-83dede205f4d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxSZXlramF2aWt8ZW58MHx8fHwxNzMxNTMxMTMxfDA&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -100,14 +107,21 @@
       "region": "Americas",
       "subregion": "North America",
       "area": 2166086,
-      "languages": ["Greenlandic"],
+      "languages": [
+        "Greenlandic"
+      ],
       "currencies": [
         {
           "name": "krone",
           "symbol": "kr."
         }
       ],
-      "timezones": ["UTC-04:00", "UTC-03:00", "UTC-01:00", "UTC+00:00"],
+      "timezones": [
+        "UTC-04:00",
+        "UTC-03:00",
+        "UTC-01:00",
+        "UTC+00:00"
+      ],
       "demonyms": {
         "male": "Greenlandic",
         "female": "Greenlandic"
@@ -119,9 +133,8 @@
         "google": "https://goo.gl/maps/j3289UPEQXt1ceSy8",
         "osm": "https://www.openstreetmap.org/relation/2184073"
       },
-      "photo": "https://images.unsplash.com/photo-1618422960849-739830070f39?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxOdXVrfGVufDB8fHx8MTczMTA3OTA2NHww&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 1,
-      "id": "a6b0"
+      "photo": null,
+      "likes": 0
     },
     {
       "name": {
@@ -138,19 +151,29 @@
       "region": "Europe",
       "subregion": "Northern Europe",
       "area": 323802,
-      "languages": ["Norwegian Nynorsk", "Norwegian Bokmål", "Sami"],
+      "languages": [
+        "Norwegian Nynorsk",
+        "Norwegian Bokmål",
+        "Sami"
+      ],
       "currencies": [
         {
           "name": "Norwegian krone",
           "symbol": "kr"
         }
       ],
-      "timezones": ["UTC+01:00"],
+      "timezones": [
+        "UTC+01:00"
+      ],
       "demonyms": {
         "male": "Norwegian",
         "female": "Norwegian"
       },
-      "borders": ["FIN", "SWE", "RUS"],
+      "borders": [
+        "FIN",
+        "SWE",
+        "RUS"
+      ],
       "drivingSide": "right",
       "fifaCode": "NOR",
       "startOfWeek": "monday",
@@ -158,9 +181,8 @@
         "google": "https://goo.gl/maps/htWRrphA7vNgQNdSA",
         "osm": "https://www.openstreetmap.org/relation/2978650"
       },
-      "photo": "https://images.unsplash.com/photo-1433757741270-94a3bcadc2f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxPc2xvfGVufDB8fHx8MTczMTA3OTA2NHww&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 23,
-      "id": "6934"
+      "photo": "https://images.unsplash.com/photo-1433757741270-94a3bcadc2f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxPc2xvfGVufDB8fHx8MTczMTUzMTEyOXww&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -177,19 +199,26 @@
       "region": "Europe",
       "subregion": "Northern Europe",
       "area": 450295,
-      "languages": ["Swedish"],
+      "languages": [
+        "Swedish"
+      ],
       "currencies": [
         {
           "name": "Swedish krona",
           "symbol": "kr"
         }
       ],
-      "timezones": ["UTC+01:00"],
+      "timezones": [
+        "UTC+01:00"
+      ],
       "demonyms": {
         "male": "Swedish",
         "female": "Swedish"
       },
-      "borders": ["FIN", "NOR"],
+      "borders": [
+        "FIN",
+        "NOR"
+      ],
       "drivingSide": "right",
       "fifaCode": "SWE",
       "startOfWeek": "monday",
@@ -197,9 +226,8 @@
         "google": "https://goo.gl/maps/iqygE491ADVgnBW39",
         "osm": "https://www.openstreetmap.org/relation/52822"
       },
-      "photo": "https://images.unsplash.com/photo-1556740762-234ad84a3bb1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxTdG9ja2hvbG18ZW58MHx8fHwxNzMxMDc5MDY0fDA&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 4,
-      "id": "d095"
+      "photo": "https://images.unsplash.com/photo-1556740762-234ad84a3bb1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxTdG9ja2hvbG18ZW58MHx8fHwxNzMxNTMxMTMwfDA&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -216,19 +244,28 @@
       "region": "Europe",
       "subregion": "Northern Europe",
       "area": 338424,
-      "languages": ["Finnish", "Swedish"],
+      "languages": [
+        "Finnish",
+        "Swedish"
+      ],
       "currencies": [
         {
           "name": "Euro",
           "symbol": "€"
         }
       ],
-      "timezones": ["UTC+02:00"],
+      "timezones": [
+        "UTC+02:00"
+      ],
       "demonyms": {
         "male": "Finnish",
         "female": "Finnish"
       },
-      "borders": ["NOR", "SWE", "RUS"],
+      "borders": [
+        "NOR",
+        "SWE",
+        "RUS"
+      ],
       "drivingSide": "right",
       "fifaCode": "FIN",
       "startOfWeek": "monday",
@@ -236,9 +273,8 @@
         "google": "https://goo.gl/maps/HjgWDCNKRAYHrkMn8",
         "osm": "openstreetmap.org/relation/54224"
       },
-      "photo": "https://images.unsplash.com/photo-1522885147691-06d859633fb8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxIZWxzaW5raXxlbnwwfHx8fDE3MzEwNzkwNjR8MA&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 0,
-      "id": "48e2"
+      "photo": "https://images.unsplash.com/photo-1522885147691-06d859633fb8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxIZWxzaW5raXxlbnwwfHx8fDE3MzE1MzExMjl8MA&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -255,19 +291,29 @@
       "region": "Europe",
       "subregion": "Northern Europe",
       "area": 43094,
-      "languages": ["Danish"],
+      "languages": [
+        "Danish"
+      ],
       "currencies": [
         {
           "name": "Danish krone",
           "symbol": "kr"
         }
       ],
-      "timezones": ["UTC-04:00", "UTC-03:00", "UTC-01:00", "UTC", "UTC+01:00"],
+      "timezones": [
+        "UTC-04:00",
+        "UTC-03:00",
+        "UTC-01:00",
+        "UTC",
+        "UTC+01:00"
+      ],
       "demonyms": {
         "male": "Danish",
         "female": "Danish"
       },
-      "borders": ["DEU"],
+      "borders": [
+        "DEU"
+      ],
       "drivingSide": "right",
       "fifaCode": "DEN",
       "startOfWeek": "monday",
@@ -275,9 +321,8 @@
         "google": "https://goo.gl/maps/UddGPN7hAyrtpFiT6",
         "osm": "https://www.openstreetmap.org/relation/50046"
       },
-      "photo": "https://images.unsplash.com/photo-1502473379243-ba6449c3b6c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxDb3BlbmhhZ2VufGVufDB8fHx8MTczMTA3OTA2NHww&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 0,
-      "id": "1e9b"
+      "photo": "https://images.unsplash.com/photo-1502473379243-ba6449c3b6c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxDb3BlbmhhZ2VufGVufDB8fHx8MTczMTUzMTEyOXww&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -294,7 +339,9 @@
       "region": "Europe",
       "subregion": "Eastern Europe",
       "area": 17098242,
-      "languages": ["Russian"],
+      "languages": [
+        "Russian"
+      ],
       "currencies": [
         {
           "name": "Russian ruble",
@@ -339,9 +386,8 @@
         "google": "https://goo.gl/maps/4F4PpDhGJgVvLby57",
         "osm": "https://www.openstreetmap.org/relation/60189#map=3/65.15/105.29"
       },
-      "photo": "https://images.unsplash.com/photo-1541447271487-09612b3f49f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxNb3Njb3d8ZW58MHx8fHwxNzMxMDc5MDY0fDA&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 0,
-      "id": "a0fd"
+      "photo": "https://images.unsplash.com/photo-1541447271487-09612b3f49f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxNb3Njb3d8ZW58MHx8fHwxNzMxNTMxMTI5fDA&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -358,19 +404,26 @@
       "region": "Europe",
       "subregion": "Northern Europe",
       "area": 45227,
-      "languages": ["Estonian"],
+      "languages": [
+        "Estonian"
+      ],
       "currencies": [
         {
           "name": "Euro",
           "symbol": "€"
         }
       ],
-      "timezones": ["UTC+02:00"],
+      "timezones": [
+        "UTC+02:00"
+      ],
       "demonyms": {
         "male": "Estonian",
         "female": "Estonian"
       },
-      "borders": ["LVA", "RUS"],
+      "borders": [
+        "LVA",
+        "RUS"
+      ],
       "drivingSide": "right",
       "fifaCode": "EST",
       "startOfWeek": "monday",
@@ -378,9 +431,8 @@
         "google": "https://goo.gl/maps/6SsynwGUodL1sDvq8",
         "osm": "https://www.openstreetmap.org/relation/79510"
       },
-      "photo": "https://images.unsplash.com/photo-1526154668476-dfe52ce0bfcc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxUYWxsaW5ufGVufDB8fHx8MTczMTA3OTA2NHww&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 31,
-      "id": "ab1d"
+      "photo": "https://images.unsplash.com/photo-1526154668476-dfe52ce0bfcc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxUYWxsaW5ufGVufDB8fHx8MTczMTUzMTEzMHww&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -397,19 +449,28 @@
       "region": "Europe",
       "subregion": "Northern Europe",
       "area": 64559,
-      "languages": ["Latvian"],
+      "languages": [
+        "Latvian"
+      ],
       "currencies": [
         {
           "name": "Euro",
           "symbol": "€"
         }
       ],
-      "timezones": ["UTC+02:00"],
+      "timezones": [
+        "UTC+02:00"
+      ],
       "demonyms": {
         "male": "Latvian",
         "female": "Latvian"
       },
-      "borders": ["BLR", "EST", "LTU", "RUS"],
+      "borders": [
+        "BLR",
+        "EST",
+        "LTU",
+        "RUS"
+      ],
       "drivingSide": "right",
       "fifaCode": "LVA",
       "startOfWeek": "monday",
@@ -417,9 +478,8 @@
         "google": "https://goo.gl/maps/iQpUkH7ghq31ZtXe9",
         "osm": "https://www.openstreetmap.org/relation/72594"
       },
-      "photo": "https://images.unsplash.com/photo-1629961193013-3d74dc17aeab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxSaWdhfGVufDB8fHx8MTczMTA3OTA2NHww&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 0,
-      "id": "f989"
+      "photo": "https://images.unsplash.com/photo-1629961193013-3d74dc17aeab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxSaWdhfGVufDB8fHx8MTczMTUzMTEyOXww&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -436,19 +496,28 @@
       "region": "Europe",
       "subregion": "Northern Europe",
       "area": 65300,
-      "languages": ["Lithuanian"],
+      "languages": [
+        "Lithuanian"
+      ],
       "currencies": [
         {
           "name": "Euro",
           "symbol": "€"
         }
       ],
-      "timezones": ["UTC+02:00"],
+      "timezones": [
+        "UTC+02:00"
+      ],
       "demonyms": {
         "male": "Lithuanian",
         "female": "Lithuanian"
       },
-      "borders": ["BLR", "LVA", "POL", "RUS"],
+      "borders": [
+        "BLR",
+        "LVA",
+        "POL",
+        "RUS"
+      ],
       "drivingSide": "right",
       "fifaCode": "LTU",
       "startOfWeek": "monday",
@@ -456,9 +525,8 @@
         "google": "https://goo.gl/maps/dd1s9rrLjrK2G8yY6",
         "osm": "https://www.openstreetmap.org/relation/72596"
       },
-      "photo": "https://images.unsplash.com/photo-1645998628999-c642d3200917?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxWaWxuaXVzfGVufDB8fHx8MTczMTA3OTA2NHww&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 0,
-      "id": "0c76"
+      "photo": "https://images.unsplash.com/photo-1645998628999-c642d3200917?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxWaWxuaXVzfGVufDB8fHx8MTczMTUzMTEzMHww&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -475,7 +543,9 @@
       "region": "Americas",
       "subregion": "North America",
       "area": 9372610,
-      "languages": ["English"],
+      "languages": [
+        "English"
+      ],
       "currencies": [
         {
           "name": "United States dollar",
@@ -499,7 +569,10 @@
         "male": "American",
         "female": "American"
       },
-      "borders": ["CAN", "MEX"],
+      "borders": [
+        "CAN",
+        "MEX"
+      ],
       "drivingSide": "right",
       "fifaCode": "USA",
       "startOfWeek": "sunday",
@@ -507,9 +580,8 @@
         "google": "https://goo.gl/maps/e8M246zY4BSjkjAv6",
         "osm": "https://www.openstreetmap.org/relation/148838#map=2/20.6/-85.8"
       },
-      "photo": "https://images.unsplash.com/photo-1543372654-b45dd90eeee5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxXYXNoaW5ndG9uJTJDJTIwRC5DLnxlbnwwfHx8fDE3MzEwNzkwNjR8MA&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 10,
-      "id": "165e"
+      "photo": "https://images.unsplash.com/photo-1543372654-b45dd90eeee5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxXYXNoaW5ndG9uJTJDJTIwRC5DLnxlbnwwfHx8fDE3MzE1MzExMzB8MA&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -526,7 +598,9 @@
       "region": "Europe",
       "subregion": "Northern Europe",
       "area": 242900,
-      "languages": ["English"],
+      "languages": [
+        "English"
+      ],
       "currencies": [
         {
           "name": "British pound",
@@ -548,16 +622,17 @@
         "male": "British",
         "female": "British"
       },
-      "borders": ["IRL"],
+      "borders": [
+        "IRL"
+      ],
       "drivingSide": "left",
       "startOfWeek": "monday",
       "maps": {
         "google": "https://goo.gl/maps/FoDtc3UKMkFsXAjHA",
         "osm": "https://www.openstreetmap.org/relation/62149"
       },
-      "photo": "https://images.unsplash.com/photo-1526129318478-62ed807ebdf9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxMb25kb258ZW58MHx8fHwxNzMxMDc5MDY0fDA&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 3,
-      "id": "b8af"
+      "photo": "https://images.unsplash.com/photo-1526129318478-62ed807ebdf9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxMb25kb258ZW58MHx8fHwxNzMxNTMxMTMxfDA&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -574,19 +649,32 @@
       "region": "Europe",
       "subregion": "Western Europe",
       "area": 41284,
-      "languages": ["French", "Swiss German", "Italian", "Romansh"],
+      "languages": [
+        "French",
+        "Swiss German",
+        "Italian",
+        "Romansh"
+      ],
       "currencies": [
         {
           "name": "Swiss franc",
           "symbol": "Fr."
         }
       ],
-      "timezones": ["UTC+01:00"],
+      "timezones": [
+        "UTC+01:00"
+      ],
       "demonyms": {
         "male": "Swiss",
         "female": "Swiss"
       },
-      "borders": ["AUT", "FRA", "ITA", "LIE", "DEU"],
+      "borders": [
+        "AUT",
+        "FRA",
+        "ITA",
+        "LIE",
+        "DEU"
+      ],
       "drivingSide": "right",
       "fifaCode": "SUI",
       "startOfWeek": "monday",
@@ -594,9 +682,8 @@
         "google": "https://goo.gl/maps/uVuZcXaxSx5jLyEC9",
         "osm": "https://www.openstreetmap.org/relation/51701"
       },
-      "photo": "https://images.unsplash.com/photo-1521066350215-051129ff0a8a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxCZXJufGVufDB8fHx8MTczMTA3OTA2NHww&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 0,
-      "id": "af5f"
+      "photo": "https://images.unsplash.com/photo-1521066350215-051129ff0a8a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxCZXJufGVufDB8fHx8MTczMTUzMTEyOXww&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -613,19 +700,32 @@
       "region": "Europe",
       "subregion": "Central Europe",
       "area": 83871,
-      "languages": ["German"],
+      "languages": [
+        "German"
+      ],
       "currencies": [
         {
           "name": "Euro",
           "symbol": "€"
         }
       ],
-      "timezones": ["UTC+01:00"],
+      "timezones": [
+        "UTC+01:00"
+      ],
       "demonyms": {
         "male": "Austrian",
         "female": "Austrian"
       },
-      "borders": ["CZE", "DEU", "HUN", "ITA", "LIE", "SVK", "SVN", "CHE"],
+      "borders": [
+        "CZE",
+        "DEU",
+        "HUN",
+        "ITA",
+        "LIE",
+        "SVK",
+        "SVN",
+        "CHE"
+      ],
       "drivingSide": "right",
       "fifaCode": "AUT",
       "startOfWeek": "monday",
@@ -633,9 +733,8 @@
         "google": "https://goo.gl/maps/pCWpWQhznHyRzQcu9",
         "osm": "https://www.openstreetmap.org/relation/16239"
       },
-      "photo": "https://images.unsplash.com/photo-1516550893923-42d28e5677af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxWaWVubmF8ZW58MHx8fHwxNzMxMDc5MDY0fDA&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 3,
-      "id": "9d67"
+      "photo": "https://images.unsplash.com/photo-1516550893923-42d28e5677af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxWaWVubmF8ZW58MHx8fHwxNzMxNTMxMTI5fDA&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -652,14 +751,18 @@
       "region": "Europe",
       "subregion": "Western Europe",
       "area": 357114,
-      "languages": ["German"],
+      "languages": [
+        "German"
+      ],
       "currencies": [
         {
           "name": "Euro",
           "symbol": "€"
         }
       ],
-      "timezones": ["UTC+01:00"],
+      "timezones": [
+        "UTC+01:00"
+      ],
       "demonyms": {
         "male": "German",
         "female": "German"
@@ -682,9 +785,8 @@
         "google": "https://goo.gl/maps/mD9FBMq1nvXUBrkv6",
         "osm": "https://www.openstreetmap.org/relation/51477"
       },
-      "photo": "https://images.unsplash.com/photo-1528728329032-2972f65dfb3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxCZXJsaW58ZW58MHx8fHwxNzMxMDc5MDY0fDA&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 4,
-      "id": "3c71"
+      "photo": "https://images.unsplash.com/photo-1528728329032-2972f65dfb3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxCZXJsaW58ZW58MHx8fHwxNzMxNTMxMTMwfDA&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -701,19 +803,31 @@
       "region": "Europe",
       "subregion": "Central Europe",
       "area": 312679,
-      "languages": ["Polish"],
+      "languages": [
+        "Polish"
+      ],
       "currencies": [
         {
           "name": "Polish złoty",
           "symbol": "zł"
         }
       ],
-      "timezones": ["UTC+01:00"],
+      "timezones": [
+        "UTC+01:00"
+      ],
       "demonyms": {
         "male": "Polish",
         "female": "Polish"
       },
-      "borders": ["BLR", "CZE", "DEU", "LTU", "RUS", "SVK", "UKR"],
+      "borders": [
+        "BLR",
+        "CZE",
+        "DEU",
+        "LTU",
+        "RUS",
+        "SVK",
+        "UKR"
+      ],
       "drivingSide": "right",
       "fifaCode": "POL",
       "startOfWeek": "monday",
@@ -721,9 +835,8 @@
         "google": "https://goo.gl/maps/gY9Xw4Sf4415P4949",
         "osm": "https://www.openstreetmap.org/relation/49715"
       },
-      "photo": "https://images.unsplash.com/photo-1473339478549-efdcad0e752c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxXYXJzYXd8ZW58MHx8fHwxNzMxMDc5MDY0fDA&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 0,
-      "id": "e745"
+      "photo": "https://images.unsplash.com/photo-1473339478549-efdcad0e752c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxXYXJzYXd8ZW58MHx8fHwxNzMxNTMxMTMzfDA&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -740,19 +853,29 @@
       "region": "Europe",
       "subregion": "Central Europe",
       "area": 78865,
-      "languages": ["Czech", "Slovak"],
+      "languages": [
+        "Czech",
+        "Slovak"
+      ],
       "currencies": [
         {
           "name": "Czech koruna",
           "symbol": "Kč"
         }
       ],
-      "timezones": ["UTC+01:00"],
+      "timezones": [
+        "UTC+01:00"
+      ],
       "demonyms": {
         "male": "Czech",
         "female": "Czech"
       },
-      "borders": ["AUT", "DEU", "POL", "SVK"],
+      "borders": [
+        "AUT",
+        "DEU",
+        "POL",
+        "SVK"
+      ],
       "drivingSide": "right",
       "fifaCode": "CZE",
       "startOfWeek": "monday",
@@ -760,9 +883,8 @@
         "google": "https://goo.gl/maps/47dmgeXMZyhDHyQW8",
         "osm": "https://www.openstreetmap.org/relation/51684"
       },
-      "photo": "https://images.unsplash.com/photo-1503410781609-75b1d892dd28?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxQcmFndWV8ZW58MHx8fHwxNzMxMDc5MDY0fDA&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 0,
-      "id": "28cd"
+      "photo": "https://images.unsplash.com/photo-1503410781609-75b1d892dd28?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxQcmFndWV8ZW58MHx8fHwxNzMxNTMxMTI5fDA&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -779,19 +901,29 @@
       "region": "Europe",
       "subregion": "Central Europe",
       "area": 49037,
-      "languages": ["Slovak"],
+      "languages": [
+        "Slovak"
+      ],
       "currencies": [
         {
           "name": "Euro",
           "symbol": "€"
         }
       ],
-      "timezones": ["UTC+01:00"],
+      "timezones": [
+        "UTC+01:00"
+      ],
       "demonyms": {
         "male": "Slovak",
         "female": "Slovak"
       },
-      "borders": ["AUT", "CZE", "HUN", "POL", "UKR"],
+      "borders": [
+        "AUT",
+        "CZE",
+        "HUN",
+        "POL",
+        "UKR"
+      ],
       "drivingSide": "right",
       "fifaCode": "SVK",
       "startOfWeek": "monday",
@@ -799,9 +931,8 @@
         "google": "https://goo.gl/maps/uNSH2wW4bLoZVYJj7",
         "osm": "https://www.openstreetmap.org/relation/14296"
       },
-      "photo": "https://images.unsplash.com/photo-1621944860890-ec7d53c45a5f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxCcmF0aXNsYXZhfGVufDB8fHx8MTczMTA3OTA2NHww&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 0,
-      "id": "41a1"
+      "photo": "https://images.unsplash.com/photo-1621944860890-ec7d53c45a5f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxCcmF0aXNsYXZhfGVufDB8fHx8MTczMTUzMTEyOXww&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -818,19 +949,31 @@
       "region": "Europe",
       "subregion": "Eastern Europe",
       "area": 603500,
-      "languages": ["Ukrainian"],
+      "languages": [
+        "Ukrainian"
+      ],
       "currencies": [
         {
           "name": "Ukrainian hryvnia",
           "symbol": "₴"
         }
       ],
-      "timezones": ["UTC+02:00"],
+      "timezones": [
+        "UTC+02:00"
+      ],
       "demonyms": {
         "male": "Ukrainian",
         "female": "Ukrainian"
       },
-      "borders": ["BLR", "HUN", "MDA", "POL", "ROU", "RUS", "SVK"],
+      "borders": [
+        "BLR",
+        "HUN",
+        "MDA",
+        "POL",
+        "ROU",
+        "RUS",
+        "SVK"
+      ],
       "drivingSide": "right",
       "fifaCode": "UKR",
       "startOfWeek": "monday",
@@ -838,9 +981,8 @@
         "google": "https://goo.gl/maps/DvgJMiPJ7aozKFZv7",
         "osm": "https://www.openstreetmap.org/relation/60199"
       },
-      "photo": "https://images.unsplash.com/photo-1616093708407-8d93651b2b04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxLeWl2fGVufDB8fHx8MTczMTA3OTA2NHww&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 1,
-      "id": "6a52"
+      "photo": "https://images.unsplash.com/photo-1616093708407-8d93651b2b04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxLeWl2fGVufDB8fHx8MTczMTUzMTEyOXww&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -857,19 +999,30 @@
       "region": "Europe",
       "subregion": "Eastern Europe",
       "area": 207600,
-      "languages": ["Belarusian", "Russian"],
+      "languages": [
+        "Belarusian",
+        "Russian"
+      ],
       "currencies": [
         {
           "name": "Belarusian ruble",
           "symbol": "Br"
         }
       ],
-      "timezones": ["UTC+03:00"],
+      "timezones": [
+        "UTC+03:00"
+      ],
       "demonyms": {
         "male": "Belarusian",
         "female": "Belarusian"
       },
-      "borders": ["LVA", "LTU", "POL", "RUS", "UKR"],
+      "borders": [
+        "LVA",
+        "LTU",
+        "POL",
+        "RUS",
+        "UKR"
+      ],
       "drivingSide": "right",
       "fifaCode": "BLR",
       "startOfWeek": "monday",
@@ -877,9 +1030,8 @@
         "google": "https://goo.gl/maps/PJUDU3EBPSszCQcu6",
         "osm": "https://www.openstreetmap.org/relation/59065"
       },
-      "photo": "https://images.unsplash.com/photo-1689034915352-f33897491a81?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxNaW5za3xlbnwwfHx8fDE3MzEwNzkwNjR8MA&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 0,
-      "id": "ddf0"
+      "photo": "https://images.unsplash.com/photo-1689034915352-f33897491a81?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxNaW5za3xlbnwwfHx8fDE3MzE1MzExMjl8MA&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -896,19 +1048,31 @@
       "region": "Asia",
       "subregion": "Central Asia",
       "area": 2724900,
-      "languages": ["Kazakh", "Russian"],
+      "languages": [
+        "Kazakh",
+        "Russian"
+      ],
       "currencies": [
         {
           "name": "Kazakhstani tenge",
           "symbol": "₸"
         }
       ],
-      "timezones": ["UTC+05:00", "UTC+06:00"],
+      "timezones": [
+        "UTC+05:00",
+        "UTC+06:00"
+      ],
       "demonyms": {
         "male": "Kazakhstani",
         "female": "Kazakhstani"
       },
-      "borders": ["CHN", "KGZ", "RUS", "TKM", "UZB"],
+      "borders": [
+        "CHN",
+        "KGZ",
+        "RUS",
+        "TKM",
+        "UZB"
+      ],
       "drivingSide": "right",
       "fifaCode": "KAZ",
       "startOfWeek": "monday",
@@ -916,9 +1080,8 @@
         "google": "https://goo.gl/maps/8VohJGu7ShuzZYyeA",
         "osm": "https://www.openstreetmap.org/relation/214665"
       },
-      "photo": "https://images.unsplash.com/photo-1645817227685-e97c2f7f1e3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxOdXItU3VsdGFufGVufDB8fHx8MTczMTA3OTA2NHww&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 0,
-      "id": "abd1"
+      "photo": "https://images.unsplash.com/photo-1645817227685-e97c2f7f1e3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxOdXItU3VsdGFufGVufDB8fHx8MTczMTUzMTEzOHww&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -935,19 +1098,27 @@
       "region": "Asia",
       "subregion": "Eastern Asia",
       "area": 1564110,
-      "languages": ["Mongolian"],
+      "languages": [
+        "Mongolian"
+      ],
       "currencies": [
         {
           "name": "Mongolian tögrög",
           "symbol": "₮"
         }
       ],
-      "timezones": ["UTC+07:00", "UTC+08:00"],
+      "timezones": [
+        "UTC+07:00",
+        "UTC+08:00"
+      ],
       "demonyms": {
         "male": "Mongolian",
         "female": "Mongolian"
       },
-      "borders": ["CHN", "RUS"],
+      "borders": [
+        "CHN",
+        "RUS"
+      ],
       "drivingSide": "right",
       "fifaCode": "MNG",
       "startOfWeek": "monday",
@@ -955,9 +1126,8 @@
         "google": "https://goo.gl/maps/A1X7bMCKThBDNjzH6",
         "osm": "https://www.openstreetmap.org/relation/161033"
       },
-      "photo": "https://images.unsplash.com/photo-1588530013770-67361359a970?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxVbGFuJTIwQmF0b3J8ZW58MHx8fHwxNzMxMDc5MDY0fDA&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 0,
-      "id": "eed8"
+      "photo": "https://images.unsplash.com/photo-1588530013770-67361359a970?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxVbGFuJTIwQmF0b3J8ZW58MHx8fHwxNzMxNTMxMTMwfDA&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -974,14 +1144,18 @@
       "region": "Asia",
       "subregion": "Eastern Asia",
       "area": 377930,
-      "languages": ["Japanese"],
+      "languages": [
+        "Japanese"
+      ],
       "currencies": [
         {
           "name": "Japanese yen",
           "symbol": "¥"
         }
       ],
-      "timezones": ["UTC+09:00"],
+      "timezones": [
+        "UTC+09:00"
+      ],
       "demonyms": {
         "male": "Japanese",
         "female": "Japanese"
@@ -994,9 +1168,8 @@
         "google": "https://goo.gl/maps/NGTLSCSrA8bMrvnX9",
         "osm": "https://www.openstreetmap.org/relation/382313"
       },
-      "photo": "https://images.unsplash.com/photo-1554797589-7241bb691973?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxUb2t5b3xlbnwwfHx8fDE3MzEwNzkwNjR8MA&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 0,
-      "id": "2c35"
+      "photo": "https://images.unsplash.com/photo-1554797589-7241bb691973?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxUb2t5b3xlbnwwfHx8fDE3MzE1MzExMzB8MA&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -1013,19 +1186,25 @@
       "region": "Asia",
       "subregion": "Eastern Asia",
       "area": 100210,
-      "languages": ["Korean"],
+      "languages": [
+        "Korean"
+      ],
       "currencies": [
         {
           "name": "South Korean won",
           "symbol": "₩"
         }
       ],
-      "timezones": ["UTC+09:00"],
+      "timezones": [
+        "UTC+09:00"
+      ],
       "demonyms": {
         "male": "South Korean",
         "female": "South Korean"
       },
-      "borders": ["PRK"],
+      "borders": [
+        "PRK"
+      ],
       "drivingSide": "right",
       "fifaCode": "KOR",
       "startOfWeek": "monday",
@@ -1033,9 +1212,8 @@
         "google": "https://goo.gl/maps/7ecjaJXefjAQhxjGA",
         "osm": "https://www.openstreetmap.org/relation/307756"
       },
-      "photo": "https://images.unsplash.com/photo-1506905635675-bb2205492c53?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxTZW91bHxlbnwwfHx8fDE3MzEwNzkwNjR8MA&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 0,
-      "id": "c855"
+      "photo": "https://images.unsplash.com/photo-1506905635675-bb2205492c53?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxTZW91bHxlbnwwfHx8fDE3MzE1MzExMzB8MA&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -1052,14 +1230,18 @@
       "region": "Asia",
       "subregion": "Eastern Asia",
       "area": 9706961,
-      "languages": ["Chinese"],
+      "languages": [
+        "Chinese"
+      ],
       "currencies": [
         {
           "name": "Chinese yuan",
           "symbol": "¥"
         }
       ],
-      "timezones": ["UTC+08:00"],
+      "timezones": [
+        "UTC+08:00"
+      ],
       "demonyms": {
         "male": "Chinese",
         "female": "Chinese"
@@ -1089,9 +1271,8 @@
         "google": "https://goo.gl/maps/p9qC6vgiFRRXzvGi7",
         "osm": "https://www.openstreetmap.org/relation/270056"
       },
-      "photo": "https://images.unsplash.com/photo-1542185269-844e51205907?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxCZWlqaW5nfGVufDB8fHx8MTczMTA3OTA2NHww&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 0,
-      "id": "ea84"
+      "photo": "https://images.unsplash.com/photo-1542185269-844e51205907?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxCZWlqaW5nfGVufDB8fHx8MTczMTUzMTEzM3ww&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -1108,19 +1289,32 @@
       "region": "Asia",
       "subregion": "Southern Asia",
       "area": 3287590,
-      "languages": ["English", "Hindi", "Tamil"],
+      "languages": [
+        "English",
+        "Hindi",
+        "Tamil"
+      ],
       "currencies": [
         {
           "name": "Indian rupee",
           "symbol": "₹"
         }
       ],
-      "timezones": ["UTC+05:30"],
+      "timezones": [
+        "UTC+05:30"
+      ],
       "demonyms": {
         "male": "Indian",
         "female": "Indian"
       },
-      "borders": ["BGD", "BTN", "MMR", "CHN", "NPL", "PAK"],
+      "borders": [
+        "BGD",
+        "BTN",
+        "MMR",
+        "CHN",
+        "NPL",
+        "PAK"
+      ],
       "drivingSide": "left",
       "fifaCode": "IND",
       "startOfWeek": "monday",
@@ -1128,9 +1322,64 @@
         "google": "https://goo.gl/maps/WSk3fLwG4vtPQetp7",
         "osm": "https://www.openstreetmap.org/relation/304716"
       },
-      "photo": "https://images.unsplash.com/photo-1586318355105-09019060cf51?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxOZXclMjBEZWxoaXxlbnwwfHx8fDE3MzEwODE0MTN8MA&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 0,
-      "id": "b9eb"
+      "photo": "https://images.unsplash.com/photo-1586318355105-09019060cf51?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxOZXclMjBEZWxoaXxlbnwwfHx8fDE3MzE1MzExMzB8MA&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
+    },
+    {
+      "name": {
+        "en": "Brazil",
+        "ka": "ბრაზილია"
+      },
+      "officialName": "Federative Republic of Brazil",
+      "flag": "https://flagcdn.com/br.svg",
+      "population": 212559409,
+      "capital": {
+        "en": "Brasília",
+        "ka": "ბრაზილია"
+      },
+      "region": "Americas",
+      "subregion": "South America",
+      "area": 8515767,
+      "languages": [
+        "Portuguese"
+      ],
+      "currencies": [
+        {
+          "name": "Brazilian real",
+          "symbol": "R$"
+        }
+      ],
+      "timezones": [
+        "UTC-05:00",
+        "UTC-04:00",
+        "UTC-03:00",
+        "UTC-02:00"
+      ],
+      "demonyms": {
+        "male": "Brazilian",
+        "female": "Brazilian"
+      },
+      "borders": [
+        "ARG",
+        "BOL",
+        "COL",
+        "GUF",
+        "GUY",
+        "PRY",
+        "PER",
+        "SUR",
+        "URY",
+        "VEN"
+      ],
+      "drivingSide": "right",
+      "fifaCode": "BRA",
+      "startOfWeek": "monday",
+      "maps": {
+        "google": "https://goo.gl/maps/waCKk21HeeqFzkNC9",
+        "osm": "https://www.openstreetmap.org/relation/59470"
+      },
+      "photo": "https://images.unsplash.com/photo-1599697777020-57693fa1bffe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxCcmFzJUMzJUFEbGlhfGVufDB8fHx8MTczMTUzMTEzMXww&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -1147,19 +1396,30 @@
       "region": "Americas",
       "subregion": "South America",
       "area": 2780400,
-      "languages": ["Guaraní", "Spanish"],
+      "languages": [
+        "Guaraní",
+        "Spanish"
+      ],
       "currencies": [
         {
           "name": "Argentine peso",
           "symbol": "$"
         }
       ],
-      "timezones": ["UTC-03:00"],
+      "timezones": [
+        "UTC-03:00"
+      ],
       "demonyms": {
         "male": "Argentine",
         "female": "Argentine"
       },
-      "borders": ["BOL", "BRA", "CHL", "PRY", "URY"],
+      "borders": [
+        "BOL",
+        "BRA",
+        "CHL",
+        "PRY",
+        "URY"
+      ],
       "drivingSide": "right",
       "fifaCode": "ARG",
       "startOfWeek": "monday",
@@ -1167,9 +1427,8 @@
         "google": "https://goo.gl/maps/Z9DXNxhf2o93kvyc6",
         "osm": "https://www.openstreetmap.org/relation/286393"
       },
-      "photo": "https://images.unsplash.com/photo-1589390216671-b4652e15241e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxCdWVub3MlMjBBaXJlc3xlbnwwfHx8fDE3MzEwODE0MTN8MA&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 0,
-      "id": "e474"
+      "photo": "https://images.unsplash.com/photo-1589390216671-b4652e15241e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxCdWVub3MlMjBBaXJlc3xlbnwwfHx8fDE3MzE1MzExMzF8MA&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -1186,7 +1445,9 @@
       "region": "Oceania",
       "subregion": "Australia and New Zealand",
       "area": 7692024,
-      "languages": ["English"],
+      "languages": [
+        "English"
+      ],
       "currencies": [
         {
           "name": "Australian dollar",
@@ -1215,9 +1476,8 @@
         "google": "https://goo.gl/maps/DcjaDa7UbhnZTndH6",
         "osm": "https://www.openstreetmap.org/relation/80500"
       },
-      "photo": "https://images.unsplash.com/photo-1506778790542-61bcb38deb64?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxDYW5iZXJyYXxlbnwwfHx8fDE3MzEwODE0MTJ8MA&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 0,
-      "id": "17e0"
+      "photo": "https://images.unsplash.com/photo-1506778790542-61bcb38deb64?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxDYW5iZXJyYXxlbnwwfHx8fDE3MzE1MzExMzF8MA&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -1234,7 +1494,11 @@
       "region": "Oceania",
       "subregion": "Australia and New Zealand",
       "area": 270467,
-      "languages": ["English", "Māori", "New Zealand Sign Language"],
+      "languages": [
+        "English",
+        "Māori",
+        "New Zealand Sign Language"
+      ],
       "currencies": [
         {
           "name": "New Zealand dollar",
@@ -1260,9 +1524,8 @@
         "google": "https://goo.gl/maps/xXiDQo65dwdpw9iu8",
         "osm": "https://www.openstreetmap.org/relation/556706#map=5/-46.710/172.046"
       },
-      "photo": "https://images.unsplash.com/photo-1696998408348-6973857e4862?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxXZWxsaW5ndG9ufGVufDB8fHx8MTczMTA4MTQxM3ww&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 0,
-      "id": "4dc8"
+      "photo": "https://images.unsplash.com/photo-1696998408348-6973857e4862?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxXZWxsaW5ndG9ufGVufDB8fHx8MTczMTUzMTEzMXww&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -1279,19 +1542,29 @@
       "region": "Americas",
       "subregion": "North America",
       "area": 1964375,
-      "languages": ["Spanish"],
+      "languages": [
+        "Spanish"
+      ],
       "currencies": [
         {
           "name": "Mexican peso",
           "symbol": "$"
         }
       ],
-      "timezones": ["UTC-08:00", "UTC-07:00", "UTC-06:00"],
+      "timezones": [
+        "UTC-08:00",
+        "UTC-07:00",
+        "UTC-06:00"
+      ],
       "demonyms": {
         "male": "Mexican",
         "female": "Mexican"
       },
-      "borders": ["BLZ", "GTM", "USA"],
+      "borders": [
+        "BLZ",
+        "GTM",
+        "USA"
+      ],
       "drivingSide": "right",
       "fifaCode": "MEX",
       "startOfWeek": "monday",
@@ -1299,9 +1572,8 @@
         "google": "https://goo.gl/maps/s5g7imNPMDEePxzbA",
         "osm": "https://www.openstreetmap.org/relation/114686"
       },
-      "photo": "https://images.unsplash.com/photo-1533250716932-0043bb51ddb2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxNZXhpY28lMjBDaXR5fGVufDB8fHx8MTczMTA4MTQxM3ww&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 0,
-      "id": "7bfc"
+      "photo": "https://images.unsplash.com/photo-1533250716932-0043bb51ddb2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxNZXhpY28lMjBDaXR5fGVufDB8fHx8MTczMTUzMTEzMXww&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -1318,7 +1590,9 @@
       "region": "Europe",
       "subregion": "Western Europe",
       "area": 551695,
-      "languages": ["French"],
+      "languages": [
+        "French"
+      ],
       "currencies": [
         {
           "name": "Euro",
@@ -1345,7 +1619,16 @@
         "male": "French",
         "female": "French"
       },
-      "borders": ["AND", "BEL", "DEU", "ITA", "LUX", "MCO", "ESP", "CHE"],
+      "borders": [
+        "AND",
+        "BEL",
+        "DEU",
+        "ITA",
+        "LUX",
+        "MCO",
+        "ESP",
+        "CHE"
+      ],
       "drivingSide": "right",
       "fifaCode": "FRA",
       "startOfWeek": "monday",
@@ -1353,9 +1636,57 @@
         "google": "https://goo.gl/maps/g7QxxSFsWyTPKuzd7",
         "osm": "https://www.openstreetmap.org/relation/1403916"
       },
-      "photo": "https://images.unsplash.com/photo-1471623320832-752e8bbf8413?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxQYXJpc3xlbnwwfHx8fDE3MzEwODE0MTJ8MA&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 0,
-      "id": "d173"
+      "photo": "https://images.unsplash.com/photo-1471623320832-752e8bbf8413?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxQYXJpc3xlbnwwfHx8fDE3MzE1MzExMzB8MA&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
+    },
+    {
+      "name": {
+        "en": "Italy",
+        "ka": "იტალია"
+      },
+      "officialName": "Italian Republic",
+      "flag": "https://flagcdn.com/it.svg",
+      "population": 59554023,
+      "capital": {
+        "en": "Rome",
+        "ka": "რომი"
+      },
+      "region": "Europe",
+      "subregion": "Southern Europe",
+      "area": 301336,
+      "languages": [
+        "Italian"
+      ],
+      "currencies": [
+        {
+          "name": "Euro",
+          "symbol": "€"
+        }
+      ],
+      "timezones": [
+        "UTC+01:00"
+      ],
+      "demonyms": {
+        "male": "Italian",
+        "female": "Italian"
+      },
+      "borders": [
+        "AUT",
+        "FRA",
+        "SMR",
+        "SVN",
+        "CHE",
+        "VAT"
+      ],
+      "drivingSide": "right",
+      "fifaCode": "ITA",
+      "startOfWeek": "monday",
+      "maps": {
+        "google": "https://goo.gl/maps/8M1K27TDj7StTRTq8",
+        "osm": "https://www.openstreetmap.org/relation/365331"
+      },
+      "photo": "https://images.unsplash.com/photo-1529154036614-a60975f5c760?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxSb21lfGVufDB8fHx8MTczMTUzMTEzMHww&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -1372,19 +1703,33 @@
       "region": "Europe",
       "subregion": "Southern Europe",
       "area": 505992,
-      "languages": ["Spanish", "Catalan", "Basque", "Galician"],
+      "languages": [
+        "Spanish",
+        "Catalan",
+        "Basque",
+        "Galician"
+      ],
       "currencies": [
         {
           "name": "Euro",
           "symbol": "€"
         }
       ],
-      "timezones": ["UTC", "UTC+01:00"],
+      "timezones": [
+        "UTC",
+        "UTC+01:00"
+      ],
       "demonyms": {
         "male": "Spanish",
         "female": "Spanish"
       },
-      "borders": ["AND", "FRA", "GIB", "PRT", "MAR"],
+      "borders": [
+        "AND",
+        "FRA",
+        "GIB",
+        "PRT",
+        "MAR"
+      ],
       "drivingSide": "right",
       "fifaCode": "ESP",
       "startOfWeek": "monday",
@@ -1392,9 +1737,8 @@
         "google": "https://goo.gl/maps/138JaXW8EZzRVitY9",
         "osm": "https://www.openstreetmap.org/relation/1311341"
       },
-      "photo": "https://images.unsplash.com/photo-1509845350455-fb0c36048db1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxNYWRyaWR8ZW58MHx8fHwxNzMxMDgxNDEzfDA&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 0,
-      "id": "63e3"
+      "photo": "https://images.unsplash.com/photo-1509845350455-fb0c36048db1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxNYWRyaWR8ZW58MHx8fHwxNzMxNTMxMTI5fDA&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -1411,19 +1755,26 @@
       "region": "Europe",
       "subregion": "Southern Europe",
       "area": 92090,
-      "languages": ["Portuguese"],
+      "languages": [
+        "Portuguese"
+      ],
       "currencies": [
         {
           "name": "Euro",
           "symbol": "€"
         }
       ],
-      "timezones": ["UTC-01:00", "UTC"],
+      "timezones": [
+        "UTC-01:00",
+        "UTC"
+      ],
       "demonyms": {
         "male": "Portuguese",
         "female": "Portuguese"
       },
-      "borders": ["ESP"],
+      "borders": [
+        "ESP"
+      ],
       "drivingSide": "right",
       "fifaCode": "POR",
       "startOfWeek": "monday",
@@ -1431,9 +1782,8 @@
         "google": "https://goo.gl/maps/BaTBSyc4GWMmbAKB8",
         "osm": "https://www.openstreetmap.org/relation/295480"
       },
-      "photo": "https://images.unsplash.com/photo-1536663815808-535e2280d2c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxMaXNib258ZW58MHx8fHwxNzMxMDgxNDEzfDA&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 0,
-      "id": "ddd9"
+      "photo": "https://images.unsplash.com/photo-1536663815808-535e2280d2c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxMaXNib258ZW58MHx8fHwxNzMxNTMxMTI5fDA&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -1450,19 +1800,28 @@
       "region": "Europe",
       "subregion": "Southern Europe",
       "area": 131990,
-      "languages": ["Greek"],
+      "languages": [
+        "Greek"
+      ],
       "currencies": [
         {
           "name": "Euro",
           "symbol": "€"
         }
       ],
-      "timezones": ["UTC+02:00"],
+      "timezones": [
+        "UTC+02:00"
+      ],
       "demonyms": {
         "male": "Greek",
         "female": "Greek"
       },
-      "borders": ["ALB", "BGR", "TUR", "MKD"],
+      "borders": [
+        "ALB",
+        "BGR",
+        "TUR",
+        "MKD"
+      ],
       "drivingSide": "right",
       "fifaCode": "GRE",
       "startOfWeek": "monday",
@@ -1470,9 +1829,8 @@
         "google": "https://goo.gl/maps/LHGcAvuRyD2iKECC6",
         "osm": "https://www.openstreetmap.org/relation/192307"
       },
-      "photo": "https://images.unsplash.com/photo-1602769247692-126fdf1f1da6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxBdGhlbnN8ZW58MHx8fHwxNzMxMDgxNDEzfDA&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 0,
-      "id": "2eab"
+      "photo": "https://images.unsplash.com/photo-1602769247692-126fdf1f1da6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxBdGhlbnN8ZW58MHx8fHwxNzMxNTMxMTMwfDA&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -1489,19 +1847,32 @@
       "region": "Asia",
       "subregion": "Western Asia",
       "area": 783562,
-      "languages": ["Turkish"],
+      "languages": [
+        "Turkish"
+      ],
       "currencies": [
         {
           "name": "Turkish lira",
           "symbol": "₺"
         }
       ],
-      "timezones": ["UTC+03:00"],
+      "timezones": [
+        "UTC+03:00"
+      ],
       "demonyms": {
         "male": "Turkish",
         "female": "Turkish"
       },
-      "borders": ["ARM", "AZE", "BGR", "GEO", "GRC", "IRN", "IRQ", "SYR"],
+      "borders": [
+        "ARM",
+        "AZE",
+        "BGR",
+        "GEO",
+        "GRC",
+        "IRN",
+        "IRQ",
+        "SYR"
+      ],
       "drivingSide": "right",
       "fifaCode": "TUR",
       "startOfWeek": "monday",
@@ -1509,9 +1880,8 @@
         "google": "https://goo.gl/maps/dXFFraiUDfcB6Quk6",
         "osm": "https://www.openstreetmap.org/relation/174737"
       },
-      "photo": "https://images.unsplash.com/photo-1671552889144-37ab0be024d1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxBbmthcmF8ZW58MHx8fHwxNzMxMDgxNDEzfDA&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 0,
-      "id": "ffab"
+      "photo": "https://images.unsplash.com/photo-1671552889144-37ab0be024d1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxBbmthcmF8ZW58MHx8fHwxNzMxNTMxMTMwfDA&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -1528,19 +1898,31 @@
       "region": "Asia",
       "subregion": "Western Asia",
       "area": 2149690,
-      "languages": ["Arabic"],
+      "languages": [
+        "Arabic"
+      ],
       "currencies": [
         {
           "name": "Saudi riyal",
           "symbol": "ر.س"
         }
       ],
-      "timezones": ["UTC+03:00"],
+      "timezones": [
+        "UTC+03:00"
+      ],
       "demonyms": {
         "male": "Saudi Arabian",
         "female": "Saudi Arabian"
       },
-      "borders": ["IRQ", "JOR", "KWT", "OMN", "QAT", "ARE", "YEM"],
+      "borders": [
+        "IRQ",
+        "JOR",
+        "KWT",
+        "OMN",
+        "QAT",
+        "ARE",
+        "YEM"
+      ],
       "drivingSide": "right",
       "fifaCode": "KSA",
       "startOfWeek": "sunday",
@@ -1548,9 +1930,8 @@
         "google": "https://goo.gl/maps/5PSjvdJ1AyaLFRrG9",
         "osm": "https://www.openstreetmap.org/relation/307584"
       },
-      "photo": "https://images.unsplash.com/photo-1697602251148-2e982bf40c5c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxSaXlhZGh8ZW58MHx8fHwxNzMxMDgxNDEyfDA&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 0,
-      "id": "2abb"
+      "photo": "https://images.unsplash.com/photo-1697602251148-2e982bf40c5c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxSaXlhZGh8ZW58MHx8fHwxNzMxNTMxMTMwfDA&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -1567,19 +1948,31 @@
       "region": "Asia",
       "subregion": "Southern Asia",
       "area": 1648195,
-      "languages": ["Persian (Farsi)"],
+      "languages": [
+        "Persian (Farsi)"
+      ],
       "currencies": [
         {
           "name": "Iranian rial",
           "symbol": "﷼"
         }
       ],
-      "timezones": ["UTC+03:30"],
+      "timezones": [
+        "UTC+03:30"
+      ],
       "demonyms": {
         "male": "Iranian",
         "female": "Iranian"
       },
-      "borders": ["AFG", "ARM", "AZE", "IRQ", "PAK", "TUR", "TKM"],
+      "borders": [
+        "AFG",
+        "ARM",
+        "AZE",
+        "IRQ",
+        "PAK",
+        "TUR",
+        "TKM"
+      ],
       "drivingSide": "right",
       "fifaCode": "IRN",
       "startOfWeek": "saturday",
@@ -1587,9 +1980,8 @@
         "google": "https://goo.gl/maps/dMgEGuacBPGYQnjY7",
         "osm": "https://www.openstreetmap.org/relation/304938"
       },
-      "photo": "https://images.unsplash.com/photo-1556879043-38510cc78848?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxUZWhyYW58ZW58MHx8fHwxNzMxMDgxNDEzfDA&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 0,
-      "id": "721a"
+      "photo": "https://images.unsplash.com/photo-1556879043-38510cc78848?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxUZWhyYW58ZW58MHx8fHwxNzMxNTMxMTMwfDA&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -1606,19 +1998,32 @@
       "region": "Asia",
       "subregion": "Western Asia",
       "area": 438317,
-      "languages": ["Arabic", "Aramaic", "Sorani"],
+      "languages": [
+        "Arabic",
+        "Aramaic",
+        "Sorani"
+      ],
       "currencies": [
         {
           "name": "Iraqi dinar",
           "symbol": "ع.د"
         }
       ],
-      "timezones": ["UTC+03:00"],
+      "timezones": [
+        "UTC+03:00"
+      ],
       "demonyms": {
         "male": "Iraqi",
         "female": "Iraqi"
       },
-      "borders": ["IRN", "JOR", "KWT", "SAU", "SYR", "TUR"],
+      "borders": [
+        "IRN",
+        "JOR",
+        "KWT",
+        "SAU",
+        "SYR",
+        "TUR"
+      ],
       "drivingSide": "right",
       "fifaCode": "IRQ",
       "startOfWeek": "sunday",
@@ -1626,9 +2031,8 @@
         "google": "https://goo.gl/maps/iL8Bmy1sUCW9fUk18",
         "osm": "https://www.openstreetmap.org/relation/304934"
       },
-      "photo": "https://images.unsplash.com/photo-1668624384628-38c90f9e5783?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxCYWdoZGFkfGVufDB8fHx8MTczMTA4MTQxMnww&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 0,
-      "id": "af1d"
+      "photo": "https://images.unsplash.com/photo-1668624384628-38c90f9e5783?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxCYWdoZGFkfGVufDB8fHx8MTczMTUzMTEzMHww&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -1645,19 +2049,30 @@
       "region": "Asia",
       "subregion": "Western Asia",
       "area": 20770,
-      "languages": ["Arabic", "Hebrew"],
+      "languages": [
+        "Arabic",
+        "Hebrew"
+      ],
       "currencies": [
         {
           "name": "Israeli new shekel",
           "symbol": "₪"
         }
       ],
-      "timezones": ["UTC+02:00"],
+      "timezones": [
+        "UTC+02:00"
+      ],
       "demonyms": {
         "male": "Israeli",
         "female": "Israeli"
       },
-      "borders": ["EGY", "JOR", "LBN", "PSE", "SYR"],
+      "borders": [
+        "EGY",
+        "JOR",
+        "LBN",
+        "PSE",
+        "SYR"
+      ],
       "drivingSide": "right",
       "fifaCode": "ISR",
       "startOfWeek": "sunday",
@@ -1665,9 +2080,8 @@
         "google": "https://goo.gl/maps/6UY1AH8XeafVwdC97",
         "osm": "https://www.openstreetmap.org/relation/1473946"
       },
-      "photo": "https://images.unsplash.com/photo-1464980195772-d5d6e9435fac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxKZXJ1c2FsZW18ZW58MHx8fHwxNzMxMDgxNDEzfDA&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 0,
-      "id": "dbf2"
+      "photo": "https://images.unsplash.com/photo-1464980195772-d5d6e9435fac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxKZXJ1c2FsZW18ZW58MHx8fHwxNzMxNTMxMTMwfDA&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -1684,19 +2098,28 @@
       "region": "Africa",
       "subregion": "Northern Africa",
       "area": 1002450,
-      "languages": ["Arabic"],
+      "languages": [
+        "Arabic"
+      ],
       "currencies": [
         {
           "name": "Egyptian pound",
           "symbol": "£"
         }
       ],
-      "timezones": ["UTC+02:00"],
+      "timezones": [
+        "UTC+02:00"
+      ],
       "demonyms": {
         "male": "Egyptian",
         "female": "Egyptian"
       },
-      "borders": ["ISR", "LBY", "PSE", "SDN"],
+      "borders": [
+        "ISR",
+        "LBY",
+        "PSE",
+        "SDN"
+      ],
       "drivingSide": "right",
       "fifaCode": "EGY",
       "startOfWeek": "sunday",
@@ -1704,9 +2127,8 @@
         "google": "https://goo.gl/maps/uoDRhXbsqjG6L7VG7",
         "osm": "https://www.openstreetmap.org/relation/1473947"
       },
-      "photo": "https://images.unsplash.com/photo-1541769740-098e80269166?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxDYWlyb3xlbnwwfHx8fDE3MzEwODE0MTJ8MA&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 0,
-      "id": "01f0"
+      "photo": "https://images.unsplash.com/photo-1541769740-098e80269166?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxDYWlyb3xlbnwwfHx8fDE3MzE1MzExMjl8MA&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -1742,12 +2164,21 @@
           "symbol": "R"
         }
       ],
-      "timezones": ["UTC+02:00"],
+      "timezones": [
+        "UTC+02:00"
+      ],
       "demonyms": {
         "male": "South African",
         "female": "South African"
       },
-      "borders": ["BWA", "LSO", "MOZ", "NAM", "SWZ", "ZWE"],
+      "borders": [
+        "BWA",
+        "LSO",
+        "MOZ",
+        "NAM",
+        "SWZ",
+        "ZWE"
+      ],
       "drivingSide": "left",
       "fifaCode": "RSA",
       "startOfWeek": "monday",
@@ -1755,9 +2186,8 @@
         "google": "https://goo.gl/maps/CLCZ1R8Uz1KpYhRv6",
         "osm": "https://www.openstreetmap.org/relation/87565"
       },
-      "photo": "https://images.unsplash.com/photo-1652940974331-56ae34ee1038?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxQcmV0b3JpYXxlbnwwfHx8fDE3MzEwODE0MTN8MA&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 0,
-      "id": "c294"
+      "photo": "https://images.unsplash.com/photo-1652940974331-56ae34ee1038?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxQcmV0b3JpYXxlbnwwfHx8fDE3MzE1MzExMzB8MA&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -1774,19 +2204,28 @@
       "region": "Africa",
       "subregion": "Western Africa",
       "area": 923768,
-      "languages": ["English"],
+      "languages": [
+        "English"
+      ],
       "currencies": [
         {
           "name": "Nigerian naira",
           "symbol": "₦"
         }
       ],
-      "timezones": ["UTC+01:00"],
+      "timezones": [
+        "UTC+01:00"
+      ],
       "demonyms": {
         "male": "Nigerian",
         "female": "Nigerian"
       },
-      "borders": ["BEN", "CMR", "TCD", "NER"],
+      "borders": [
+        "BEN",
+        "CMR",
+        "TCD",
+        "NER"
+      ],
       "drivingSide": "right",
       "fifaCode": "NGA",
       "startOfWeek": "monday",
@@ -1794,9 +2233,8 @@
         "google": "https://goo.gl/maps/LTn417qWwBPFszuV9",
         "osm": "https://www.openstreetmap.org/relation/192787"
       },
-      "photo": "https://images.unsplash.com/photo-1678652225243-8445e7535e36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxBYnVqYXxlbnwwfHx8fDE3MzEwODE0MTJ8MA&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 0,
-      "id": "5a79"
+      "photo": "https://images.unsplash.com/photo-1678652225243-8445e7535e36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxBYnVqYXxlbnwwfHx8fDE3MzE1MzExMzB8MA&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -1813,19 +2251,30 @@
       "region": "Africa",
       "subregion": "Eastern Africa",
       "area": 580367,
-      "languages": ["English", "Swahili"],
+      "languages": [
+        "English",
+        "Swahili"
+      ],
       "currencies": [
         {
           "name": "Kenyan shilling",
           "symbol": "Sh"
         }
       ],
-      "timezones": ["UTC+03:00"],
+      "timezones": [
+        "UTC+03:00"
+      ],
       "demonyms": {
         "male": "Kenyan",
         "female": "Kenyan"
       },
-      "borders": ["ETH", "SOM", "SSD", "TZA", "UGA"],
+      "borders": [
+        "ETH",
+        "SOM",
+        "SSD",
+        "TZA",
+        "UGA"
+      ],
       "drivingSide": "left",
       "fifaCode": "KEN",
       "startOfWeek": "monday",
@@ -1833,9 +2282,8 @@
         "google": "https://goo.gl/maps/Ni9M7wcCxf8bJHLX8",
         "osm": "https://www.openstreetmap.org/relation/192798"
       },
-      "photo": "https://images.unsplash.com/photo-1713746834155-1d7a431db637?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxOYWlyb2JpfGVufDB8fHx8MTczMTA4MTQxM3ww&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 0,
-      "id": "fe27"
+      "photo": "https://images.unsplash.com/photo-1713746834155-1d7a431db637?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxOYWlyb2JpfGVufDB8fHx8MTczMTUzMTEyOXww&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -1852,19 +2300,27 @@
       "region": "Africa",
       "subregion": "Western Africa",
       "area": 238533,
-      "languages": ["English"],
+      "languages": [
+        "English"
+      ],
       "currencies": [
         {
           "name": "Ghanaian cedi",
           "symbol": "₵"
         }
       ],
-      "timezones": ["UTC"],
+      "timezones": [
+        "UTC"
+      ],
       "demonyms": {
         "male": "Ghanaian",
         "female": "Ghanaian"
       },
-      "borders": ["BFA", "CIV", "TGO"],
+      "borders": [
+        "BFA",
+        "CIV",
+        "TGO"
+      ],
       "drivingSide": "right",
       "fifaCode": "GHA",
       "startOfWeek": "monday",
@@ -1872,9 +2328,8 @@
         "google": "https://goo.gl/maps/Avy5RSmdsXFBaiXq8",
         "osm": "https://www.openstreetmap.org/relation/192781"
       },
-      "photo": "https://images.unsplash.com/photo-1590669448170-f53dff54ee7a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxBY2NyYXxlbnwwfHx8fDE3MzEwODE0MTN8MA&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 0,
-      "id": "6859"
+      "photo": "https://images.unsplash.com/photo-1590669448170-f53dff54ee7a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxBY2NyYXxlbnwwfHx8fDE3MzE1MzExMzF8MA&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -1891,19 +2346,29 @@
       "region": "Americas",
       "subregion": "South America",
       "area": 1141748,
-      "languages": ["Spanish"],
+      "languages": [
+        "Spanish"
+      ],
       "currencies": [
         {
           "name": "Colombian peso",
           "symbol": "$"
         }
       ],
-      "timezones": ["UTC-05:00"],
+      "timezones": [
+        "UTC-05:00"
+      ],
       "demonyms": {
         "male": "Colombian",
         "female": "Colombian"
       },
-      "borders": ["BRA", "ECU", "PAN", "PER", "VEN"],
+      "borders": [
+        "BRA",
+        "ECU",
+        "PAN",
+        "PER",
+        "VEN"
+      ],
       "drivingSide": "right",
       "fifaCode": "COL",
       "startOfWeek": "monday",
@@ -1911,9 +2376,8 @@
         "google": "https://goo.gl/maps/zix9qNFX69E9yZ2M6",
         "osm": "https://www.openstreetmap.org/relation/120027"
       },
-      "photo": "https://images.unsplash.com/photo-1676005557437-d81374dcdfcc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxCb2dvdCVDMyVBMXxlbnwwfHx8fDE3MzEwODE0MTN8MA&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 0,
-      "id": "efa0"
+      "photo": "https://images.unsplash.com/photo-1676005557437-d81374dcdfcc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxCb2dvdCVDMyVBMXxlbnwwfHx8fDE3MzE1MzExMzB8MA&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -1930,19 +2394,28 @@
       "region": "Americas",
       "subregion": "South America",
       "area": 756102,
-      "languages": ["Spanish"],
+      "languages": [
+        "Spanish"
+      ],
       "currencies": [
         {
           "name": "Chilean peso",
           "symbol": "$"
         }
       ],
-      "timezones": ["UTC-06:00", "UTC-04:00"],
+      "timezones": [
+        "UTC-06:00",
+        "UTC-04:00"
+      ],
       "demonyms": {
         "male": "Chilean",
         "female": "Chilean"
       },
-      "borders": ["ARG", "BOL", "PER"],
+      "borders": [
+        "ARG",
+        "BOL",
+        "PER"
+      ],
       "drivingSide": "right",
       "fifaCode": "CHI",
       "startOfWeek": "monday",
@@ -1950,9 +2423,8 @@
         "google": "https://goo.gl/maps/XboxyNHh2fAjCPNn9",
         "osm": "https://www.openstreetmap.org/relation/167454"
       },
-      "photo": "https://images.unsplash.com/photo-1588432106919-c2213dd7ee60?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxTYW50aWFnb3xlbnwwfHx8fDE3MzEwODE0MTN8MA&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 0,
-      "id": "9da0"
+      "photo": "https://images.unsplash.com/photo-1588432106919-c2213dd7ee60?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxTYW50aWFnb3xlbnwwfHx8fDE3MzE1MzExMzB8MA&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -1969,19 +2441,31 @@
       "region": "Americas",
       "subregion": "South America",
       "area": 1285216,
-      "languages": ["Aymara", "Quechua", "Spanish"],
+      "languages": [
+        "Aymara",
+        "Quechua",
+        "Spanish"
+      ],
       "currencies": [
         {
           "name": "Peruvian sol",
           "symbol": "S/ "
         }
       ],
-      "timezones": ["UTC-05:00"],
+      "timezones": [
+        "UTC-05:00"
+      ],
       "demonyms": {
         "male": "Peruvian",
         "female": "Peruvian"
       },
-      "borders": ["BOL", "BRA", "CHL", "COL", "ECU"],
+      "borders": [
+        "BOL",
+        "BRA",
+        "CHL",
+        "COL",
+        "ECU"
+      ],
       "drivingSide": "right",
       "fifaCode": "PER",
       "startOfWeek": "monday",
@@ -1989,9 +2473,8 @@
         "google": "https://goo.gl/maps/uDWEUaXNcZTng1fP6",
         "osm": "https://www.openstreetmap.org/relation/288247"
       },
-      "photo": "https://images.unsplash.com/photo-1693492157243-e06d9b136fa3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxMaW1hfGVufDB8fHx8MTczMTA4MTQxMnww&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 0,
-      "id": "8387"
+      "photo": "https://images.unsplash.com/photo-1693492157243-e06d9b136fa3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxMaW1hfGVufDB8fHx8MTczMTUzMTEyOXww&ixlib=rb-4.0.3&q=80&w=400",
+      "likes": 0
     },
     {
       "name": {
@@ -2008,19 +2491,27 @@
       "region": "Americas",
       "subregion": "South America",
       "area": 916445,
-      "languages": ["Spanish"],
+      "languages": [
+        "Spanish"
+      ],
       "currencies": [
         {
           "name": "Venezuelan bolívar soberano",
           "symbol": "Bs.S."
         }
       ],
-      "timezones": ["UTC-04:00"],
+      "timezones": [
+        "UTC-04:00"
+      ],
       "demonyms": {
         "male": "Venezuelan",
         "female": "Venezuelan"
       },
-      "borders": ["BRA", "COL", "GUY"],
+      "borders": [
+        "BRA",
+        "COL",
+        "GUY"
+      ],
       "drivingSide": "right",
       "fifaCode": "VEN",
       "startOfWeek": "monday",
@@ -2028,23 +2519,7 @@
         "google": "https://goo.gl/maps/KLCwDN8sec7z2kse9",
         "osm": "https://www.openstreetmap.org/relation/272644"
       },
-      "photo": "https://images.unsplash.com/photo-1572276037952-478cead56982?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxDYXJhY2FzfGVufDB8fHx8MTczMTA4MTQxM3ww&ixlib=rb-4.0.3&q=80&w=400",
-      "likes": 0,
-      "id": "feb8"
-    },
-    {
-      "id": "299f9693-ec2a-4dc3-aa74-669c2f461c1e",
-      "name": {
-        "en": "Wsdasad",
-        "ka": "Adsa"
-      },
-      "capital": {
-        "en": "Sadsasa",
-        "ka": "Asdsa"
-      },
-      "flag": "",
-      "population": 123,
-      "photo": "",
+      "photo": "https://images.unsplash.com/photo-1572276037952-478cead56982?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjAyNDh8MHwxfHNlYXJjaHwxfHxDYXJhY2FzfGVufDB8fHx8MTczMTUzMTEyOXww&ixlib=rb-4.0.3&q=80&w=400",
       "likes": 0
     }
   ]

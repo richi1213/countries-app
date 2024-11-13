@@ -123,10 +123,10 @@ const CountryList: React.FC = () => {
   });
 
   const rowVirtualizer = useVirtualizer({
-    count: countriesData ? countriesData.length : 0,
+    count: countriesData ? (data?.pages[0].totalCountries as number) : 0,
     getScrollElement: () => parentRef.current,
     estimateSize: () => 400,
-    overscan: 3,
+    overscan: 9,
   });
 
   useEffect(() => {
@@ -192,16 +192,14 @@ const CountryList: React.FC = () => {
     event.preventDefault();
     event.currentTarget.blur();
 
-    const country = state.countries.find((country) => country.id === countryId);
-
-    if (country) {
-      dispatch({
-        type: 'country/deleted',
-        payload: { id: countryId },
-      });
-    }
-
-    deleteCountry(countryId);
+    deleteCountry(countryId, {
+      onSuccess: () => {
+        refetch();
+      },
+      onError: (error) => {
+        console.error('Error deleting country:', error);
+      },
+    });
   };
 
   const handleAddCountry = (newCountry: BaseCountryData) => {
@@ -211,12 +209,15 @@ const CountryList: React.FC = () => {
     });
   };
 
+  console.log(countriesData);
+
   const handleEditCountry = (
     event: MouseEvent<HTMLButtonElement>,
     id: string,
   ) => {
     event.preventDefault();
-    const countryToEdit = state.countries.find((country) => country.id === id);
+    const countryToEdit = countriesData.find((country) => country.id === id);
+
     if (countryToEdit) {
       setSelectedCountry(countryToEdit);
       setIsEditCountryModalOpen(true);
@@ -239,10 +240,6 @@ const CountryList: React.FC = () => {
     setSearchParams({ sort: newSortOrder });
   };
 
-  console.log('countries data', countriesData);
-
-  console.log('data', data);
-
   return (
     <div>
       <AddCountryButton
@@ -256,7 +253,7 @@ const CountryList: React.FC = () => {
           ref={parentRef}
           className={styles.countryList}
           style={{
-            height: `500px`,
+            height: `100vh`,
             width: `100%`,
             overflow: 'auto',
           }}
