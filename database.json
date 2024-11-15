@@ -15,10 +15,7 @@
       "region": "Americas",
       "subregion": "North America",
       "area": 9984670,
-      "languages": [
-        "English",
-        "French"
-      ],
+      "languages": ["English", "French"],
       "currencies": [
         {
           "name": "Canadian dollar",
@@ -37,9 +34,7 @@
         "male": "Canadian",
         "female": "Canadian"
       },
-      "borders": [
-        "USA"
-      ],
+      "borders": ["USA"],
       "drivingSide": "right",
       "fifaCode": "CAN",
       "startOfWeek": "sunday",
@@ -65,18 +60,14 @@
       "region": "Europe",
       "subregion": "Northern Europe",
       "area": 103000,
-      "languages": [
-        "Icelandic"
-      ],
+      "languages": ["Icelandic"],
       "currencies": [
         {
           "name": "Icelandic króna",
           "symbol": "kr"
         }
       ],
-      "timezones": [
-        "UTC"
-      ],
+      "timezones": ["UTC"],
       "demonyms": {
         "male": "Icelander",
         "female": "Icelander"
@@ -107,21 +98,14 @@
       "region": "Americas",
       "subregion": "North America",
       "area": 2166086,
-      "languages": [
-        "Greenlandic"
-      ],
+      "languages": ["Greenlandic"],
       "currencies": [
         {
           "name": "krone",
           "symbol": "kr."
         }
       ],
-      "timezones": [
-        "UTC-04:00",
-        "UTC-03:00",
-        "UTC-01:00",
-        "UTC+00:00"
-      ],
+      "timezones": ["UTC-04:00", "UTC-03:00", "UTC-01:00", "UTC+00:00"],
       "demonyms": {
         "male": "Greenlandic",
         "female": "Greenlandic"
@@ -151,29 +135,19 @@
       "region": "Europe",
       "subregion": "Northern Europe",
       "area": 323802,
-      "languages": [
-        "Norwegian Nynorsk",
-        "Norwegian Bokmål",
-        "Sami"
-      ],
+      "languages": ["Norwegian Nynorsk", "Norwegian Bokmål", "Sami"],
       "currencies": [
         {
           "name": "Norwegian krone",
           "symbol": "kr"
         }
       ],
-      "timezones": [
-        "UTC+01:00"
-      ],
+      "timezones": ["UTC+01:00"],
       "demonyms": {
         "male": "Norwegian",
         "female": "Norwegian"
       },
-      "borders": [
-        "FIN",
-        "SWE",
-        "RUS"
-      ],
+      "borders": ["FIN", "SWE", "RUS"],
       "drivingSide": "right",
       "fifaCode": "NOR",
       "startOfWeek": "monday",
@@ -199,26 +173,19 @@
       "region": "Europe",
       "subregion": "Northern Europe",
       "area": 450295,
-      "languages": [
-        "Swedish"
-      ],
+      "languages": ["Swedish"],
       "currencies": [
         {
           "name": "Swedish krona",
           "symbol": "kr"
         }
       ],
-      "timezones": [
-        "UTC+01:00"
-      ],
+      "timezones": ["UTC+01:00"],
       "demonyms": {
         "male": "Swedish",
         "female": "Swedish"
       },
-      "borders": [
-        "FIN",
-        "NOR"
-      ],
+      "borders": ["FIN", "NOR"],
       "drivingSide": "right",
       "fifaCode": "SWE",
       "startOfWeek": "monday",
@@ -244,28 +211,19 @@
       "region": "Europe",
       "subregion": "Northern Europe",
       "area": 338424,
-      "languages": [
-        "Finnish",
-        "Swedish"
-      ],
+      "languages": ["Finnish", "Swedish"],
       "currencies": [
         {
           "name": "Euro",
           "symbol": "€"
         }
       ],
-      "timezones": [
-        "UTC+02:00"
-      ],
+      "timezones": ["UTC+02:00"],
       "demonyms": {
         "male": "Finnish",
         "female": "Finnish"
       },
-      "borders": [
-        "NOR",
-        "SWE",
-        "RUS"
-      ],
+      "borders": ["NOR", "SWE", "RUS"],
       "drivingSide": "right",
       "fifaCode": "FIN",
       "startOfWeek": "monday",
@@ -291,29 +249,19 @@
       "region": "Europe",
       "subregion": "Northern Europe",
       "area": 43094,
-      "languages": [
-        "Danish"
-      ],
+      "languages": ["Danish"],
       "currencies": [
         {
           "name": "Danish krone",
           "symbol": "kr"
         }
       ],
-      "timezones": [
-        "UTC-04:00",
-        "UTC-03:00",
-        "UTC-01:00",
-        "UTC",
-        "UTC+01:00"
-      ],
+      "timezones": ["UTC-04:00", "UTC-03:00", "UTC-01:00", "UTC", "UTC+01:00"],
       "demonyms": {
         "male": "Danish",
         "female": "Danish"
       },
-      "borders": [
-        "DEU"
-      ],
+      "borders": ["DEU"],
       "drivingSide": "right",
       "fifaCode": "DEN",
       "startOfWeek": "monday",
@@ -339,9 +287,7 @@
       "region": "Europe",
       "subregion": "Eastern Europe",
       "area": 17098242,
-      "languages": [
-        "Russian"
-      ],
+      "languages": ["Russian"],
       "currencies": [
         {
           "name": "Russian ruble",
@@ -404,26 +350,19 @@
       "region": "Europe",
       "subregion": "Northern Europe",
       "area": 45227,
-      "languages": [
-        "Estonian"
-      ],
+      "languages": ["Estonian"],
       "currencies": [
         {
           "name": "Euro",
           "symbol": "€"
         }
       ],
-      "timezones": [
-        "UTC+02:00"
-      ],
+      "timezones": ["UTC+02:00"],
       "demonyms": {
         "male": "Estonian",
         "female": "Estonian"
       },
-      "borders": [
-        "LVA",
-        "RUS"
-      ],
+      "borders": ["LVA", "RUS"],
       "drivingSide": "right",
       "fifaCode": "EST",
       "startOfWeek": "monday",
@@ -449,28 +388,19 @@
       "region": "Europe",
       "subregion": "Northern Europe",
       "area": 64559,
-      "languages": [
-        "Latvian"
-      ],
+      "languages": ["Latvian"],
       "currencies": [
         {
           "name": "Euro",
           "symbol": "€"
         }
       ],
-      "timezones": [
-        "UTC+02:00"
-      ],
+      "timezones": ["UTC+02:00"],
       "demonyms": {
         "male": "Latvian",
         "female": "Latvian"
       },
-      "borders": [
-        "BLR",
-        "EST",
-        "LTU",
-        "RUS"
-      ],
+      "borders": ["BLR", "EST", "LTU", "RUS"],
       "drivingSide": "right",
       "fifaCode": "LVA",
       "startOfWeek": "monday",
@@ -496,28 +426,19 @@
       "region": "Europe",
       "subregion": "Northern Europe",
       "area": 65300,
-      "languages": [
-        "Lithuanian"
-      ],
+      "languages": ["Lithuanian"],
       "currencies": [
         {
           "name": "Euro",
           "symbol": "€"
         }
       ],
-      "timezones": [
-        "UTC+02:00"
-      ],
+      "timezones": ["UTC+02:00"],
       "demonyms": {
         "male": "Lithuanian",
         "female": "Lithuanian"
       },
-      "borders": [
-        "BLR",
-        "LVA",
-        "POL",
-        "RUS"
-      ],
+      "borders": ["BLR", "LVA", "POL", "RUS"],
       "drivingSide": "right",
       "fifaCode": "LTU",
       "startOfWeek": "monday",
@@ -543,9 +464,7 @@
       "region": "Americas",
       "subregion": "North America",
       "area": 9372610,
-      "languages": [
-        "English"
-      ],
+      "languages": ["English"],
       "currencies": [
         {
           "name": "United States dollar",
@@ -569,10 +488,7 @@
         "male": "American",
         "female": "American"
       },
-      "borders": [
-        "CAN",
-        "MEX"
-      ],
+      "borders": ["CAN", "MEX"],
       "drivingSide": "right",
       "fifaCode": "USA",
       "startOfWeek": "sunday",
@@ -598,9 +514,7 @@
       "region": "Europe",
       "subregion": "Northern Europe",
       "area": 242900,
-      "languages": [
-        "English"
-      ],
+      "languages": ["English"],
       "currencies": [
         {
           "name": "British pound",
@@ -622,9 +536,7 @@
         "male": "British",
         "female": "British"
       },
-      "borders": [
-        "IRL"
-      ],
+      "borders": ["IRL"],
       "drivingSide": "left",
       "startOfWeek": "monday",
       "maps": {
@@ -649,32 +561,19 @@
       "region": "Europe",
       "subregion": "Western Europe",
       "area": 41284,
-      "languages": [
-        "French",
-        "Swiss German",
-        "Italian",
-        "Romansh"
-      ],
+      "languages": ["French", "Swiss German", "Italian", "Romansh"],
       "currencies": [
         {
           "name": "Swiss franc",
           "symbol": "Fr."
         }
       ],
-      "timezones": [
-        "UTC+01:00"
-      ],
+      "timezones": ["UTC+01:00"],
       "demonyms": {
         "male": "Swiss",
         "female": "Swiss"
       },
-      "borders": [
-        "AUT",
-        "FRA",
-        "ITA",
-        "LIE",
-        "DEU"
-      ],
+      "borders": ["AUT", "FRA", "ITA", "LIE", "DEU"],
       "drivingSide": "right",
       "fifaCode": "SUI",
       "startOfWeek": "monday",
@@ -700,32 +599,19 @@
       "region": "Europe",
       "subregion": "Central Europe",
       "area": 83871,
-      "languages": [
-        "German"
-      ],
+      "languages": ["German"],
       "currencies": [
         {
           "name": "Euro",
           "symbol": "€"
         }
       ],
-      "timezones": [
-        "UTC+01:00"
-      ],
+      "timezones": ["UTC+01:00"],
       "demonyms": {
         "male": "Austrian",
         "female": "Austrian"
       },
-      "borders": [
-        "CZE",
-        "DEU",
-        "HUN",
-        "ITA",
-        "LIE",
-        "SVK",
-        "SVN",
-        "CHE"
-      ],
+      "borders": ["CZE", "DEU", "HUN", "ITA", "LIE", "SVK", "SVN", "CHE"],
       "drivingSide": "right",
       "fifaCode": "AUT",
       "startOfWeek": "monday",
@@ -751,18 +637,14 @@
       "region": "Europe",
       "subregion": "Western Europe",
       "area": 357114,
-      "languages": [
-        "German"
-      ],
+      "languages": ["German"],
       "currencies": [
         {
           "name": "Euro",
           "symbol": "€"
         }
       ],
-      "timezones": [
-        "UTC+01:00"
-      ],
+      "timezones": ["UTC+01:00"],
       "demonyms": {
         "male": "German",
         "female": "German"
@@ -803,31 +685,19 @@
       "region": "Europe",
       "subregion": "Central Europe",
       "area": 312679,
-      "languages": [
-        "Polish"
-      ],
+      "languages": ["Polish"],
       "currencies": [
         {
           "name": "Polish złoty",
           "symbol": "zł"
         }
       ],
-      "timezones": [
-        "UTC+01:00"
-      ],
+      "timezones": ["UTC+01:00"],
       "demonyms": {
         "male": "Polish",
         "female": "Polish"
       },
-      "borders": [
-        "BLR",
-        "CZE",
-        "DEU",
-        "LTU",
-        "RUS",
-        "SVK",
-        "UKR"
-      ],
+      "borders": ["BLR", "CZE", "DEU", "LTU", "RUS", "SVK", "UKR"],
       "drivingSide": "right",
       "fifaCode": "POL",
       "startOfWeek": "monday",
@@ -853,29 +723,19 @@
       "region": "Europe",
       "subregion": "Central Europe",
       "area": 78865,
-      "languages": [
-        "Czech",
-        "Slovak"
-      ],
+      "languages": ["Czech", "Slovak"],
       "currencies": [
         {
           "name": "Czech koruna",
           "symbol": "Kč"
         }
       ],
-      "timezones": [
-        "UTC+01:00"
-      ],
+      "timezones": ["UTC+01:00"],
       "demonyms": {
         "male": "Czech",
         "female": "Czech"
       },
-      "borders": [
-        "AUT",
-        "DEU",
-        "POL",
-        "SVK"
-      ],
+      "borders": ["AUT", "DEU", "POL", "SVK"],
       "drivingSide": "right",
       "fifaCode": "CZE",
       "startOfWeek": "monday",
@@ -901,29 +761,19 @@
       "region": "Europe",
       "subregion": "Central Europe",
       "area": 49037,
-      "languages": [
-        "Slovak"
-      ],
+      "languages": ["Slovak"],
       "currencies": [
         {
           "name": "Euro",
           "symbol": "€"
         }
       ],
-      "timezones": [
-        "UTC+01:00"
-      ],
+      "timezones": ["UTC+01:00"],
       "demonyms": {
         "male": "Slovak",
         "female": "Slovak"
       },
-      "borders": [
-        "AUT",
-        "CZE",
-        "HUN",
-        "POL",
-        "UKR"
-      ],
+      "borders": ["AUT", "CZE", "HUN", "POL", "UKR"],
       "drivingSide": "right",
       "fifaCode": "SVK",
       "startOfWeek": "monday",
@@ -949,31 +799,19 @@
       "region": "Europe",
       "subregion": "Eastern Europe",
       "area": 603500,
-      "languages": [
-        "Ukrainian"
-      ],
+      "languages": ["Ukrainian"],
       "currencies": [
         {
           "name": "Ukrainian hryvnia",
           "symbol": "₴"
         }
       ],
-      "timezones": [
-        "UTC+02:00"
-      ],
+      "timezones": ["UTC+02:00"],
       "demonyms": {
         "male": "Ukrainian",
         "female": "Ukrainian"
       },
-      "borders": [
-        "BLR",
-        "HUN",
-        "MDA",
-        "POL",
-        "ROU",
-        "RUS",
-        "SVK"
-      ],
+      "borders": ["BLR", "HUN", "MDA", "POL", "ROU", "RUS", "SVK"],
       "drivingSide": "right",
       "fifaCode": "UKR",
       "startOfWeek": "monday",
@@ -999,30 +837,19 @@
       "region": "Europe",
       "subregion": "Eastern Europe",
       "area": 207600,
-      "languages": [
-        "Belarusian",
-        "Russian"
-      ],
+      "languages": ["Belarusian", "Russian"],
       "currencies": [
         {
           "name": "Belarusian ruble",
           "symbol": "Br"
         }
       ],
-      "timezones": [
-        "UTC+03:00"
-      ],
+      "timezones": ["UTC+03:00"],
       "demonyms": {
         "male": "Belarusian",
         "female": "Belarusian"
       },
-      "borders": [
-        "LVA",
-        "LTU",
-        "POL",
-        "RUS",
-        "UKR"
-      ],
+      "borders": ["LVA", "LTU", "POL", "RUS", "UKR"],
       "drivingSide": "right",
       "fifaCode": "BLR",
       "startOfWeek": "monday",
@@ -1048,31 +875,19 @@
       "region": "Asia",
       "subregion": "Central Asia",
       "area": 2724900,
-      "languages": [
-        "Kazakh",
-        "Russian"
-      ],
+      "languages": ["Kazakh", "Russian"],
       "currencies": [
         {
           "name": "Kazakhstani tenge",
           "symbol": "₸"
         }
       ],
-      "timezones": [
-        "UTC+05:00",
-        "UTC+06:00"
-      ],
+      "timezones": ["UTC+05:00", "UTC+06:00"],
       "demonyms": {
         "male": "Kazakhstani",
         "female": "Kazakhstani"
       },
-      "borders": [
-        "CHN",
-        "KGZ",
-        "RUS",
-        "TKM",
-        "UZB"
-      ],
+      "borders": ["CHN", "KGZ", "RUS", "TKM", "UZB"],
       "drivingSide": "right",
       "fifaCode": "KAZ",
       "startOfWeek": "monday",
@@ -1098,27 +913,19 @@
       "region": "Asia",
       "subregion": "Eastern Asia",
       "area": 1564110,
-      "languages": [
-        "Mongolian"
-      ],
+      "languages": ["Mongolian"],
       "currencies": [
         {
           "name": "Mongolian tögrög",
           "symbol": "₮"
         }
       ],
-      "timezones": [
-        "UTC+07:00",
-        "UTC+08:00"
-      ],
+      "timezones": ["UTC+07:00", "UTC+08:00"],
       "demonyms": {
         "male": "Mongolian",
         "female": "Mongolian"
       },
-      "borders": [
-        "CHN",
-        "RUS"
-      ],
+      "borders": ["CHN", "RUS"],
       "drivingSide": "right",
       "fifaCode": "MNG",
       "startOfWeek": "monday",
@@ -1144,18 +951,14 @@
       "region": "Asia",
       "subregion": "Eastern Asia",
       "area": 377930,
-      "languages": [
-        "Japanese"
-      ],
+      "languages": ["Japanese"],
       "currencies": [
         {
           "name": "Japanese yen",
           "symbol": "¥"
         }
       ],
-      "timezones": [
-        "UTC+09:00"
-      ],
+      "timezones": ["UTC+09:00"],
       "demonyms": {
         "male": "Japanese",
         "female": "Japanese"
@@ -1186,25 +989,19 @@
       "region": "Asia",
       "subregion": "Eastern Asia",
       "area": 100210,
-      "languages": [
-        "Korean"
-      ],
+      "languages": ["Korean"],
       "currencies": [
         {
           "name": "South Korean won",
           "symbol": "₩"
         }
       ],
-      "timezones": [
-        "UTC+09:00"
-      ],
+      "timezones": ["UTC+09:00"],
       "demonyms": {
         "male": "South Korean",
         "female": "South Korean"
       },
-      "borders": [
-        "PRK"
-      ],
+      "borders": ["PRK"],
       "drivingSide": "right",
       "fifaCode": "KOR",
       "startOfWeek": "monday",
@@ -1230,18 +1027,14 @@
       "region": "Asia",
       "subregion": "Eastern Asia",
       "area": 9706961,
-      "languages": [
-        "Chinese"
-      ],
+      "languages": ["Chinese"],
       "currencies": [
         {
           "name": "Chinese yuan",
           "symbol": "¥"
         }
       ],
-      "timezones": [
-        "UTC+08:00"
-      ],
+      "timezones": ["UTC+08:00"],
       "demonyms": {
         "male": "Chinese",
         "female": "Chinese"
@@ -1289,32 +1082,19 @@
       "region": "Asia",
       "subregion": "Southern Asia",
       "area": 3287590,
-      "languages": [
-        "English",
-        "Hindi",
-        "Tamil"
-      ],
+      "languages": ["English", "Hindi", "Tamil"],
       "currencies": [
         {
           "name": "Indian rupee",
           "symbol": "₹"
         }
       ],
-      "timezones": [
-        "UTC+05:30"
-      ],
+      "timezones": ["UTC+05:30"],
       "demonyms": {
         "male": "Indian",
         "female": "Indian"
       },
-      "borders": [
-        "BGD",
-        "BTN",
-        "MMR",
-        "CHN",
-        "NPL",
-        "PAK"
-      ],
+      "borders": ["BGD", "BTN", "MMR", "CHN", "NPL", "PAK"],
       "drivingSide": "left",
       "fifaCode": "IND",
       "startOfWeek": "monday",
@@ -1340,21 +1120,14 @@
       "region": "Americas",
       "subregion": "South America",
       "area": 8515767,
-      "languages": [
-        "Portuguese"
-      ],
+      "languages": ["Portuguese"],
       "currencies": [
         {
           "name": "Brazilian real",
           "symbol": "R$"
         }
       ],
-      "timezones": [
-        "UTC-05:00",
-        "UTC-04:00",
-        "UTC-03:00",
-        "UTC-02:00"
-      ],
+      "timezones": ["UTC-05:00", "UTC-04:00", "UTC-03:00", "UTC-02:00"],
       "demonyms": {
         "male": "Brazilian",
         "female": "Brazilian"
@@ -1396,30 +1169,19 @@
       "region": "Americas",
       "subregion": "South America",
       "area": 2780400,
-      "languages": [
-        "Guaraní",
-        "Spanish"
-      ],
+      "languages": ["Guaraní", "Spanish"],
       "currencies": [
         {
           "name": "Argentine peso",
           "symbol": "$"
         }
       ],
-      "timezones": [
-        "UTC-03:00"
-      ],
+      "timezones": ["UTC-03:00"],
       "demonyms": {
         "male": "Argentine",
         "female": "Argentine"
       },
-      "borders": [
-        "BOL",
-        "BRA",
-        "CHL",
-        "PRY",
-        "URY"
-      ],
+      "borders": ["BOL", "BRA", "CHL", "PRY", "URY"],
       "drivingSide": "right",
       "fifaCode": "ARG",
       "startOfWeek": "monday",
@@ -1445,9 +1207,7 @@
       "region": "Oceania",
       "subregion": "Australia and New Zealand",
       "area": 7692024,
-      "languages": [
-        "English"
-      ],
+      "languages": ["English"],
       "currencies": [
         {
           "name": "Australian dollar",
@@ -1494,11 +1254,7 @@
       "region": "Oceania",
       "subregion": "Australia and New Zealand",
       "area": 270467,
-      "languages": [
-        "English",
-        "Māori",
-        "New Zealand Sign Language"
-      ],
+      "languages": ["English", "Māori", "New Zealand Sign Language"],
       "currencies": [
         {
           "name": "New Zealand dollar",
@@ -1542,29 +1298,19 @@
       "region": "Americas",
       "subregion": "North America",
       "area": 1964375,
-      "languages": [
-        "Spanish"
-      ],
+      "languages": ["Spanish"],
       "currencies": [
         {
           "name": "Mexican peso",
           "symbol": "$"
         }
       ],
-      "timezones": [
-        "UTC-08:00",
-        "UTC-07:00",
-        "UTC-06:00"
-      ],
+      "timezones": ["UTC-08:00", "UTC-07:00", "UTC-06:00"],
       "demonyms": {
         "male": "Mexican",
         "female": "Mexican"
       },
-      "borders": [
-        "BLZ",
-        "GTM",
-        "USA"
-      ],
+      "borders": ["BLZ", "GTM", "USA"],
       "drivingSide": "right",
       "fifaCode": "MEX",
       "startOfWeek": "monday",
@@ -1590,9 +1336,7 @@
       "region": "Europe",
       "subregion": "Western Europe",
       "area": 551695,
-      "languages": [
-        "French"
-      ],
+      "languages": ["French"],
       "currencies": [
         {
           "name": "Euro",
@@ -1619,16 +1363,7 @@
         "male": "French",
         "female": "French"
       },
-      "borders": [
-        "AND",
-        "BEL",
-        "DEU",
-        "ITA",
-        "LUX",
-        "MCO",
-        "ESP",
-        "CHE"
-      ],
+      "borders": ["AND", "BEL", "DEU", "ITA", "LUX", "MCO", "ESP", "CHE"],
       "drivingSide": "right",
       "fifaCode": "FRA",
       "startOfWeek": "monday",
@@ -1654,30 +1389,19 @@
       "region": "Europe",
       "subregion": "Southern Europe",
       "area": 301336,
-      "languages": [
-        "Italian"
-      ],
+      "languages": ["Italian"],
       "currencies": [
         {
           "name": "Euro",
           "symbol": "€"
         }
       ],
-      "timezones": [
-        "UTC+01:00"
-      ],
+      "timezones": ["UTC+01:00"],
       "demonyms": {
         "male": "Italian",
         "female": "Italian"
       },
-      "borders": [
-        "AUT",
-        "FRA",
-        "SMR",
-        "SVN",
-        "CHE",
-        "VAT"
-      ],
+      "borders": ["AUT", "FRA", "SMR", "SVN", "CHE", "VAT"],
       "drivingSide": "right",
       "fifaCode": "ITA",
       "startOfWeek": "monday",
@@ -1703,33 +1427,19 @@
       "region": "Europe",
       "subregion": "Southern Europe",
       "area": 505992,
-      "languages": [
-        "Spanish",
-        "Catalan",
-        "Basque",
-        "Galician"
-      ],
+      "languages": ["Spanish", "Catalan", "Basque", "Galician"],
       "currencies": [
         {
           "name": "Euro",
           "symbol": "€"
         }
       ],
-      "timezones": [
-        "UTC",
-        "UTC+01:00"
-      ],
+      "timezones": ["UTC", "UTC+01:00"],
       "demonyms": {
         "male": "Spanish",
         "female": "Spanish"
       },
-      "borders": [
-        "AND",
-        "FRA",
-        "GIB",
-        "PRT",
-        "MAR"
-      ],
+      "borders": ["AND", "FRA", "GIB", "PRT", "MAR"],
       "drivingSide": "right",
       "fifaCode": "ESP",
       "startOfWeek": "monday",
@@ -1755,26 +1465,19 @@
       "region": "Europe",
       "subregion": "Southern Europe",
       "area": 92090,
-      "languages": [
-        "Portuguese"
-      ],
+      "languages": ["Portuguese"],
       "currencies": [
         {
           "name": "Euro",
           "symbol": "€"
         }
       ],
-      "timezones": [
-        "UTC-01:00",
-        "UTC"
-      ],
+      "timezones": ["UTC-01:00", "UTC"],
       "demonyms": {
         "male": "Portuguese",
         "female": "Portuguese"
       },
-      "borders": [
-        "ESP"
-      ],
+      "borders": ["ESP"],
       "drivingSide": "right",
       "fifaCode": "POR",
       "startOfWeek": "monday",
@@ -1800,28 +1503,19 @@
       "region": "Europe",
       "subregion": "Southern Europe",
       "area": 131990,
-      "languages": [
-        "Greek"
-      ],
+      "languages": ["Greek"],
       "currencies": [
         {
           "name": "Euro",
           "symbol": "€"
         }
       ],
-      "timezones": [
-        "UTC+02:00"
-      ],
+      "timezones": ["UTC+02:00"],
       "demonyms": {
         "male": "Greek",
         "female": "Greek"
       },
-      "borders": [
-        "ALB",
-        "BGR",
-        "TUR",
-        "MKD"
-      ],
+      "borders": ["ALB", "BGR", "TUR", "MKD"],
       "drivingSide": "right",
       "fifaCode": "GRE",
       "startOfWeek": "monday",
@@ -1847,32 +1541,19 @@
       "region": "Asia",
       "subregion": "Western Asia",
       "area": 783562,
-      "languages": [
-        "Turkish"
-      ],
+      "languages": ["Turkish"],
       "currencies": [
         {
           "name": "Turkish lira",
           "symbol": "₺"
         }
       ],
-      "timezones": [
-        "UTC+03:00"
-      ],
+      "timezones": ["UTC+03:00"],
       "demonyms": {
         "male": "Turkish",
         "female": "Turkish"
       },
-      "borders": [
-        "ARM",
-        "AZE",
-        "BGR",
-        "GEO",
-        "GRC",
-        "IRN",
-        "IRQ",
-        "SYR"
-      ],
+      "borders": ["ARM", "AZE", "BGR", "GEO", "GRC", "IRN", "IRQ", "SYR"],
       "drivingSide": "right",
       "fifaCode": "TUR",
       "startOfWeek": "monday",
@@ -1898,31 +1579,19 @@
       "region": "Asia",
       "subregion": "Western Asia",
       "area": 2149690,
-      "languages": [
-        "Arabic"
-      ],
+      "languages": ["Arabic"],
       "currencies": [
         {
           "name": "Saudi riyal",
           "symbol": "ر.س"
         }
       ],
-      "timezones": [
-        "UTC+03:00"
-      ],
+      "timezones": ["UTC+03:00"],
       "demonyms": {
         "male": "Saudi Arabian",
         "female": "Saudi Arabian"
       },
-      "borders": [
-        "IRQ",
-        "JOR",
-        "KWT",
-        "OMN",
-        "QAT",
-        "ARE",
-        "YEM"
-      ],
+      "borders": ["IRQ", "JOR", "KWT", "OMN", "QAT", "ARE", "YEM"],
       "drivingSide": "right",
       "fifaCode": "KSA",
       "startOfWeek": "sunday",
@@ -1948,31 +1617,19 @@
       "region": "Asia",
       "subregion": "Southern Asia",
       "area": 1648195,
-      "languages": [
-        "Persian (Farsi)"
-      ],
+      "languages": ["Persian (Farsi)"],
       "currencies": [
         {
           "name": "Iranian rial",
           "symbol": "﷼"
         }
       ],
-      "timezones": [
-        "UTC+03:30"
-      ],
+      "timezones": ["UTC+03:30"],
       "demonyms": {
         "male": "Iranian",
         "female": "Iranian"
       },
-      "borders": [
-        "AFG",
-        "ARM",
-        "AZE",
-        "IRQ",
-        "PAK",
-        "TUR",
-        "TKM"
-      ],
+      "borders": ["AFG", "ARM", "AZE", "IRQ", "PAK", "TUR", "TKM"],
       "drivingSide": "right",
       "fifaCode": "IRN",
       "startOfWeek": "saturday",
@@ -1998,32 +1655,19 @@
       "region": "Asia",
       "subregion": "Western Asia",
       "area": 438317,
-      "languages": [
-        "Arabic",
-        "Aramaic",
-        "Sorani"
-      ],
+      "languages": ["Arabic", "Aramaic", "Sorani"],
       "currencies": [
         {
           "name": "Iraqi dinar",
           "symbol": "ع.د"
         }
       ],
-      "timezones": [
-        "UTC+03:00"
-      ],
+      "timezones": ["UTC+03:00"],
       "demonyms": {
         "male": "Iraqi",
         "female": "Iraqi"
       },
-      "borders": [
-        "IRN",
-        "JOR",
-        "KWT",
-        "SAU",
-        "SYR",
-        "TUR"
-      ],
+      "borders": ["IRN", "JOR", "KWT", "SAU", "SYR", "TUR"],
       "drivingSide": "right",
       "fifaCode": "IRQ",
       "startOfWeek": "sunday",
@@ -2049,30 +1693,19 @@
       "region": "Asia",
       "subregion": "Western Asia",
       "area": 20770,
-      "languages": [
-        "Arabic",
-        "Hebrew"
-      ],
+      "languages": ["Arabic", "Hebrew"],
       "currencies": [
         {
           "name": "Israeli new shekel",
           "symbol": "₪"
         }
       ],
-      "timezones": [
-        "UTC+02:00"
-      ],
+      "timezones": ["UTC+02:00"],
       "demonyms": {
         "male": "Israeli",
         "female": "Israeli"
       },
-      "borders": [
-        "EGY",
-        "JOR",
-        "LBN",
-        "PSE",
-        "SYR"
-      ],
+      "borders": ["EGY", "JOR", "LBN", "PSE", "SYR"],
       "drivingSide": "right",
       "fifaCode": "ISR",
       "startOfWeek": "sunday",
@@ -2098,28 +1731,19 @@
       "region": "Africa",
       "subregion": "Northern Africa",
       "area": 1002450,
-      "languages": [
-        "Arabic"
-      ],
+      "languages": ["Arabic"],
       "currencies": [
         {
           "name": "Egyptian pound",
           "symbol": "£"
         }
       ],
-      "timezones": [
-        "UTC+02:00"
-      ],
+      "timezones": ["UTC+02:00"],
       "demonyms": {
         "male": "Egyptian",
         "female": "Egyptian"
       },
-      "borders": [
-        "ISR",
-        "LBY",
-        "PSE",
-        "SDN"
-      ],
+      "borders": ["ISR", "LBY", "PSE", "SDN"],
       "drivingSide": "right",
       "fifaCode": "EGY",
       "startOfWeek": "sunday",
@@ -2164,21 +1788,12 @@
           "symbol": "R"
         }
       ],
-      "timezones": [
-        "UTC+02:00"
-      ],
+      "timezones": ["UTC+02:00"],
       "demonyms": {
         "male": "South African",
         "female": "South African"
       },
-      "borders": [
-        "BWA",
-        "LSO",
-        "MOZ",
-        "NAM",
-        "SWZ",
-        "ZWE"
-      ],
+      "borders": ["BWA", "LSO", "MOZ", "NAM", "SWZ", "ZWE"],
       "drivingSide": "left",
       "fifaCode": "RSA",
       "startOfWeek": "monday",
@@ -2204,28 +1819,19 @@
       "region": "Africa",
       "subregion": "Western Africa",
       "area": 923768,
-      "languages": [
-        "English"
-      ],
+      "languages": ["English"],
       "currencies": [
         {
           "name": "Nigerian naira",
           "symbol": "₦"
         }
       ],
-      "timezones": [
-        "UTC+01:00"
-      ],
+      "timezones": ["UTC+01:00"],
       "demonyms": {
         "male": "Nigerian",
         "female": "Nigerian"
       },
-      "borders": [
-        "BEN",
-        "CMR",
-        "TCD",
-        "NER"
-      ],
+      "borders": ["BEN", "CMR", "TCD", "NER"],
       "drivingSide": "right",
       "fifaCode": "NGA",
       "startOfWeek": "monday",
@@ -2251,30 +1857,19 @@
       "region": "Africa",
       "subregion": "Eastern Africa",
       "area": 580367,
-      "languages": [
-        "English",
-        "Swahili"
-      ],
+      "languages": ["English", "Swahili"],
       "currencies": [
         {
           "name": "Kenyan shilling",
           "symbol": "Sh"
         }
       ],
-      "timezones": [
-        "UTC+03:00"
-      ],
+      "timezones": ["UTC+03:00"],
       "demonyms": {
         "male": "Kenyan",
         "female": "Kenyan"
       },
-      "borders": [
-        "ETH",
-        "SOM",
-        "SSD",
-        "TZA",
-        "UGA"
-      ],
+      "borders": ["ETH", "SOM", "SSD", "TZA", "UGA"],
       "drivingSide": "left",
       "fifaCode": "KEN",
       "startOfWeek": "monday",
@@ -2300,27 +1895,19 @@
       "region": "Africa",
       "subregion": "Western Africa",
       "area": 238533,
-      "languages": [
-        "English"
-      ],
+      "languages": ["English"],
       "currencies": [
         {
           "name": "Ghanaian cedi",
           "symbol": "₵"
         }
       ],
-      "timezones": [
-        "UTC"
-      ],
+      "timezones": ["UTC"],
       "demonyms": {
         "male": "Ghanaian",
         "female": "Ghanaian"
       },
-      "borders": [
-        "BFA",
-        "CIV",
-        "TGO"
-      ],
+      "borders": ["BFA", "CIV", "TGO"],
       "drivingSide": "right",
       "fifaCode": "GHA",
       "startOfWeek": "monday",
@@ -2346,29 +1933,19 @@
       "region": "Americas",
       "subregion": "South America",
       "area": 1141748,
-      "languages": [
-        "Spanish"
-      ],
+      "languages": ["Spanish"],
       "currencies": [
         {
           "name": "Colombian peso",
           "symbol": "$"
         }
       ],
-      "timezones": [
-        "UTC-05:00"
-      ],
+      "timezones": ["UTC-05:00"],
       "demonyms": {
         "male": "Colombian",
         "female": "Colombian"
       },
-      "borders": [
-        "BRA",
-        "ECU",
-        "PAN",
-        "PER",
-        "VEN"
-      ],
+      "borders": ["BRA", "ECU", "PAN", "PER", "VEN"],
       "drivingSide": "right",
       "fifaCode": "COL",
       "startOfWeek": "monday",
@@ -2394,28 +1971,19 @@
       "region": "Americas",
       "subregion": "South America",
       "area": 756102,
-      "languages": [
-        "Spanish"
-      ],
+      "languages": ["Spanish"],
       "currencies": [
         {
           "name": "Chilean peso",
           "symbol": "$"
         }
       ],
-      "timezones": [
-        "UTC-06:00",
-        "UTC-04:00"
-      ],
+      "timezones": ["UTC-06:00", "UTC-04:00"],
       "demonyms": {
         "male": "Chilean",
         "female": "Chilean"
       },
-      "borders": [
-        "ARG",
-        "BOL",
-        "PER"
-      ],
+      "borders": ["ARG", "BOL", "PER"],
       "drivingSide": "right",
       "fifaCode": "CHI",
       "startOfWeek": "monday",
@@ -2441,31 +2009,19 @@
       "region": "Americas",
       "subregion": "South America",
       "area": 1285216,
-      "languages": [
-        "Aymara",
-        "Quechua",
-        "Spanish"
-      ],
+      "languages": ["Aymara", "Quechua", "Spanish"],
       "currencies": [
         {
           "name": "Peruvian sol",
           "symbol": "S/ "
         }
       ],
-      "timezones": [
-        "UTC-05:00"
-      ],
+      "timezones": ["UTC-05:00"],
       "demonyms": {
         "male": "Peruvian",
         "female": "Peruvian"
       },
-      "borders": [
-        "BOL",
-        "BRA",
-        "CHL",
-        "COL",
-        "ECU"
-      ],
+      "borders": ["BOL", "BRA", "CHL", "COL", "ECU"],
       "drivingSide": "right",
       "fifaCode": "PER",
       "startOfWeek": "monday",
@@ -2491,27 +2047,19 @@
       "region": "Americas",
       "subregion": "South America",
       "area": 916445,
-      "languages": [
-        "Spanish"
-      ],
+      "languages": ["Spanish"],
       "currencies": [
         {
           "name": "Venezuelan bolívar soberano",
           "symbol": "Bs.S."
         }
       ],
-      "timezones": [
-        "UTC-04:00"
-      ],
+      "timezones": ["UTC-04:00"],
       "demonyms": {
         "male": "Venezuelan",
         "female": "Venezuelan"
       },
-      "borders": [
-        "BRA",
-        "COL",
-        "GUY"
-      ],
+      "borders": ["BRA", "COL", "GUY"],
       "drivingSide": "right",
       "fifaCode": "VEN",
       "startOfWeek": "monday",
